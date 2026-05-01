@@ -10,7 +10,8 @@ website:
   description: "Assistant Professor in Public Finance · University of Málaga"
   site-url: "https://gonzalollamosas.com"
   repo-url: "https://github.com/lgg18106/personal-website"
-  favicon: images/branding/03_favicon.svg
+  image: images/profile.jpg
+  favicon: images/branding/favicon-180.png
 
   open-graph:
     image: "https://gonzalollamosas.com/images/og-image.png"
@@ -21,10 +22,8 @@ website:
     card-style: summary_large_image
 
   navbar:
-    background: "#ffffff"
-    foreground: "#1a1a1a"
     pinned: true
-    logo: images/branding/wordmark.png
+    logo: images/branding/wordmark_white.png
     logo-href: /
     logo-alt: "Gonzalo Llamosas"
     title: false
@@ -41,8 +40,6 @@ website:
         href: blog/index.qmd
       - text: "CV"
         href: cv/index.qmd
-      - text: "Contact"
-        href: contact.qmd
     right:
       - icon: github
         href: https://github.com/lgg18106
@@ -53,34 +50,43 @@ website:
       - icon: twitter-x
         href: https://x.com/gonzalollamosas
         aria-label: X
+      - icon: envelope
+        href: "mailto:gonzalo.llamosas@uma.es"
+        aria-label: Email
       - text: "Scholar"
         href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
       - text: "ORCID"
         href: https://orcid.org/0000-0002-4407-2845
+
+  search:
+    location: navbar
+    type: textbox
 
   page-footer:
     border: true
     left: |
       © 2026 Gonzalo Llamosas
     center: |
-      Built with [Quarto](https://quarto.org) · Source on [GitHub](https://github.com/lgg18106/personal-website)
+      [Source on GitHub](https://github.com/lgg18106/personal-website)
     right:
-      - icon: envelope
-        href: "mailto:gonzalo.llamosas@uma.es"
-        aria-label: Email
+      Built with [Quarto](https://quarto.org)
 
 format:
   html:
-    fontsize: 1.0625em
+    fontsize: 1.1em
     theme:
-      light: [default, html/styles.scss]
-      dark: [darkly, html/styles.scss]
+      - pulse
+      - html/styles.scss
     toc: false
-    smooth-scroll: true
     code-link: true
     anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
     include-in-header:
       - text: |
           <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon-180.png">
           <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon-64.png">
-          <meta name="theme-color" content="#ffffff">
+
+execute:
+  freeze: auto

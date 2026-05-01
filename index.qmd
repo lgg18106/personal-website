@@ -1,38 +1,56 @@
 ---
-title: "Hi, I'm Gonzalo"
-about:
-  template: jolla
-  id: about-block
-  image: images/profile.jpg
-  image-shape: round
-  image-width: 18em
-  links:
-    - icon: envelope
-      text: Email
-      href: mailto:gonzalo.llamosas@uma.es
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/gonzalo-llamosas-garcia/
-    - icon: github
-      text: GitHub
-      href: https://github.com/lgg18106
-    - icon: twitter-x
-      text: X
-      href: https://x.com/gonzalollamosas
-    - text: Scholar
-      href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
-    - text: ORCID
-      href: https://orcid.org/0000-0002-4407-2845
+title: ""
+pagetitle: "Gonzalo Llamosas"
+page-layout: full
 ---
 
-::: {#about-block}
-:::
+```{=html}
+<section class="hero-block">
+  <div class="hero-text">
+    <h1>Hi, I'm <span class="accent">Gonzalo</span>.</h1>
 
-I am **Assistant Professor in Public Finance** at the [University of Málaga](https://www.uma.es), accredited by ANECA as Associate Professor.
+    <p class="hero-lead">
+      I am <strong>Assistant Professor in Public Finance</strong> at the
+      <a href="https://www.uma.es" target="_blank">University of Málaga</a>,
+      accredited by ANECA as Associate Professor.
+    </p>
 
-My research sits at the intersection of **fiscal policy**, **behavioural economics** and **data**, with growing attention to how artificial intelligence is reshaping the tax base of advanced economies. I currently work on the effects of fiscal consolidation on public debt sustainability in the EU-27, on the design of financial-education policies, and on how human decisions interact with fiscal-policy outcomes.
+    <p class="hero-lead">
+      My research sits at the intersection of <strong>fiscal policy</strong>,
+      <strong>behavioural economics</strong> and <strong>data</strong>, with growing
+      attention to how artificial intelligence is reshaping the tax base of
+      advanced economies.
+    </p>
 
-My recent work has appeared in the *Journal of Behavioral and Experimental Economics* (2025) and *Global Policy* (2020). Outside academia, I host [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions.
+    <p class="hero-lead">
+      I currently work on the effects of fiscal consolidation on public debt
+      sustainability in the EU-27, on the design of financial-education policies,
+      and on how human decisions interact with fiscal-policy outcomes. My recent
+      work has appeared in the
+      <em>Journal of Behavioral and Experimental Economics</em> (2025) and
+      <em>Global Policy</em> (2020).
+    </p>
+
+    <p class="hero-lead">
+      Outside academia, I host <a href="outlook-project.html"><strong>Outlook Project</strong></a>,
+      a YouTube channel on economics, data and human decisions.
+    </p>
+
+    <div class="social-pills">
+      <a class="social-pill" href="mailto:gonzalo.llamosas@uma.es"><i class="bi bi-envelope"></i> Email</a>
+      <a class="social-pill" href="https://www.linkedin.com/in/gonzalo-llamosas-garcia/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      <a class="social-pill" href="https://github.com/lgg18106" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+      <a class="social-pill" href="https://x.com/gonzalollamosas" target="_blank"><i class="bi bi-twitter-x"></i> X</a>
+      <a class="social-pill" href="https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en" target="_blank">Scholar</a>
+      <a class="social-pill" href="https://orcid.org/0000-0002-4407-2845" target="_blank">ORCID</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="images/profile.jpg" alt="Gonzalo Llamosas">
+  </div>
+</section>
+```
 
 ## Recent
 
