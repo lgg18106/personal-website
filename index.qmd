@@ -35,15 +35,6 @@ page-layout: full
       Outside academia, I host <a href="outlook-project.html"><strong>Outlook Project</strong></a>,
       a YouTube channel on economics, data and human decisions.
     </p>
-
-    <div class="social-pills">
-      <a class="social-pill" href="mailto:gonzalo.llamosas@uma.es"><i class="bi bi-envelope"></i> Email</a>
-      <a class="social-pill" href="https://www.linkedin.com/in/gonzalo-llamosas-garcia/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-      <a class="social-pill" href="https://github.com/lgg18106" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-      <a class="social-pill" href="https://x.com/gonzalollamosas" target="_blank"><i class="bi bi-twitter-x"></i> X</a>
-      <a class="social-pill" href="https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en" target="_blank">Scholar</a>
-      <a class="social-pill" href="https://orcid.org/0000-0002-4407-2845" target="_blank">ORCID</a>
-    </div>
   </div>
 
   <div class="hero-image">

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- VARIANTE 3 · Frame redondeado · curva con drop-line · línea base + punto pequeño en el origen
+       Más narrativo · "shock al inicio · IRF ondulada · resultado al final". -->
+
+  <!-- Frame cuadrado redondeado -->
+  <rect x="22" y="22" width="156" height="156" rx="8"
+        stroke="#E6AA04" stroke-width="2.5" fill="none" />
+
+  <!-- Línea base interior sutil -->
+  <line x1="38" y1="160" x2="162" y2="160"
+        stroke="#E6AA04" stroke-width="1.5" stroke-opacity="0.35"
+        stroke-linecap="round" />
+
+  <!-- Drop-line vertical al peak final -->
+  <line x1="158" y1="55" x2="158" y2="160"
+        stroke="#E6AA04" stroke-width="1.5" stroke-opacity="0.4"
+        stroke-dasharray="3,3" />
+
+  <!-- Curva ondulada ascendente -->
+  <path d="M 40 150 C 52 132, 64 95, 82 95 C 100 95, 108 122, 118 125 C 132 128, 145 75, 158 55"
+        stroke="#E6AA04" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Punto pequeño al inicio · "shock" -->
+  <circle cx="40" cy="150" r="4" fill="#E6AA04" />
+
+  <!-- Punto grande al peak final · "outcome" -->
+  <circle cx="158" cy="55" r="8" fill="#E6AA04" />
+</svg>

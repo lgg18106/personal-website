@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- OPCIÓN 1 · Curva IRF (Impulse Response Function)
+       Eco directo de tu paper LP-DiD: la curva sube tras el shock, alcanza pico,
+       declina. El punto dorado marca el peak, el "outlook" del momento. -->
+  <line x1="20" y1="160" x2="180" y2="160" stroke="#E6AA04" stroke-width="3" stroke-linecap="round" />
+  <path d="M 30 145 Q 70 60, 110 50 Q 150 60, 175 95"
+        stroke="#E6AA04" stroke-width="6" stroke-linecap="round" fill="none" />
+  <circle cx="110" cy="50" r="11" fill="#E6AA04" />
+</svg>

@@ -86,11 +86,11 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     background-color: $black !important;
     border-bottom: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
 
     .navbar-brand-logo img {
-        height: 40px !important;
-        max-height: 40px !important;
+        height: 52px !important;       // wordmark más grande
+        max-height: 52px !important;
         width: auto !important;
         max-width: none !important;
     }
@@ -122,13 +122,34 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    // Search
-    .aa-Form, .aa-DetachedSearchButton {
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-color: rgba(255, 255, 255, 0.2) !important;
+    // Search · solo icono lupa, minimalista
+    .aa-DetachedSearchButton {
+        background: transparent !important;
+        border: none !important;
         color: $white !important;
+        padding: 0.5rem !important;
+        box-shadow: none !important;
+        width: auto !important;
+
+        &:hover { color: $gold !important; }
     }
-    .aa-DetachedSearchButton { color: $white !important; }
+
+    // Ocultar el placeholder "Search..." y dejar solo la lupa
+    .aa-DetachedSearchButtonPlaceholder,
+    .aa-DetachedSearchButtonQuery,
+    .aa-DetachedSearchButton-placeholder {
+        display: none !important;
+    }
+    .aa-DetachedSearchButtonIcon {
+        margin: 0 !important;
+
+        svg {
+            width: 20px !important;
+            height: 20px !important;
+            color: $white !important;
+            fill: $white !important;
+        }
+    }
 }
 
 
@@ -150,13 +171,17 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-text {
         h1 {
-            font-size: calc(2.5rem + 1.2vw);
-            font-weight: 500;  // ESTE es el truco de Marvin
+            font-size: calc(3.2rem + 1.8vw);   // mucho más grande
+            font-weight: 500;
             letter-spacing: -0.02em;
-            line-height: 1.1;
+            line-height: 1.05;
             margin-bottom: 2rem;
             color: $black;
             font-family: $font-family-sans-serif;
+
+            @media (max-width: 767px) {
+                font-size: calc(2.5rem + 1vw);
+            }
 
             .accent {
                 color: $gold;

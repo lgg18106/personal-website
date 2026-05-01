@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- OPCIÓN 2 · Delta (Δ) griega
+       Símbolo del CAMBIO en economía: ΔSPB, ΔY, Δb_t.
+       Tu paper entero usa Δ_h Y. Es literalmente tu agenda. -->
+  <polygon points="100,28 178,170 22,170"
+           stroke="#E6AA04" stroke-width="11" stroke-linejoin="round" fill="none" />
+</svg>

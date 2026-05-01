@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- OPCIÓN 5 · 3 barras ascendentes
+       Gráfico de barras minimal · clásico de economía.
+       La tercera barra (la más alta) en sólido dorado: el insight,
+       el dato que salta del resto. -->
+  <line x1="22" y1="170" x2="178" y2="170" stroke="#E6AA04" stroke-width="3" stroke-linecap="round" />
+  <rect x="38" y="115" width="30" height="55" stroke="#E6AA04" stroke-width="6" fill="none" />
+  <rect x="85" y="80" width="30" height="90" stroke="#E6AA04" stroke-width="6" fill="none" />
+  <rect x="132" y="45" width="30" height="125" fill="#E6AA04" />
+</svg>

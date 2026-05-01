@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- VARIANTE 2 · Curva flotante (sin eje)
+       Solo la curva y el punto. Más etéreo, más editorial.
+       Eliminamos la línea base para máximo minimalismo. -->
+  <path d="M 25 145 Q 70 60, 110 50 Q 150 60, 175 100"
+        stroke="#E6AA04" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="110" cy="50" r="9" fill="#E6AA04" />
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- OPCIÓN 3 · Sigma (Σ) griega
+       La suma, fundamental en econometría y estadística.
+       Símbolo más reconocible del trabajo cuantitativo serio. -->
+  <text x="100" y="155"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="180"
+        font-weight="500"
+        fill="#E6AA04"
+        text-anchor="middle">Σ</text>
+</svg>

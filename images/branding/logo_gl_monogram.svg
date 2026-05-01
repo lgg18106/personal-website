@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- OPCIÓN 4 · Monograma "GL." con punto editorial
+       Sin símbolo gráfico. Iniciales puras + punto dorado al final
+       como sello editorial (The New Yorker, n+1, Granta).
+       Más maduro y académico. -->
+  <text x="20" y="135"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="115"
+        font-weight="700"
+        fill="#000000"
+        letter-spacing="-6">GL</text>
+  <circle cx="170" cy="125" r="14" fill="#E6AA04" />
+</svg>

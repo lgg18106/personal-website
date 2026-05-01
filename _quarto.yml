@@ -9,9 +9,8 @@ website:
   title: "Gonzalo Llamosas"
   description: "Assistant Professor in Public Finance · University of Málaga"
   site-url: "https://gonzalollamosas.com"
-  repo-url: "https://github.com/lgg18106/personal-website"
   image: images/profile.jpg
-  favicon: images/branding/favicon-180.png
+  favicon: images/branding/logo_curve_bars_v4.svg
 
   open-graph:
     image: "https://gonzalollamosas.com/images/og-image.png"
@@ -23,7 +22,7 @@ website:
 
   navbar:
     pinned: true
-    logo: images/branding/navbar_logo_combo.png
+    logo: images/branding/navbar_combo_v4.png
     logo-href: /
     logo-alt: "Gonzalo Llamosas"
     title: false
@@ -41,9 +40,6 @@ website:
       - text: "CV"
         href: cv/index.qmd
     right:
-      - icon: github
-        href: https://github.com/lgg18106
-        aria-label: GitHub
       - icon: linkedin
         href: https://www.linkedin.com/in/gonzalo-llamosas-garcia/
         aria-label: LinkedIn
@@ -60,14 +56,13 @@ website:
 
   search:
     location: navbar
-    type: textbox
+    type: overlay
 
   page-footer:
     border: true
     left: |
       © 2026 Gonzalo Llamosas
-    center: |
-      [Source on GitHub](https://github.com/lgg18106/personal-website)
+    center: ""
     right:
       Built with [Quarto](https://quarto.org)
 

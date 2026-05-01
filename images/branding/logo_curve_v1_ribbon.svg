@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- VARIANTE 1 · IRF con intervalo de confianza
+       Replica el estilo exacto de las figuras de tu paper LP-DiD.
+       Curva sólida + banda translúcida (95% CI) + punto en el peak. -->
+
+  <!-- Banda de confianza · ribbon translúcido -->
+  <path d="M 28 138 Q 65 80, 105 60 Q 145 70, 175 110
+           L 175 140 Q 145 110, 105 100 Q 65 120, 28 165 Z"
+        fill="#E6AA04" fill-opacity="0.18" />
+
+  <!-- Eje X · línea base sutil -->
+  <line x1="22" y1="170" x2="178" y2="170"
+        stroke="#000000" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Tick marks pequeños en el eje -->
+  <line x1="50" y1="170" x2="50" y2="174" stroke="#000000" stroke-width="2" />
+  <line x1="100" y1="170" x2="100" y2="174" stroke="#000000" stroke-width="2" />
+  <line x1="150" y1="170" x2="150" y2="174" stroke="#000000" stroke-width="2" />
+
+  <!-- Curva principal · sólida dorada -->
+  <path d="M 28 152 Q 65 100, 105 80 Q 145 90, 175 125"
+        stroke="#E6AA04" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Punto en el peak -->
+  <circle cx="105" cy="80" r="9" fill="#E6AA04" />
+  <circle cx="105" cy="80" r="4" fill="#FFFFFF" />
+</svg>

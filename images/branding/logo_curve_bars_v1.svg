@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- VARIANTE 1 · Histograma fantasma detrás de la curva
+       Barras translúcidas al fondo + curva sólida encima.
+       La curva es la protagonista, las barras dan textura sutil. -->
+
+  <!-- Frame cuadrado puro -->
+  <rect x="22" y="22" width="156" height="156"
+        stroke="#E6AA04" stroke-width="2.5" fill="none" />
+
+  <!-- Barras translúcidas al fondo · histograma ascendente sutil -->
+  <rect x="38" y="140" width="14" height="22" fill="#E6AA04" fill-opacity="0.18" />
+  <rect x="58" y="120" width="14" height="42" fill="#E6AA04" fill-opacity="0.18" />
+  <rect x="78" y="100" width="14" height="62" fill="#E6AA04" fill-opacity="0.18" />
+  <rect x="98" y="115" width="14" height="47" fill="#E6AA04" fill-opacity="0.18" />
+  <rect x="118" y="90" width="14" height="72" fill="#E6AA04" fill-opacity="0.18" />
+  <rect x="138" y="70" width="14" height="92" fill="#E6AA04" fill-opacity="0.18" />
+
+  <!-- Curva ondulada ascendente · sube-baja-sube -->
+  <path d="M 38 150 C 52 130, 65 95, 82 95 C 100 95, 108 122, 118 125 C 132 128, 145 75, 162 55"
+        stroke="#E6AA04" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Punto en el peak final -->
+  <circle cx="162" cy="55" r="8.5" fill="#E6AA04" />
+</svg>
