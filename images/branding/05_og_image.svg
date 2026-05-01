@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Open Graph image · 1200×630 para previews en X, LinkedIn, Slack, etc.
+       Lenguaje visual coherente con Outlook Project (líneas + microtextos editoriales)
+       pero hablando en marca personal. -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+
+  <!-- Línea decorativa superior con microtextos -->
+  <line x1="80" y1="105" x2="1120" y2="105" stroke="#000000" stroke-width="1"/>
+  <text x="80" y="90"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14"
+        font-weight="600"
+        fill="#000000"
+        letter-spacing="4">PERSONAL WEBSITE · MMXXVI</text>
+  <text x="1120" y="90"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14"
+        font-weight="600"
+        fill="#000000"
+        letter-spacing="4"
+        text-anchor="end">GONZALOLLAMOSAS.COM</text>
+
+  <!-- Nombre principal · contraste de pesos -->
+  <text x="80" y="320"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="120"
+        font-weight="700"
+        fill="#000000"
+        letter-spacing="-4">Gonzalo</text>
+  <text x="80" y="445"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="120"
+        font-weight="200"
+        fill="#000000"
+        letter-spacing="-3">Llamosas</text>
+
+  <!-- Línea decorativa inferior con tagline -->
+  <line x1="80" y1="510" x2="1120" y2="510" stroke="#000000" stroke-width="1"/>
+  <text x="80" y="540"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14"
+        font-weight="500"
+        fill="#666666"
+        letter-spacing="3">ASSISTANT PROFESSOR IN PUBLIC FINANCE · UNIVERSITY OF MÁLAGA</text>
+  <text x="80" y="568"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14"
+        font-weight="500"
+        fill="#666666"
+        letter-spacing="3">PUBLIC DEBT · BEHAVIOURAL ECONOMICS · DATA</text>
+</svg>

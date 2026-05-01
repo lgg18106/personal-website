@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Favicon · cuadrado negro con "GL" en blanco
+       Tamaño objetivo: 32×32 y 64×64 para todos los navegadores y mobile bookmarks. -->
+  <rect width="64" height="64" fill="#000000"/>
+  <text x="32" y="46"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="34"
+        font-weight="700"
+        fill="#FFFFFF"
+        letter-spacing="-2"
+        text-anchor="middle">GL</text>
+</svg>

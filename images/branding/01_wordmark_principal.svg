@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 100" fill="none">
+  <!-- Wordmark principal · "Gonzalo Llamosas"
+       Pensado para uso en navbar (alto ~30-40px renderizado) y firmas. -->
+  <text x="0" y="68"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="56"
+        font-weight="600"
+        fill="#000000"
+        letter-spacing="-1.5">Gonzalo Llamosas</text>
+</svg>

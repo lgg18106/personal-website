@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <rect width="800" height="800" fill="#FFFFFF"/>
+  
+  <!-- O grande centrada -->
+  <g transform="translate(400, 400)">
+    <circle cx="0" cy="0" r="240" fill="#000000"/>
+    <circle cx="0" cy="0" r="115" fill="#FFFFFF"/>
+  </g>
+</svg>

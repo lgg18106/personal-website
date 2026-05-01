@@ -16,11 +16,11 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/lgg18106
-    - text: "{{< iconify academicons google-scholar >}} Scholar"
+    - text: "Scholar"
       href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
-    - text: "{{< iconify academicons orcid >}} ORCID"
+    - text: "ORCID"
       href: https://orcid.org/0000-0002-4407-2845
-    - text: "{{< iconify academicons researchgate >}} ResearchGate"
+    - text: "ResearchGate"
       href: https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2
 ---
 

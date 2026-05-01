@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100" fill="none">
+  <!-- Wordmark compacto · "G. Llamosas"
+       Para usos donde el nombre completo se queda apretado (mobile, footer). -->
+  <text x="0" y="68"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="56"
+        font-weight="600"
+        fill="#000000"
+        letter-spacing="-1.5">G. Llamosas</text>
+</svg>

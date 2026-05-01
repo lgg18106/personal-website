@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" fill="none">
+  <rect width="1000" height="250" fill="#FFFFFF"/>
+  
+  <!-- O alineada al baseline -->
+  <g transform="translate(96, 132)">
+    <circle cx="0" cy="0" r="56" fill="#000000"/>
+    <circle cx="0" cy="0" r="27" fill="#FFFFFF"/>
+  </g>
+  
+  <text x="159" y="188" font-family="'Helvetica Neue', Arial, sans-serif" font-size="120" font-weight="800" fill="#000000" letter-spacing="-6">utlook</text>
+  <text x="660" y="188" font-family="'Helvetica Neue', Arial, sans-serif" font-size="80" font-weight="200" fill="#000000" letter-spacing="-2">Project</text>
+</svg>

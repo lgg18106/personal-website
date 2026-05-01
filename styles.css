@@ -1,78 +1,104 @@
 /* ─────────────────────────────────────────────
    Personal website · Gonzalo Llamosas-García
+   Minimal editorial · coherent with Outlook Project
    ───────────────────────────────────────────── */
 
 :root {
   --font-body: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-head: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --color-accent: #0B1F3A;
+  --font-head: "Helvetica Neue", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --color-accent: #000000;
   --color-muted: #6c757d;
+  --color-rule: #e5e5e5;
 }
 
 body {
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.65;
+  color: #1a1a1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-head);
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: #000;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.6rem; margin-top: 2.4rem; }
-h3 { font-size: 1.25rem; margin-top: 1.8rem; }
+h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.7rem; margin-top: 2.6rem; letter-spacing: -0.015em; }
+h3 { font-size: 1.3rem; margin-top: 1.8rem; }
 
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-rule); }
+a:hover { border-bottom-color: var(--color-accent); }
 
-/* Navbar limpio */
-.navbar { border-bottom: 1px solid #eee; }
-.navbar-brand { font-weight: 600; }
+/* ── Navbar minimal ───────────────────────────── */
+.navbar {
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.6rem 0;
+}
+.navbar-brand img {
+  max-height: 32px;
+}
+.navbar .nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
 
-/* Bloques de publicación */
+/* ── Bloques de publicación ───────────────────── */
 .publication {
-  border-left: 3px solid var(--color-accent);
-  padding: 0.6rem 1rem;
-  margin: 1rem 0;
+  border-left: 2px solid var(--color-accent);
+  padding: 0.7rem 1.1rem;
+  margin: 1.1rem 0;
   background-color: #fafbfc;
+  font-size: 0.95rem;
 }
+.publication strong { font-size: 1.05rem; }
 
-.publication strong {
-  font-size: 1.05rem;
-}
-
-/* Footer */
+/* ── Footer ───────────────────────────────────── */
 .nav-footer {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-rule);
   font-size: 0.85rem;
   color: var(--color-muted);
+  padding: 1.2rem 0;
 }
 
-/* Quotes en español dentro de páginas EN */
+/* ── Quotes en español dentro de páginas EN ───── */
 blockquote em {
   color: #555;
   font-size: 0.95rem;
 }
 
-/* Listado de blog posts */
-.quarto-listing-default {
-  margin-top: 1.5rem;
-}
+/* ── Listado de blog posts ────────────────────── */
+.quarto-listing-default { margin-top: 1.5rem; }
 
-/* Tipografía técnica para code */
+/* ── Code ─────────────────────────────────────── */
 code, pre {
   font-family: "JetBrains Mono", "Menlo", monospace;
   font-size: 0.92em;
 }
 
-/* Dark mode tweaks */
-[data-bs-theme="dark"] {
-  --color-accent: #6ea8fe;
+/* ── About template trestles ──────────────────── */
+.about-image {
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
+.about-link { font-size: 0.95rem; }
+
+/* ── Dark mode tweaks ─────────────────────────── */
+[data-bs-theme="dark"] {
+  --color-accent: #ffffff;
+  --color-rule: #333;
+}
+[data-bs-theme="dark"] body { color: #e0e0e0; }
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3 { color: #fff; }
 [data-bs-theme="dark"] .publication {
   background-color: #1e2329;
   border-left-color: var(--color-accent);
+}
+[data-bs-theme="dark"] .navbar-brand img {
+  filter: invert(1);
 }
