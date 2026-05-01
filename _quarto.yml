@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - "CNAME"
+    - "images/**"
 
 website:
   title: "Gonzalo Llamosas-García"
