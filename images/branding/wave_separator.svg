@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none" fill="none">
+  <!-- Ondulado dorado decorativo · 5 líneas paralelas
+       Inspiración directa de marvin-schmitt.com (separador editorial). -->
+
+  <path d="M 0 70 C 150 30, 300 110, 450 70 S 750 30, 900 70 S 1200 110, 1350 70"
+        stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <path d="M 0 90 C 150 50, 300 130, 450 90 S 750 50, 900 90 S 1200 130, 1350 90"
+        stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <path d="M 0 110 C 150 70, 300 150, 450 110 S 750 70, 900 110 S 1200 150, 1350 110"
+        stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <path d="M 0 130 C 150 90, 300 170, 450 130 S 750 90, 900 130 S 1200 170, 1350 130"
+        stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <path d="M 0 150 C 150 110, 300 190, 450 150 S 750 110, 900 150 S 1200 190, 1350 150"
+        stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round" />
+</svg>
