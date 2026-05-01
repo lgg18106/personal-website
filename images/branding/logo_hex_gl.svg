@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Hexágono outline dorado con "GL" centrado -->
+  <polygon points="100,12 184,57 184,143 100,188 16,143 16,57"
+           stroke="#E6AA04"
+           stroke-width="11"
+           stroke-linejoin="round"
+           fill="none" />
+  <text x="100" y="125"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="78"
+        font-weight="700"
+        fill="#E6AA04"
+        letter-spacing="-3"
+        text-anchor="middle">GL</text>
+</svg>

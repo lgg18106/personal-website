@@ -23,7 +23,7 @@ website:
 
   navbar:
     pinned: true
-    logo: images/branding/wordmark_white.png
+    logo: images/branding/navbar_logo_combo.png
     logo-href: /
     logo-alt: "Gonzalo Llamosas"
     title: false

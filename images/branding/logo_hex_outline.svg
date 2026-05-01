@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Hexágono outline dorado · estilo Marvin Schmitt
+       Color exacto: #E6AA04 (dorado mostaza) -->
+  <polygon points="100,12 184,57 184,143 100,188 16,143 16,57"
+           stroke="#E6AA04"
+           stroke-width="13"
+           stroke-linejoin="round"
+           fill="none" />
+</svg>

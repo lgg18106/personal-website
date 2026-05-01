@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" fill="none">
+  <!-- Variante alternativa · hexágono SÓLIDO dorado + texto blanco
+       Más impactante. Pensado para navbar negro. -->
+
+  <g transform="translate(50, 50)">
+    <polygon points="0,-38 33,-19 33,19 0,38 -33,19 -33,-19"
+             fill="#E6AA04" />
+  </g>
+
+  <text x="105" y="65"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="38"
+        font-weight="500"
+        fill="#FFFFFF"
+        letter-spacing="-0.5">Gonzalo Llamosas</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" fill="none">
+  <!-- Combo navbar · hexágono outline dorado + "Gonzalo Llamosas" en blanco
+       Pensado para navbar negro, alto renderizado ~36px -->
+
+  <!-- Hexágono dorado a la izquierda · escalado para navbar -->
+  <g transform="translate(50, 50)">
+    <polygon points="0,-38 33,-19 33,19 0,38 -33,19 -33,-19"
+             stroke="#E6AA04"
+             stroke-width="6"
+             stroke-linejoin="round"
+             fill="none" />
+  </g>
+
+  <!-- Wordmark "Gonzalo Llamosas" en blanco -->
+  <text x="105" y="65"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="38"
+        font-weight="500"
+        fill="#FFFFFF"
+        letter-spacing="-0.5">Gonzalo Llamosas</text>
+</svg>
