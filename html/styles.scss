@@ -164,17 +164,17 @@ main h1.title.display-7,
 header#title-block-header h1.title,
 header#title-block-header h1.title.display-7,
 h1.title.display-7 {
-    font-size: calc(3.8rem + 2.5vw) !important;
+    font-size: calc(2.8rem + 1.4vw) !important;   // tamaño moderado
     font-weight: 500 !important;
-    letter-spacing: -0.025em !important;
-    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
     color: $black !important;
     font-family: $font-family-sans-serif !important;
-    margin-top: 2.5rem !important;
-    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1.5rem !important;
 
     @media (max-width: 767px) {
-        font-size: calc(2.7rem + 1.2vw) !important;
+        font-size: calc(2.2rem + 1vw) !important;
     }
 }
 
@@ -442,9 +442,11 @@ blockquote {
         &:hover { opacity: 0.85; }
     }
     .uma-footer-logo {
-        height: 36px;
+        height: 32px;
         width: auto;
-        filter: brightness(1.4) saturate(0.7);
+        // Logo oficial UMA tiene letras oscuras sobre fondo transparente.
+        // Invertimos para que se vea blanco sobre el fondo negro del footer.
+        filter: invert(1) brightness(1.2);
     }
     .uma-footer-text {
         font-size: 0.85rem;
