@@ -21,6 +21,8 @@ website:
     card-style: summary_large_image
 
   navbar:
+    background: "#ffffff"
+    foreground: "#1a1a1a"
     pinned: true
     logo: images/branding/wordmark.png
     logo-href: /
