@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 110" fill="none">
+  <!-- Combo navbar · logo del usuario + "Gonzalo Llamosas" en blanco
+       El logo es un cuadrado redondeado dorado con check ascendente recortado.
+       Adaptado a navbar negro · Lato 500 -->
+
+  <!-- Logo del usuario · escalado 80×80 con margen -->
+  <g transform="translate(15, 15)">
+    <defs>
+      <mask id="cut-navbar">
+        <rect x="0" y="0" width="80" height="80" fill="white"/>
+        <path d="M 18.3 36.7 L 40 55 L 65 25"
+              fill="none" stroke="black"
+              stroke-width="6.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="65" cy="25" r="6.7" fill="black"/>
+      </mask>
+    </defs>
+    <rect x="4.7" y="4.7" width="70.6" height="70.6" rx="10.7"
+          fill="#D9A12C" mask="url(#cut-navbar)"/>
+  </g>
+
+  <!-- Wordmark "Gonzalo Llamosas" en blanco · Lato 500 -->
+  <text x="115" y="73"
+        font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
+        font-size="48"
+        font-weight="500"
+        fill="#FFFFFF"
+        letter-spacing="-0.8">Gonzalo Llamosas</text>
+</svg>

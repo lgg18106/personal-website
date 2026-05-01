@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <mask id="cut">
+      <rect x="0" y="0" width="240" height="240" fill="white"></rect>
+      <path d="M 55 110 L 120 165 L 195 75" fill="none" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="195" cy="75" r="20" fill="black"></circle>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="oklch(0.74 0.13 80)" mask="url(#cut)"></rect>
+</svg>
