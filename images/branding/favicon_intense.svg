@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- FAVICON INTENSO · fondo negro · dorado vivo · stroke gruesos
+       Optimizado para 32×32 / 64×64 píxeles · alto contraste.
+       Mismo diseño que logo_curve_bars_v4 pero adaptado a tamaño favicon. -->
+
+  <!-- Fondo negro puro · contraste máximo -->
+  <rect x="0" y="0" width="200" height="200" fill="#000000" rx="14" />
+
+  <!-- Frame dorado más grueso -->
+  <rect x="22" y="22" width="156" height="156"
+        stroke="#E6AA04" stroke-width="6" fill="none" />
+
+  <!-- Barras finas verticales · opacidad alta -->
+  <line x1="40" y1="160" x2="40" y2="148" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="58" y1="160" x2="58" y2="135" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="76" y1="160" x2="76" y2="105" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="94" y1="160" x2="94" y2="100" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="112" y1="160" x2="112" y2="120" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="130" y1="160" x2="130" y2="115" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="148" y1="160" x2="148" y2="80" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+  <line x1="162" y1="160" x2="162" y2="63" stroke="#E6AA04" stroke-width="5" stroke-opacity="0.7" stroke-linecap="round" />
+
+  <!-- Curva ondulada · más gruesa -->
+  <path d="M 38 150 C 52 130, 65 95, 82 95 C 100 95, 108 122, 118 125 C 132 128, 145 75, 162 55"
+        stroke="#E6AA04" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Punto en el peak · más grande -->
+  <circle cx="162" cy="55" r="12" fill="#E6AA04" />
+</svg>

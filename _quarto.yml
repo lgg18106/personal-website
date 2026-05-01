@@ -10,7 +10,7 @@ website:
   description: "Assistant Professor in Public Finance · University of Málaga"
   site-url: "https://gonzalollamosas.com"
   image: images/profile.jpg
-  favicon: images/branding/logo_curve_bars_v4.svg
+  favicon: images/branding/favicon_intense.svg
 
   open-graph:
     image: "https://gonzalollamosas.com/images/og-image.png"
@@ -62,7 +62,11 @@ website:
     border: true
     left: |
       © 2026 Gonzalo Llamosas
-    center: ""
+    center: |
+      <a href="https://www.uma.es" target="_blank" class="uma-footer-link">
+        <img src="/images/uma_logo.png" alt="Universidad de Málaga" class="uma-footer-logo">
+        <span class="uma-footer-text">Department of Public Finance · Universidad de Málaga</span>
+      </a>
     right:
       Built with [Quarto](https://quarto.org)
 
@@ -80,8 +84,9 @@ format:
     footnotes-hover: true
     include-in-header:
       - text: |
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon-180.png">
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon-64.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_intense_180.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_intense_64.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/images/branding/favicon_intense_512.png">
 
 execute:
   freeze: auto

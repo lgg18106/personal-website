@@ -153,6 +153,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+// ─── DEFENSA GLOBAL · h1 con accent · MÁXIMA ESPECIFICIDAD ───────
+// Quarto envuelve el h1 con clases `display-7` que pisan reglas normales.
+// Atacamos esas clases directamente con !important.
+
+main h1.title,
+main h1.title.display-7,
+.quarto-title-block h1.title,
+.quarto-title-block h1.title.display-7,
+header#title-block-header h1.title,
+header#title-block-header h1.title.display-7,
+h1.title.display-7 {
+    font-size: calc(3.8rem + 2.5vw) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.05 !important;
+    color: $black !important;
+    font-family: $font-family-sans-serif !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 2rem !important;
+
+    @media (max-width: 767px) {
+        font-size: calc(2.7rem + 1.2vw) !important;
+    }
+}
+
+// Span .accent dentro del título · DORADO con máxima especificidad
+main h1.title .accent,
+main h1.title.display-7 .accent,
+.quarto-title-block h1 .accent,
+header#title-block-header h1 .accent,
+h1 span.accent,
+.title .accent,
+span.accent {
+    color: $gold !important;
+    font-weight: 500 !important;
+}
+
+
 // ─── HERO BLOCK · "Hi, I'm Gonzalo." asimétrico ─────────────
 
 .hero-block {
@@ -170,22 +208,23 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-text {
-        h1 {
-            font-size: calc(3.2rem + 1.8vw);   // mucho más grande
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.05;
-            margin-bottom: 2rem;
-            color: $black;
-            font-family: $font-family-sans-serif;
+        // h1 + selector defensivo si Quarto envuelve el h1 en otro contenedor
+        h1, .title {
+            font-size: calc(3.5rem + 2.2vw) !important;   // muy grande
+            font-weight: 500 !important;
+            letter-spacing: -0.025em !important;
+            line-height: 1.05 !important;
+            margin-bottom: 2rem !important;
+            color: $black !important;
+            font-family: $font-family-sans-serif !important;
 
             @media (max-width: 767px) {
-                font-size: calc(2.5rem + 1vw);
+                font-size: calc(2.6rem + 1.2vw) !important;
             }
 
             .accent {
-                color: $gold;
-                font-weight: 500;
+                color: $gold !important;
+                font-weight: 500 !important;
             }
         }
 
@@ -387,9 +426,33 @@ blockquote {
     background-color: $black !important;
     color: $gray-300;
     border: 0 !important;
-    min-height: 3.5em;
-    padding: 1.2rem 0;
+    min-height: 4.5em;
+    padding: 1.4rem 0;
     font-size: 0.9rem;
+
+    // Logo UMA + afiliación en el centro del footer
+    .uma-footer-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: $gray-300 !important;
+        text-decoration: none !important;
+        transition: opacity 0.15s ease;
+
+        &:hover { opacity: 0.85; }
+    }
+    .uma-footer-logo {
+        height: 36px;
+        width: auto;
+        filter: brightness(1.4) saturate(0.7);
+    }
+    .uma-footer-text {
+        font-size: 0.85rem;
+        color: $gray-300;
+        letter-spacing: 0.01em;
+
+        @media (max-width: 767px) { display: none; }
+    }
 
     a {
         color: $gold !important;
