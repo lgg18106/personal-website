@@ -6,7 +6,7 @@ project:
     - "images/**"
 
 website:
-  title: "Gonzalo Llamosas-García"
+  title: "Gonzalo Llamosas"
   description: "Assistant Professor in Public Finance · University of Málaga"
   site-url: "https://gonzalollamosas.com"
   repo-url: "https://github.com/lgg18106/personal-website"

@@ -1,11 +1,11 @@
 ---
-title: "Gonzalo Llamosas-García"
+title: "Gonzalo Llamosas"
 subtitle: "Assistant Professor in Public Finance · University of Málaga"
 about:
   template: trestles
   image: images/profile.jpg
   image-shape: round
-  image-width: 18em
+  image-width: 16em
   links:
     - icon: envelope
       text: Email

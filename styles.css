@@ -37,9 +37,23 @@ a:hover { border-bottom-color: var(--color-accent); }
   border-bottom: 1px solid var(--color-rule);
   padding: 0.6rem 0;
 }
-.navbar-brand img {
-  max-height: 32px;
+
+/* Logo navbar · forzar tamaño visible y alineación izquierda */
+.navbar-brand-container {
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
+.navbar-brand-logo {
+  display: inline-flex !important;
+  align-items: center;
+}
+.navbar-logo {
+  height: 28px !important;
+  width: auto !important;
+  max-height: 28px !important;
+  max-width: none !important;
+}
+
 .navbar .nav-link {
   font-weight: 500;
   font-size: 0.95rem;
@@ -82,9 +96,28 @@ code, pre {
 /* ── About template trestles ──────────────────── */
 .about-image {
   border-radius: 50%;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
 }
 .about-link { font-size: 0.95rem; }
+
+/* Más aire entre foto y descripción · trestles layout */
+.quarto-about-trestles {
+  gap: 4rem !important;
+}
+.quarto-about-trestles .about-entity {
+  padding-right: 1.5rem;
+}
+.quarto-about-trestles .about-contents {
+  padding-left: 1.5rem;
+}
+@media (max-width: 767px) {
+  .quarto-about-trestles { gap: 2rem !important; }
+  .quarto-about-trestles .about-entity,
+  .quarto-about-trestles .about-contents {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 /* ── Dark mode tweaks ─────────────────────────── */
 [data-bs-theme="dark"] {
