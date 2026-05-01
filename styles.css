@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   Personal website · Gonzalo Llamosas-García
+   Personal website · Gonzalo Llamosas
    Minimal editorial · coherent with Outlook Project
    ───────────────────────────────────────────── */
 
@@ -9,43 +9,73 @@
   --color-accent: #000000;
   --color-muted: #6c757d;
   --color-rule: #e5e5e5;
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+}
+
+html, body {
+  background-color: var(--color-bg);
 }
 
 body {
   font-family: var(--font-body);
   font-size: 17px;
   line-height: 1.65;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-head);
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #000;
+  color: inherit;
 }
 
 h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
 h2 { font-size: 1.7rem; margin-top: 2.6rem; letter-spacing: -0.015em; }
 h3 { font-size: 1.3rem; margin-top: 1.8rem; }
 
-a { text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-rule); }
-a:hover { border-bottom-color: var(--color-accent); }
+/* Solo subrayar enlaces dentro de contenido, NO en navbar/footer/about */
+.content p a,
+.content li a,
+main p a,
+main li a {
+  text-decoration: none;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-rule);
+}
+.content p a:hover,
+.content li a:hover,
+main p a:hover,
+main li a:hover {
+  border-bottom-color: var(--color-accent);
+}
 
-/* ── Navbar minimal ───────────────────────────── */
+/* Enlaces normales (navbar, footer, etc) sin subrayado */
+a { text-decoration: none; color: inherit; }
+a.navbar-brand,
+a.navbar-brand-logo,
+a.nav-link,
+.about-link,
+.nav-footer a {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* ── Navbar ───────────────────────────────────── */
 .navbar {
   border-bottom: 1px solid var(--color-rule);
   padding: 0.6rem 0;
 }
-
-/* Logo navbar · simplificado, deja que Quarto haga su trabajo
-   y solo forzamos tamaño + alineación + invertido para dark mode */
 .navbar-brand-container.mx-auto {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
-.navbar-brand-logo {
+.navbar-brand-logo,
+a.navbar-brand-logo {
   padding: 0 !important;
+  border: none !important;
+  text-decoration: none !important;
 }
 .navbar-logo {
   height: 36px !important;
@@ -55,7 +85,6 @@ a:hover { border-bottom-color: var(--color-accent); }
   opacity: 1 !important;
   visibility: visible !important;
 }
-/* En dark mode, invertir el SVG negro a blanco */
 [data-bs-theme="dark"] .navbar-logo {
   filter: invert(1);
 }
@@ -106,7 +135,6 @@ code, pre {
 }
 .about-link { font-size: 0.95rem; }
 
-/* Más aire entre foto y descripción · trestles layout */
 .quarto-about-trestles {
   gap: 4rem !important;
 }
@@ -125,19 +153,40 @@ code, pre {
   }
 }
 
-/* ── Dark mode tweaks ─────────────────────────── */
+/* ── Dark mode · forzar legibilidad ───────────── */
 [data-bs-theme="dark"] {
   --color-accent: #ffffff;
   --color-rule: #333;
+  --color-bg: #15171a;
+  --color-text: #e6e6e6;
+  --color-muted: #999;
 }
-[data-bs-theme="dark"] body { color: #e0e0e0; }
+[data-bs-theme="dark"] body,
+html[data-bs-theme="dark"] {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+[data-bs-theme="dark"] .navbar {
+  background-color: #1c1f24 !important;
+  border-bottom-color: #2a2e35 !important;
+}
 [data-bs-theme="dark"] h1,
 [data-bs-theme="dark"] h2,
-[data-bs-theme="dark"] h3 { color: #fff; }
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 { color: #ffffff !important; }
+[data-bs-theme="dark"] p,
+[data-bs-theme="dark"] li,
+[data-bs-theme="dark"] .about-contents,
+[data-bs-theme="dark"] main { color: var(--color-text) !important; }
 [data-bs-theme="dark"] .publication {
   background-color: #1e2329;
   border-left-color: var(--color-accent);
 }
-[data-bs-theme="dark"] .navbar-brand img {
-  filter: invert(1);
+[data-bs-theme="dark"] .nav-link { color: #d0d0d0 !important; }
+[data-bs-theme="dark"] .nav-link:hover { color: #ffffff !important; }
+[data-bs-theme="dark"] .nav-footer {
+  border-top-color: #2a2e35;
+  color: #999;
 }
