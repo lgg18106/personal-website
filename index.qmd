@@ -1,0 +1,33 @@
+---
+title: "Gonzalo Llamosas-García"
+subtitle: "Assistant Professor in Public Finance · University of Málaga"
+about:
+  template: trestles
+  image: images/profile.jpg
+  image-shape: round
+  image-width: 18em
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:gonzalo.llamosas@uma.es
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/gonzalo-llamosas-garcia/
+    - icon: github
+      text: GitHub
+      href: https://github.com/lgg18106
+    - text: "{{< iconify academicons google-scholar >}} Scholar"
+      href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
+    - text: "{{< iconify academicons orcid >}} ORCID"
+      href: https://orcid.org/0000-0002-4407-2845
+    - text: "{{< iconify academicons researchgate >}} ResearchGate"
+      href: https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2
+---
+
+I am Assistant Professor in Public Finance at the [University of Málaga](https://www.uma.es), accredited by ANECA as Associate Professor.
+
+My research sits at the intersection of **fiscal policy**, **behavioural economics** and **data**, with growing attention to how artificial intelligence is reshaping the tax base of advanced economies.
+
+I currently work on the effects of fiscal consolidation on public debt sustainability in the EU-27, on the design of financial-education policies, and on how human decisions interact with fiscal-policy outcomes. My recent work has appeared in the *Journal of Behavioral and Experimental Economics* (2025) and *Global Policy* (2020).
+
+Outside academia, I host [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions.

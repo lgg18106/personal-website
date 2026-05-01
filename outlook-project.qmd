@@ -1,0 +1,36 @@
+---
+title: "Outlook Project"
+description: "A YouTube channel on economics, data and human decisions"
+toc: false
+---
+
+::: {.callout-note appearance="simple"}
+**Outlook Project · Economics · Data · Human Decisions**\
+A new channel hosted by Gonzalo Llamosas-García. Long-form conversations with researchers and policymakers on the questions that actually shape European fiscal policy.
+:::
+
+## What it is
+
+Outlook Project is a YouTube channel I host that brings together rigorous economic analysis, primary data and the behavioural side of policy decisions.
+
+The format favours long-form conversations (45–70 minutes) with academic and institutional figures from the European fiscal-policy ecosystem, alongside shorter solo episodes (15–25 minutes) on topical questions.
+
+## Why this channel
+
+The Spanish-language space for economic analysis is dominated either by ideologically driven commentary or by generalist outlets that struggle to give technical questions room to breathe. Outlook Project tries to occupy the gap. The audience I have in mind is technical but not exclusively academic: officials at fiscal councils and supervisory authorities, economists in research desks, journalists who cover policy with rigour, and graduate students and faculty.
+
+## Episodes
+
+::: {.callout-tip appearance="simple"}
+**Episode 0 · Coming soon**\
+Channel introduction and intellectual proposal.
+:::
+
+## Subscribe
+
+- [YouTube channel](#) · *(URL pendiente · launching mayo 2026)*
+- [Substack newsletter](#) · *(pendiente)*
+
+## En español
+
+> *Outlook Project es mi canal de YouTube sobre economía, datos y decisiones humanas. El planteamiento es sencillo: conversaciones pausadas, sin tertulianismo, con rigor técnico y enfoque de política pública. Audiencia objetivo: técnicos institucionales, periodistas económicos serios, profesores y estudiantes de máster. Lanzamiento previsto para mayo de 2026.*

@@ -1,0 +1,15 @@
+---
+title: "Blog"
+description: "Notes on fiscal policy, behavioural economics, AI and methods"
+listing:
+  contents: posts
+  type: default
+  fields: [date, title, description, reading-time, categories]
+  sort: "date desc"
+  categories: true
+  feed: true
+page-layout: full
+toc: false
+---
+
+This blog collects shorter writing on the topics I work on. Posts may be in **English** or **Spanish**, depending on the audience and the source of the argument. Use the categories below to filter.

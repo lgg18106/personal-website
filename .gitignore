@@ -1,0 +1,29 @@
+# Quarto build output
+/.quarto/
+/_site/
+/_freeze/
+*_files/
+*_cache/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Logs
+*.log

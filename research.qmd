@@ -1,0 +1,63 @@
+---
+title: "Research"
+description: "Publications, working papers and ongoing projects"
+toc: true
+toc-location: right
+---
+
+## Working papers
+
+::: {.publication}
+**Does Fiscal Consolidation Reduce Public Debt? Evidence from the European Union Using Local Projections**\
+*Gonzalo Llamosas-García, Cristina Mazas Pérez-Oleaga, José M. Domínguez Martínez* · 2026 · *Under review at [journal]*
+
+Applies Local Projections Difference-in-Differences (LP-DiD) to 126 fiscal consolidation episodes in the EU-27 over 1996–2024. Finds that consolidations raise the debt-to-GDP ratio in the short run, with output losses, an adverse interest-growth differential, persistent stock-flow adjustments and the absence of a credibility dividend on sovereign spreads driving the result. Heterogeneity by macroeconomic regime and consolidation design.
+
+[`PDF (preprint)`](#) · [`Replication code`](#) · [`Bib`](#)
+:::
+
+## Published work
+
+### 2025
+
+::: {.publication}
+**What Works in Financial Education? Experimental Evidence on Program Impact**\
+*Journal of Behavioral and Experimental Economics*, Vol. 119 · [`DOI`](https://doi.org/10.1016/j.socec.2025.102401){target="_blank"}
+
+Q1 in Economics, Econometrics and Finance.
+:::
+
+### 2023
+
+::: {.publication}
+**Predicting the Tide of the Pandemic: An In-Depth Analysis of Forecasting Models for COVID-19 in Cantabria**\
+*BEIO. Boletín de Estadística e Investigación Operativa*, Vol. 39, No. 2, pp. 36–49 · [`Link`](https://portaldelainvestigacion.uma.es/documentos/6501a724df0d06753d5bfb47){target="_blank"}
+:::
+
+### 2020
+
+::: {.publication}
+**A Behavioral Perspective on Saving Decisions. Empirical Evidence for Policymakers in the European Union**\
+*Global Policy*, Vol. 11, No. S1, pp. 62–72 · [`DOI`](https://doi.org/10.1111/1758-5899.12751){target="_blank"}
+
+Q1 in Political Science.
+:::
+
+::: {.publication}
+**ICT-Enabled Co-Production of Public Services: Barriers and Enablers. A Systematic Review**\
+*Information Polity*, Vol. 25, No. 1, pp. 25–48 · [`DOI`](https://doi.org/10.3233/IP-190122){target="_blank"}
+:::
+
+## Ongoing projects
+
+- **Paper #2** · Methodological extensions of the LP-DiD framework applied to fiscal sustainability under r > g regimes.
+- **Vaccination and mental health (with coauthors)** · Major revision in progress, target resubmission Q2 2026.
+- **AI and the tax base of advanced economies** · Early-stage paper exploring how AI-driven labour-market transitions affect the structure and size of fiscal revenues in the EU.
+
+## Citations and metrics
+
+- [Google Scholar](https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en){target="_blank"}
+- [ORCID 0000-0002-4407-2845](https://orcid.org/0000-0002-4407-2845){target="_blank"}
+- [ResearchGate](https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2){target="_blank"}
+- [Dialnet](https://dialnet.unirioja.es/metricas/investigadores/5013639/masindicadores){target="_blank"}
+- [Lens.org](https://www.lens.org/lens/orcid/0000-0002-4407-2845/scholar){target="_blank"}

@@ -1,0 +1,41 @@
+---
+title: "About"
+description: "Background, agenda and trajectory"
+toc: true
+toc-location: right
+---
+
+## Position
+
+I am **Assistant Professor in Public Finance** (*Profesor Ayudante Doctor*) at the University of Málaga and accredited by ANECA as **Associate Professor** (*Profesor Contratado Doctor*).
+
+## Research agenda
+
+My work sits at the intersection of three areas that are usually treated separately. I am particularly interested in the cases where they overlap.
+
+- **Fiscal policy and public debt sustainability.** I study how fiscal consolidation episodes interact with debt dynamics in advanced economies, with a focus on the EU-27 and on the role of the interest-growth differential.
+- **Behavioural economics applied to public policy.** I look at how heuristics, beliefs and information frictions shape household financial decisions and how these patterns matter for policy design.
+- **Data, methods and AI in economic research.** I work in R, increasingly with AI-assisted pipelines, and explore how generative AI tools change both the speed and the scope of empirical economic research.
+
+The connecting question is institutional. As advanced economies face simultaneously rising debt, ageing populations and the early stages of an AI-driven labour-market transition, the fiscal and behavioural foundations of public policy require revisiting. My research tries to contribute small, empirical pieces to that revision.
+
+## Trajectory
+
+- **2026 –** Assistant Professor in Public Finance, University of Málaga.
+- **2019** PhD in Economics, University of Cantabria. Thesis on the economic behaviour of citizens in public-interest services from an EU perspective.
+- Previously, data scientist for the regional government of Cantabria.
+
+## Education
+
+- **PhD in Economics** · Universities of Cantabria, Oviedo and the Basque Country (2019).
+- **MSc in Economics**.
+- **BSc in Economics**.
+
+## Acknowledged scientific outputs
+
+- 4 international publications, 2 of them in Q1 (JBEE 2025, *Global Policy* 2020).
+- Working paper on fiscal consolidation under review at the *[journal]* (2026).
+
+## Otros idiomas
+
+> *Soy profesor ayudante doctor en Hacienda Pública en la Universidad de Málaga, acreditado por ANECA como profesor contratado doctor. Mi investigación combina política fiscal, economía conductual y datos, con atención creciente al impacto de la inteligencia artificial sobre la base fiscal de las economías avanzadas. Mi trabajo reciente ha aparecido en el* Journal of Behavioral and Experimental Economics *(2025) y en* Global Policy *(2020). Fuera de la academia, dirijo* [**Outlook Project**](outlook-project.qmd)*, un canal de YouTube sobre economía, datos y decisiones humanas.*

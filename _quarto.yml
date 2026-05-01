@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "CNAME"
+
+website:
+  title: "Gonzalo Llamosas-García"
+  description: "Assistant Professor in Public Finance · University of Málaga"
+  site-url: "https://gonzalollamosas.com"
+  repo-url: "https://github.com/lgg18106/personal-website"
+  favicon: images/favicon.png
+
+  open-graph: true
+  twitter-card: true
+
+  navbar:
+    background: light
+    pinned: true
+    logo: images/logo.png
+    title: Gonzalo Llamosas-García
+    left:
+      - text: "About"
+        href: about.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "Outlook Project"
+        href: outlook-project.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "CV"
+        href: cv/index.qmd
+      - text: "Contact"
+        href: contact.qmd
+    right:
+      - icon: github
+        href: https://github.com/lgg18106
+      - icon: linkedin
+        href: https://www.linkedin.com/in/gonzalo-llamosas-garcia/
+      - icon: twitter-x
+        href: https://x.com/gonzalollamosas
+      - text: "Scholar"
+        href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
+      - text: "ORCID"
+        href: https://orcid.org/0000-0002-4407-2845
+
+  page-footer:
+    left: "© 2026 Gonzalo Llamosas-García"
+    center: "Built with [Quarto](https://quarto.org) · Source on [GitHub](https://github.com/lgg18106/personal-website)"
+    right:
+      - icon: envelope
+        href: "mailto:gonzalo.llamosas@uma.es"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    code-link: true
+    anchor-sections: true
+    grid:
+      sidebar-width: 250px
+      body-width: 800px
+      margin-width: 250px

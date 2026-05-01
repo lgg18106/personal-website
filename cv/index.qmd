@@ -1,0 +1,59 @@
+---
+title: "CV"
+description: "Curriculum vitae · current academic and professional record"
+toc: true
+toc-location: right
+---
+
+::: {.callout-note appearance="simple"}
+Download the full CV as PDF: [English](Llamosas_CV_EN.pdf) · [Español](Llamosas_CV_ES.pdf) *(pendiente de subir)*
+:::
+
+## Current position
+
+**Assistant Professor in Public Finance** · University of Málaga · 2026–present.\
+Accredited by ANECA as Associate Professor (*Profesor Contratado Doctor*).
+
+## Education
+
+- **PhD in Economics** · Universities of Cantabria, Oviedo and the Basque Country · 2019. *Thesis: economic behaviour of citizens in public-interest services from an EU perspective.*
+- **MSc in Economics**.
+- **BSc in Economics**.
+
+## Publications
+
+Full list at [Research](../research.qmd).
+
+- 2025 · *Journal of Behavioral and Experimental Economics*, Vol. 119 · Q1.
+- 2023 · *BEIO*, Vol. 39 No. 2.
+- 2020 · *Global Policy*, Vol. 11 No. S1 · Q1.
+- 2020 · *Information Polity*, Vol. 25 No. 1.
+
+## Teaching
+
+- **Sistemas Fiscales** · ADE · UMA · 2025–2026.
+- **Hacienda Pública Española** · ADE · UMA · 2025–2026.
+
+## Selected projects and grants
+
+- *Pendiente · añadir Horizon 2020 CITADEL, Jean Monnet, etc.*
+
+## Languages
+
+- Spanish · native.
+- English · proficient (academic and professional).
+
+## Software and tools
+
+- **Languages:** R, Python, LaTeX, SQL, Markdown.
+- **Stats:** panel data, causal inference (LP-DiD, IV, RDD), survey methodology, Bayesian methods.
+- **AI tools:** Claude Code, custom AI-assisted research pipelines.
+- **Production:** Final Cut Pro, Motion (for Outlook Project).
+
+## Service
+
+- Reviewer · *Journal of Behavioral and Experimental Economics* · 2026.
+
+## En español
+
+> *Soy profesor ayudante doctor en Hacienda Pública en la Universidad de Málaga, acreditado por ANECA como profesor contratado doctor. Doctor en Economía por la Universidad de Cantabria (2019). Cuatro publicaciones internacionales, dos de ellas en revistas Q1.*
