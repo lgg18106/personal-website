@@ -38,20 +38,26 @@ a:hover { border-bottom-color: var(--color-accent); }
   padding: 0.6rem 0;
 }
 
-/* Logo navbar · forzar tamaño visible y alineación izquierda */
-.navbar-brand-container {
+/* Logo navbar · simplificado, deja que Quarto haga su trabajo
+   y solo forzamos tamaño + alineación + invertido para dark mode */
+.navbar-brand-container.mx-auto {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
 .navbar-brand-logo {
-  display: inline-flex !important;
-  align-items: center;
+  padding: 0 !important;
 }
 .navbar-logo {
-  height: 28px !important;
+  height: 36px !important;
+  max-height: 36px !important;
   width: auto !important;
-  max-height: 28px !important;
   max-width: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+/* En dark mode, invertir el SVG negro a blanco */
+[data-bs-theme="dark"] .navbar-logo {
+  filter: invert(1);
 }
 
 .navbar .nav-link {

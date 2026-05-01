@@ -1,10 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 100" fill="none">
-  <!-- Wordmark principal · "Gonzalo Llamosas"
-       Pensado para uso en navbar (alto ~30-40px renderizado) y firmas. -->
-  <text x="0" y="68"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 100" fill="none">
+  <!-- Wordmark principal · "Gonzalo Llamosas." con contraste de pesos
+       Eco directo del Outlook Project: light + bold combo
+       Punto final como sello editorial (The New Yorker style) -->
+  <text x="0" y="72"
         font-family="'Helvetica Neue', Arial, sans-serif"
-        font-size="56"
-        font-weight="600"
-        fill="#000000"
-        letter-spacing="-1.5">Gonzalo Llamosas</text>
+        font-size="60"
+        letter-spacing="-1.5"
+        fill="#000000">
+    <tspan font-weight="200">Gonzalo </tspan>
+    <tspan font-weight="700">Llamosas</tspan>
+    <tspan font-weight="700">.</tspan>
+  </text>
 </svg>

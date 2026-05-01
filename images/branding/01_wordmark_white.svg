@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none">
-  <!-- Wordmark compacto · "G. Llamosas." con mismo contraste de pesos -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 100" fill="none">
+  <!-- Wordmark blanco · idéntico al principal pero invertido para dark mode -->
   <text x="0" y="72"
         font-family="'Helvetica Neue', Arial, sans-serif"
         font-size="60"
         letter-spacing="-1.5"
-        fill="#000000">
-    <tspan font-weight="200">G. </tspan>
+        fill="#FFFFFF">
+    <tspan font-weight="200">Gonzalo </tspan>
     <tspan font-weight="700">Llamosas</tspan>
     <tspan font-weight="700">.</tspan>
   </text>
