@@ -71,10 +71,10 @@ website:
 
 format:
   html:
+    fontsize: 1.0625em
     theme:
-      light: cosmo
-      dark: darkly
-    css: styles.css
+      light: [default, html/styles.scss]
+      dark: [darkly, html/styles.scss]
     toc: false
     smooth-scroll: true
     code-link: true
@@ -83,4 +83,4 @@ format:
       - text: |
           <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon-180.png">
           <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon-64.png">
-          <meta name="theme-color" content="#000000">
+          <meta name="theme-color" content="#ffffff">

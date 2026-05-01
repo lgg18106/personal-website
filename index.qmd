@@ -1,11 +1,11 @@
 ---
-title: "Gonzalo Llamosas"
-subtitle: "Assistant Professor in Public Finance · University of Málaga"
+title: "Hi, I'm Gonzalo"
 about:
-  template: trestles
+  template: jolla
+  id: about-block
   image: images/profile.jpg
   image-shape: round
-  image-width: 16em
+  image-width: 18em
   links:
     - icon: envelope
       text: Email
@@ -16,18 +16,30 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/lgg18106
-    - text: "Scholar"
+    - icon: twitter-x
+      text: X
+      href: https://x.com/gonzalollamosas
+    - text: Scholar
       href: https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en
-    - text: "ORCID"
+    - text: ORCID
       href: https://orcid.org/0000-0002-4407-2845
-    - text: "ResearchGate"
-      href: https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2
 ---
 
-I am Assistant Professor in Public Finance at the [University of Málaga](https://www.uma.es), accredited by ANECA as Associate Professor.
+::: {#about-block}
+:::
 
-My research sits at the intersection of **fiscal policy**, **behavioural economics** and **data**, with growing attention to how artificial intelligence is reshaping the tax base of advanced economies.
+I am **Assistant Professor in Public Finance** at the [University of Málaga](https://www.uma.es), accredited by ANECA as Associate Professor.
 
-I currently work on the effects of fiscal consolidation on public debt sustainability in the EU-27, on the design of financial-education policies, and on how human decisions interact with fiscal-policy outcomes. My recent work has appeared in the *Journal of Behavioral and Experimental Economics* (2025) and *Global Policy* (2020).
+My research sits at the intersection of **fiscal policy**, **behavioural economics** and **data**, with growing attention to how artificial intelligence is reshaping the tax base of advanced economies. I currently work on the effects of fiscal consolidation on public debt sustainability in the EU-27, on the design of financial-education policies, and on how human decisions interact with fiscal-policy outcomes.
 
-Outside academia, I host [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions.
+My recent work has appeared in the *Journal of Behavioral and Experimental Economics* (2025) and *Global Policy* (2020). Outside academia, I host [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions.
+
+## Recent
+
+- **April 2026** · Working paper *"Does Fiscal Consolidation Reduce Public Debt? Evidence from the EU-27"* submitted to *[journal]*.
+- **2025** · Published *"What Works in Financial Education?"* in [*Journal of Behavioral and Experimental Economics*](https://doi.org/10.1016/j.socec.2025.102401) (Q1).
+- **Coming soon** · Launching the [Outlook Project](outlook-project.qmd) YouTube channel on economics, data and human decisions.
+
+## En español
+
+> *Soy profesor ayudante doctor en Hacienda Pública en la Universidad de Málaga, acreditado por ANECA como profesor contratado doctor. Mi investigación combina política fiscal, economía conductual y datos, con atención creciente al impacto de la inteligencia artificial sobre la base fiscal de las economías avanzadas.*
