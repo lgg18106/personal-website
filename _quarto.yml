@@ -77,10 +77,6 @@ format:
     smooth-scroll: true
     code-link: true
     anchor-sections: true
-    grid:
-      sidebar-width: 250px
-      body-width: 800px
-      margin-width: 250px
     include-in-header:
       - text: |
           <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon-180.png">

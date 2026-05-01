@@ -135,22 +135,12 @@ code, pre {
 }
 .about-link { font-size: 0.95rem; }
 
+/* About trestles · separación moderada sin romper el layout */
 .quarto-about-trestles {
-  gap: 4rem !important;
-}
-.quarto-about-trestles .about-entity {
-  padding-right: 1.5rem;
-}
-.quarto-about-trestles .about-contents {
-  padding-left: 1.5rem;
+  gap: 3rem;
 }
 @media (max-width: 767px) {
-  .quarto-about-trestles { gap: 2rem !important; }
-  .quarto-about-trestles .about-entity,
-  .quarto-about-trestles .about-contents {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  .quarto-about-trestles { gap: 2rem; }
 }
 
 /* ── Dark mode · forzar legibilidad ───────────── */
