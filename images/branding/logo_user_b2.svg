@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE B2 · Forma "M" simétrica · 2 picos iguales + 1 valle central
+       Como un gráfico de doble peak perfectamente simétrico.
+       Sin "cola" alargada, totalmente balanceado. -->
+  <defs>
+    <mask id="cutB2">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 45 170 L 80 90 L 120 145 L 160 90 L 195 170"
+            fill="none" stroke="black" stroke-width="22"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cutB2)"/>
+</svg>

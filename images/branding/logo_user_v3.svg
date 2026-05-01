@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE 3 · Curva IRF clásica (sube · peak · baja)
+       Forma de campana/IRF perfectamente centrada.
+       Punto en el PEAK (centro superior). -->
+  <defs>
+    <mask id="cut3">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 45 170 Q 90 80, 120 70 Q 150 80, 195 170"
+            fill="none" stroke="black" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="120" cy="70" r="22" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cut3)"/>
+</svg>

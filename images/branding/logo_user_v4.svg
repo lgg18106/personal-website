@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE 4 · Curva con eje base · estilo plot académico
+       Línea horizontal (eje X) + curva ascendente por encima + punto al final.
+       Más "gráfico de paper" · perfectamente centrado. -->
+  <defs>
+    <mask id="cut4">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- Eje X horizontal -->
+      <line x1="40" y1="190" x2="200" y2="190"
+            stroke="black" stroke-width="14" stroke-linecap="round"/>
+      <!-- Curva ascendente -->
+      <path d="M 50 165 C 90 130, 130 90, 195 65"
+            fill="none" stroke="black" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Punto al final -->
+      <circle cx="195" cy="65" r="20" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cut4)"/>
+</svg>

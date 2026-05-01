@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE 2 · Curva ondulada ascendente (sube · baja · sube más alto)
+       Eco directo del logo de la web · narrativa de IRF + outlook.
+       Mejor centrada que el original · punto al final. -->
+  <defs>
+    <mask id="cut2">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 45 170 C 70 150, 85 110, 105 110 C 120 110, 132 145, 145 150 C 165 152, 180 90, 195 65"
+            fill="none" stroke="black" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="195" cy="65" r="20" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cut2)"/>
+</svg>

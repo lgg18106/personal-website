@@ -65,7 +65,6 @@ website:
     center: |
       <a href="https://www.uma.es" target="_blank" class="uma-footer-link">
         <img src="/images/uma_logo.png" alt="Universidad de Málaga" class="uma-footer-logo">
-        <span class="uma-footer-text">Department of Public Finance · Universidad de Málaga</span>
       </a>
     right:
       Built with [Quarto](https://quarto.org)

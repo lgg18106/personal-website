@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE 1 · Curva ascendente suave (growth)
+       Empieza abajo izquierda, sube progresivamente hasta arriba derecha.
+       Centrada vertical y horizontalmente. Punto al final. -->
+  <defs>
+    <mask id="cut1">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 50 175 C 90 165, 120 110, 160 80 C 175 70, 185 65, 195 60"
+            fill="none" stroke="black" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="195" cy="60" r="20" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cut1)"/>
+</svg>

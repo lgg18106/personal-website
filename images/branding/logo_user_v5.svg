@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE 5 · Curva en S elegante
+       Forma de S inversa · más sofisticada · centrada.
+       Punto al final superior derecho. -->
+  <defs>
+    <mask id="cut5">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 45 170 C 80 170, 105 90, 130 75 S 180 80, 195 65"
+            fill="none" stroke="black" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="195" cy="65" r="20" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cut5)"/>
+</svg>

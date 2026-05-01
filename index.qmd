@@ -2,15 +2,6 @@
 pagetitle: "Gonzalo Llamosas"
 page-layout: full
 title-block-style: none
-listing:
-  - id: featured-posts
-    contents: blog/posts
-    type: grid
-    fields: [image, title, date]
-    sort: "date desc"
-    max-items: 3
-    grid-columns: 3
-    image-placeholder: "images/profile.jpg"
 ---
 
 ```{=html}
@@ -69,13 +60,6 @@ listing:
 - **April 18, 2026** · My paper *"Does Fiscal Consolidation Reduce Public Debt?"* (with Cristina Mazas Pérez-Oleaga and José M. Domínguez Martínez) was submitted to the *[journal]* (`[redacted]`). Currently under editorial review.
 - **2025** · Published *"What Works in Financial Education? Experimental Evidence on Program Impact"* in [*Journal of Behavioral and Experimental Economics*](https://doi.org/10.1016/j.socec.2025.102401), Vol. 119 (Q1).
 - **Coming soon** · Launching [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions. First episode out in May 2026.
-:::
-
-::: {.featured-section}
-## Featured Blog Posts
-
-::: {#featured-posts}
-:::
 :::
 
 ## En español
