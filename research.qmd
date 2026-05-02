@@ -9,11 +9,9 @@ toc-location: right
 
 ::: {.publication}
 **Does Fiscal Consolidation Reduce Public Debt? Evidence from the European Union Using Local Projections**\
-*Gonzalo Llamosas-García, Cristina Mazas Pérez-Oleaga, José M. Domínguez Martínez* · 2026 · *Under review at [journal]*
+*Gonzalo Llamosas-García, Cristina Mazas Pérez-Oleaga, José M. Domínguez Martínez* · 2026 · *Working paper*
 
 Applies Local Projections Difference-in-Differences (LP-DiD) to 126 fiscal consolidation episodes in the EU-27 over 1996–2024. Finds that consolidations raise the debt-to-GDP ratio in the short run, with output losses, an adverse interest-growth differential, persistent stock-flow adjustments and the absence of a credibility dividend on sovereign spreads driving the result. Heterogeneity by macroeconomic regime and consolidation design.
-
-[`PDF (preprint)`](#) · [`Replication code`](#) · [`Bib`](#)
 :::
 
 ## Published work
