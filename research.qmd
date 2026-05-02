@@ -12,6 +12,8 @@ toc-location: right
 *Gonzalo Llamosas-García, Cristina Mazas Pérez-Oleaga, José M. Domínguez Martínez* · 2026 · *Working paper*
 
 Applies Local Projections Difference-in-Differences (LP-DiD) to 126 fiscal consolidation episodes in the EU-27 over 1996–2024. Finds that consolidations raise the debt-to-GDP ratio in the short run, with output losses, an adverse interest-growth differential, persistent stock-flow adjustments and the absence of a credibility dividend on sovereign spreads driving the result. Heterogeneity by macroeconomic regime and consolidation design.
+
+[Read on ResearchGate](https://www.researchgate.net/publication/403998208_Does_Fiscal_Consolidation_Reduce_Public_Debt_Evidence_from_the_European_Union_Using_Local_Projections){target="_blank"}
 :::
 
 ## Published work
