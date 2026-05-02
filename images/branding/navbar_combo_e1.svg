@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 110" fill="none">
-  <!-- Combo navbar · logo E1 (histograma + density curve) + "Gonzalo Llamosas" en blanco
-       Logo a 80×80 a la izquierda · texto Lato 500 al lado. -->
+  <!-- Combo navbar · logo E1 CENTRADO + "Gonzalo Llamosas" en blanco -->
 
-  <!-- Logo E1 anidado en sub-svg con viewBox propio para escalado limpio -->
   <svg x="15" y="15" width="80" height="80" viewBox="0 0 240 240">
     <defs>
       <mask id="cutNav">
         <rect x="0" y="0" width="240" height="240" fill="white"/>
-        <rect x="51" y="165" width="22" height="25" fill="black" rx="2"/>
-        <rect x="80" y="140" width="22" height="50" fill="black" rx="2"/>
-        <rect x="109" y="115" width="22" height="75" fill="black" rx="2"/>
-        <rect x="138" y="140" width="22" height="50" fill="black" rx="2"/>
-        <rect x="167" y="165" width="22" height="25" fill="black" rx="2"/>
-        <path d="M 45 150 Q 80 80, 120 75 Q 160 80, 195 150"
+        <rect x="51" y="152" width="22" height="25" fill="black" rx="2"/>
+        <rect x="80" y="127" width="22" height="50" fill="black" rx="2"/>
+        <rect x="109" y="102" width="22" height="75" fill="black" rx="2"/>
+        <rect x="138" y="127" width="22" height="50" fill="black" rx="2"/>
+        <rect x="167" y="152" width="22" height="25" fill="black" rx="2"/>
+        <path d="M 45 137 Q 80 67, 120 62 Q 160 67, 195 137"
               stroke="black" stroke-width="11" fill="none"
               stroke-linecap="round" stroke-linejoin="round"/>
       </mask>
@@ -21,7 +19,6 @@
           fill="#D9A12C" mask="url(#cutNav)"/>
   </svg>
 
-  <!-- Wordmark "Gonzalo Llamosas" en blanco -->
   <text x="115" y="73"
         font-family="Lato, 'Helvetica Neue', Arial, sans-serif"
         font-size="48"
