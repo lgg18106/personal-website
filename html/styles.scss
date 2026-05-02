@@ -190,6 +190,55 @@ span.accent {
     font-weight: 500 !important;
 }
 
+// ─── TITLE-BLOCK · subtítulo (.description) elegante bajo el H1 ───
+// Quarto renderiza la description del frontmatter como subtítulo gris.
+// La afinamos para que parezca una entradilla, no un meta tag.
+header#title-block-header .description,
+.quarto-title-block .description {
+    font-size: 1.15rem !important;
+    font-weight: 300 !important;
+    color: $gray-700 !important;
+    line-height: 1.55 !important;
+    margin: 0 0 2.2rem 0 !important;
+    max-width: 60ch;
+    letter-spacing: 0.005em;
+}
+
+// ─── TITLE-BLOCK · ocultar bloque visible "Keywords" ──────────────
+// Las keywords del frontmatter siguen yendo al <meta> para SEO,
+// pero no las queremos como texto en la página.
+header#title-block-header .keywords,
+.quarto-title-block .keywords {
+    display: none !important;
+}
+
+// ─── INDEX · evitar autor renderizado bajo el H1 (limpieza) ───────
+// La home tiene title-block-style: none, pero Quarto a veces extrae
+// un <p class="author"> al header. Lo neutralizamos por seguridad.
+main > p.author:first-of-type,
+header#title-block-header + p.author,
+.quarto-title-block + p.author {
+    display: none !important;
+}
+
+// ─── INDEX · colapsar segundo title-block vacío que Quarto inyecta ─
+// Cuando hay description-meta + keywords + title-block-style:none,
+// Quarto produce un segundo <header id="title-block-header"></header>
+// vacío entre el H1 y el hero-block. Lo eliminamos para no dejar hueco.
+header#title-block-header + header#title-block-header {
+    display: none !important;
+}
+
+// ─── INDEX · pegar el H1 de la home al hero-block ─────────────────
+// El title-block en la home (sin clase "default") fuerza un margin
+// inferior demasiado grande al H1 "Hi, I'm Gonzalo." Reducimos el
+// hueco entre el título y el primer párrafo del hero.
+header#title-block-header.quarto-title-block:not(.default) h1.title,
+header#title-block-header.quarto-title-block:not(.default) h1.title.display-7 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
 
 // ─── HERO BLOCK · "Hi, I'm Gonzalo." asimétrico ─────────────
 

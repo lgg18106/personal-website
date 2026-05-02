@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Background, research agenda and trajectory of Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga."
+description: "A short tour through what I work on, where I am headed and how I got here."
 keywords: "Gonzalo Llamosas, public finance, fiscal policy, University of Málaga, behavioural economics, public debt, EU fiscal framework, ANECA, professor"
 toc: true
 toc-location: right
