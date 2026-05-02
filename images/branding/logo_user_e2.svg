@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- E2 · Pico central angular + 4 barras flanqueantes
+       Curva V invertida con peak central · barras simétricas a los lados.
+       Estilo geométrico. -->
+  <defs>
+    <mask id="cutE2">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- Barras pequeñas flanqueantes (2 a cada lado) -->
+      <rect x="42" y="160" width="18" height="30" fill="black" rx="2"/>
+      <rect x="66" y="145" width="18" height="45" fill="black" rx="2"/>
+      <rect x="156" y="145" width="18" height="45" fill="black" rx="2"/>
+      <rect x="180" y="160" width="18" height="30" fill="black" rx="2"/>
+      <!-- Curva V invertida con peak central agudo -->
+      <path d="M 90 130 L 120 60 L 150 130"
+            stroke="black" stroke-width="16" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutE2)"/>
+</svg>

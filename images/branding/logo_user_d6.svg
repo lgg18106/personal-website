@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D6 · Area chart · curva + área shaded debajo
+       Curva ascendente con área rellena (estilo Bloomberg). -->
+  <defs>
+    <mask id="cutD6">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- Área shaded -->
+      <path d="M 50 175 C 90 145, 130 110, 195 60 L 195 175 Z" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD6)"/>
+</svg>

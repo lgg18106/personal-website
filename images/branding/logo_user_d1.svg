@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D1 · Bar chart puro · 5 barras escalonadas crecientes
+       Sin curva. Foco total en el gráfico de barras. -->
+  <defs>
+    <mask id="cutD1">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <rect x="50" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="80" y="135" width="22" height="55" fill="black" rx="2"/>
+      <rect x="110" y="115" width="22" height="75" fill="black" rx="2"/>
+      <rect x="140" y="95" width="22" height="95" fill="black" rx="2"/>
+      <rect x="170" y="65" width="22" height="125" fill="black" rx="2"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD1)"/>
+</svg>

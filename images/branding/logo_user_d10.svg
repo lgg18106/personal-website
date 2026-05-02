@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D10 · GL monograma simple
+       Solo las iniciales · Lato-style · puro tipográfico. -->
+  <defs>
+    <mask id="cutD10">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <text x="120" y="160"
+            font-family="'Helvetica Neue', Arial, sans-serif"
+            font-size="130"
+            font-weight="700"
+            fill="black"
+            letter-spacing="-6"
+            text-anchor="middle">GL</text>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD10)"/>
+</svg>

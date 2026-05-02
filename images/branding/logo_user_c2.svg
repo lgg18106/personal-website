@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE C2 · Barras crecientes + curva sale del top
+       3 barras a la izq · curva ondulada sale del top de la última y termina arriba.
+       La curva NACE de las barras → no hay efecto cola+cabeza. -->
+  <defs>
+    <mask id="cutC2">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+
+      <!-- 3 barras crecientes a la izquierda -->
+      <rect x="42" y="150" width="22" height="40" fill="black" rx="2"/>
+      <rect x="72" y="125" width="22" height="65" fill="black" rx="2"/>
+      <rect x="102" y="100" width="22" height="90" fill="black" rx="2"/>
+
+      <!-- Curva ondulada que sale del top de la última barra y termina arriba derecha -->
+      <path d="M 113 100 C 130 95, 140 130, 155 130 C 175 130, 185 80, 200 60"
+            fill="none" stroke="black" stroke-width="14"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cutC2)"/>
+</svg>

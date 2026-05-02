@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- VARIANTE C4 · Barras finas verticales + curva ondulada
+       Barras finas tipo "volume bars" estilo bursátil (muchas, finas).
+       Curva ondulada por encima. Estética Bloomberg / FT. -->
+  <defs>
+    <mask id="cutC4">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+
+      <!-- 8 barras finas verticales (volume) -->
+      <rect x="48" y="170" width="8" height="20" fill="black"/>
+      <rect x="64" y="160" width="8" height="30" fill="black"/>
+      <rect x="80" y="155" width="8" height="35" fill="black"/>
+      <rect x="96" y="140" width="8" height="50" fill="black"/>
+      <rect x="112" y="135" width="8" height="55" fill="black"/>
+      <rect x="128" y="125" width="8" height="65" fill="black"/>
+      <rect x="144" y="115" width="8" height="75" fill="black"/>
+      <rect x="160" y="100" width="8" height="90" fill="black"/>
+
+      <!-- Curva ondulada por encima · sin punto final -->
+      <path d="M 45 90 C 75 70, 95 110, 120 95 C 145 80, 160 100, 200 55"
+            fill="none" stroke="black" stroke-width="13"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32"
+        fill="#D9A12C" mask="url(#cutC4)"/>
+</svg>

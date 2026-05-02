@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D2 · Barras + flecha ascendente
+       3 barras crecientes + flecha que continúa hacia arriba derecha. -->
+  <defs>
+    <mask id="cutD2">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- 3 barras -->
+      <rect x="40" y="145" width="26" height="45" fill="black" rx="2"/>
+      <rect x="78" y="115" width="26" height="75" fill="black" rx="2"/>
+      <rect x="116" y="85" width="26" height="105" fill="black" rx="2"/>
+      <!-- Flecha ascendente saliendo de la última barra -->
+      <path d="M 145 80 L 200 50" stroke="black" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 200 50 L 175 50 M 200 50 L 200 75" stroke="black" stroke-width="14" stroke-linecap="round" fill="none"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD2)"/>
+</svg>

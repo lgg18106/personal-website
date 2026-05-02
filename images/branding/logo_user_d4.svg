@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D4 · Histograma simétrico · peak central (campana)
+       Distribución normal en barras · 5 barras simétricas crecientes-decrecientes. -->
+  <defs>
+    <mask id="cutD4">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <rect x="42" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="74" y="120" width="22" height="70" fill="black" rx="2"/>
+      <rect x="106" y="80" width="22" height="110" fill="black" rx="2"/>
+      <rect x="138" y="120" width="22" height="70" fill="black" rx="2"/>
+      <rect x="170" y="155" width="22" height="35" fill="black" rx="2"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD4)"/>
+</svg>

@@ -10,7 +10,7 @@ website:
   description: "Assistant Professor in Public Finance · University of Málaga"
   site-url: "https://gonzalollamosas.com"
   image: images/profile.jpg
-  favicon: images/branding/user_logo.svg
+  favicon: images/branding/logo_user_e1.svg
 
   open-graph:
     image: "https://gonzalollamosas.com/images/og-image.png"
@@ -22,7 +22,7 @@ website:
 
   navbar:
     pinned: true
-    logo: images/branding/navbar_combo_user.png
+    logo: images/branding/navbar_combo_e1.png
     logo-href: /
     logo-alt: "Gonzalo Llamosas"
     title: false
@@ -83,10 +83,10 @@ format:
     footnotes-hover: true
     include-in-header:
       - text: |
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/user_logo_180.png">
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/user_logo_32.png">
-          <link rel="icon" type="image/png" sizes="64x64" href="/images/branding/user_logo_64.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="/images/branding/user_logo_512.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/logo_e1_180.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/logo_e1_32.png">
+          <link rel="icon" type="image/png" sizes="64x64" href="/images/branding/logo_e1_64.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/images/branding/logo_e1_512.png">
 
 execute:
   freeze: auto

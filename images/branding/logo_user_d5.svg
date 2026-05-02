@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D5 · Step chart ascendente · escalones
+       Línea escalonada que sube · forma de "escalera" económica. -->
+  <defs>
+    <mask id="cutD5">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <path d="M 45 175 L 75 175 L 75 145 L 110 145 L 110 115 L 145 115 L 145 85 L 195 85"
+            fill="none" stroke="black" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD5)"/>
+</svg>

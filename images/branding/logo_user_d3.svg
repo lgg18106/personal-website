@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- D3 · Mini chart completo · ejes X+Y + curva
+       Gráfico académico literal: ejes y curva ascendente. -->
+  <defs>
+    <mask id="cutD3">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- Eje Y -->
+      <line x1="55" y1="50" x2="55" y2="190" stroke="black" stroke-width="12" stroke-linecap="round"/>
+      <!-- Eje X -->
+      <line x1="55" y1="190" x2="195" y2="190" stroke="black" stroke-width="12" stroke-linecap="round"/>
+      <!-- Curva ascendente -->
+      <path d="M 65 165 C 100 130, 140 95, 190 65" fill="none" stroke="black" stroke-width="14" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutD3)"/>
+</svg>

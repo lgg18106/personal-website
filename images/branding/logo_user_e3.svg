@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- E3 · 5 barras uniformes al pie + curva campana arriba
+       Composición separada: barras como base estable + curva flotante encima.
+       Simétrico horizontal. -->
+  <defs>
+    <mask id="cutE3">
+      <rect x="0" y="0" width="240" height="240" fill="white"/>
+      <!-- 5 barras de altura uniforme (eje base sólido) -->
+      <rect x="51" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="80" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="109" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="138" y="155" width="22" height="35" fill="black" rx="2"/>
+      <rect x="167" y="155" width="22" height="35" fill="black" rx="2"/>
+      <!-- Curva campana en la mitad superior · peak central -->
+      <path d="M 45 125 Q 75 65, 120 60 Q 165 65, 195 125"
+            stroke="black" stroke-width="14" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="14" y="14" width="212" height="212" rx="32" fill="#D9A12C" mask="url(#cutE3)"/>
+</svg>
