@@ -1,6 +1,7 @@
 ---
 title: "Welcome to the blog"
-description: "Why I am starting this and what to expect."
+description: "First post of the blog — why I'm starting this, what to expect, and how it will accompany my research and the Outlook Project channel."
+keywords: "blog launch, fiscal policy notes, Gonzalo Llamosas, Outlook Project"
 author: "Gonzalo Llamosas-García"
 date: "2026-05-01"
 categories: [meta, english]

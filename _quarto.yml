@@ -5,6 +5,8 @@ project:
     - "CNAME"
     - "robots.txt"
     - "images/**"
+  post-render:
+    - python3 _scripts/post-render.py
 
 website:
   title: "Gonzalo Llamosas"
@@ -94,8 +96,6 @@ format:
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
           <meta name="googlebot" content="index, follow">
           <meta name="bingbot" content="index, follow">
-          <meta property="og:site_name" content="Gonzalo Llamosas">
-          <meta property="og:type" content="website">
           <meta property="profile:first_name" content="Gonzalo">
           <meta property="profile:last_name" content="Llamosas-García">
           <!-- Google Search Console verification (replace TOKEN after verifying) -->

@@ -1,6 +1,6 @@
 ---
 title: "Teaching"
-description: "Current and past teaching by Gonzalo Llamosas-García: Fiscal Systems and Spanish Public Finance at the University of Málaga, plus past teaching at Cantabria, UEA and Loyola Andalucía."
+description: "Teaching by Gonzalo Llamosas-García: Fiscal Systems and Spanish Public Finance at UMA, plus past courses at Cantabria, UEA and Loyola Andalucía."
 keywords: "teaching public finance, fiscal systems, hacienda pública, University of Málaga, ADE, business administration, economics teaching Spain"
 toc: true
 toc-location: right

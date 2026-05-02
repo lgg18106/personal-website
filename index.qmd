@@ -1,6 +1,6 @@
 ---
-pagetitle: "Gonzalo Llamosas — Assistant Professor in Public Finance"
-description: "Personal website of Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga. Research on fiscal policy, public debt sustainability, behavioural economics and AI in economic research."
+pagetitle: "Public Finance · Fiscal Policy · Data"
+description: "Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga. Research on fiscal policy, public debt and behavioural economics."
 keywords: "Gonzalo Llamosas, Gonzalo Llamosas García, public finance, fiscal policy, University of Málaga, UMA, behavioural economics, fiscal consolidation, public debt EU, ANECA, Hacienda Pública, profesor ayudante doctor, economista España"
 author: "Gonzalo Llamosas-García"
 page-layout: full

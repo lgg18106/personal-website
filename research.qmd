@@ -1,6 +1,6 @@
 ---
 title: "Research"
-description: "Publications and working papers by Gonzalo Llamosas-García on fiscal consolidation, public debt sustainability, local projections and behavioural economics in the European Union."
+description: "Publications and working papers on fiscal consolidation, public debt sustainability, local projections (LP-DiD) and behavioural economics in the EU."
 keywords: "fiscal consolidation, local projections, LP-DiD, public debt, EU-27, behavioural economics, financial education, sovereign spreads, structural primary balance"
 toc: true
 toc-location: right

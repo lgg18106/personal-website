@@ -1,6 +1,7 @@
 ---
 title: "Blog"
-description: "Notes on fiscal policy, behavioural economics, AI and methods"
+description: "Notes by Gonzalo Llamosas on fiscal policy, behavioural economics, AI and methods. Short writing in English or Spanish, accompanying research and Outlook Project."
+keywords: "fiscal policy blog, behavioural economics, AI economics, public finance notes, Gonzalo Llamosas"
 listing:
   contents: posts
   type: default
