@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 110" fill="none">
-  <!-- Combo navbar · logo E1 CENTRADO + "Gonzalo Llamosas" en blanco -->
+  <!-- Combo navbar · logo E1 centrado perceptual + "Gonzalo Llamosas" -->
 
   <svg x="15" y="15" width="80" height="80" viewBox="0 0 240 240">
     <defs>
       <mask id="cutNav">
         <rect x="0" y="0" width="240" height="240" fill="white"/>
-        <rect x="51" y="152" width="22" height="25" fill="black" rx="2"/>
-        <rect x="80" y="127" width="22" height="50" fill="black" rx="2"/>
-        <rect x="109" y="102" width="22" height="75" fill="black" rx="2"/>
-        <rect x="138" y="127" width="22" height="50" fill="black" rx="2"/>
-        <rect x="167" y="152" width="22" height="25" fill="black" rx="2"/>
-        <path d="M 45 137 Q 80 67, 120 62 Q 160 67, 195 137"
-              stroke="black" stroke-width="11" fill="none"
+        <rect x="51" y="133" width="22" height="25" fill="black" rx="2"/>
+        <rect x="80" y="108" width="22" height="50" fill="black" rx="2"/>
+        <rect x="109" y="83" width="22" height="75" fill="black" rx="2"/>
+        <rect x="138" y="108" width="22" height="50" fill="black" rx="2"/>
+        <rect x="167" y="133" width="22" height="25" fill="black" rx="2"/>
+        <path d="M 45 118 Q 80 48, 120 43 Q 160 48, 195 118"
+              stroke="black" stroke-width="14" fill="none"
               stroke-linecap="round" stroke-linejoin="round"/>
       </mask>
     </defs>
