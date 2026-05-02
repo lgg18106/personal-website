@@ -1,33 +1,71 @@
 ---
-title: "Docencia"
-description: "Asignaturas en la Universidad de Málaga"
+title: "Teaching"
+description: "Current and past teaching"
 toc: true
 toc-location: right
-lang: es
 ---
 
-> *Esta sección está en español porque está dirigida a estudiantes de la Universidad de Málaga. Para una versión en inglés del CV docente, consulta el [CV](cv/index.qmd).*
+## Current teaching · 2025–2026
 
-## Curso 2025–2026
+**University of Málaga** · Department of Public Finance
 
 ### Sistemas Fiscales
 
-- **Grado:** ADE
-- **Departamento:** Hacienda Pública
-- **Horario:** Lunes 16:30–18:00 · Martes 18:15–20:00
-- **Descripción:** Introducción al sistema tributario español y comparación con otros sistemas fiscales europeos. Análisis de los principales impuestos (IRPF, IS, IVA, cotizaciones sociales) y de los efectos económicos de la imposición.
+- **Programme:** Business Administration (ADE)
+- **Schedule:** Monday 16:30–18:00 · Tuesday 18:15–20:00
+- **Description:** Introduction to the Spanish tax system and comparison with other European fiscal systems. Analysis of the main taxes (PIT, CIT, VAT, social contributions) and the economic effects of taxation.
 
 ### Hacienda Pública Española
 
-- **Grado:** ADE
-- **Departamento:** Hacienda Pública
-- **Horario:** Jueves 16:30–18:00 · Viernes 18:15–20:00
-- **Descripción:** Estructura del sector público español, gasto público por funciones, sostenibilidad fiscal y reformas estructurales recientes.
+- **Programme:** Business Administration (ADE)
+- **Schedule:** Thursday 16:30–18:00 · Friday 18:15–20:00
+- **Description:** Structure of the Spanish public sector, public spending by function, fiscal sustainability and recent structural reforms.
 
-## Materiales
+## Materials and office hours
 
-Los materiales docentes se distribuyen a través del Campus Virtual de la UMA. Si eres estudiante de alguna de mis asignaturas y necesitas acceso, contacta a través del [correo institucional](mailto:gonzalo.llamosas@uma.es).
+Course materials are distributed through the UMA Campus Virtual. Students enrolled in any of my courses can request access via the [institutional email](mailto:gonzalo.llamosas@uma.es).
 
-## Tutorías
+Office hours are arranged through Campus Virtual or by email. Please indicate the course and the reason for the meeting in the subject line.
 
-Concertadas a través del Campus Virtual o por correo. Indica en el asunto la asignatura y el motivo de la tutoría.
+
+## Past teaching
+
+### University of Cantabria
+
+**Academic year 2024–2025**
+
+- Production and Industrial Organization · B.S. in Industrial Electronics and Automation Engineering
+- Production and Industrial Organization · B.S. in Electrical Engineering
+- Economics and Business Management · B.S. in Civil Engineering
+- Economics and Business Management · B.S. in Telecommunications Engineering
+- Business Management and Administration · M.S. in Industrial Engineering
+- Business · B.S. in Industrial Electronics and Automation Engineering
+- Business · B.S. in Electrical Engineering
+
+**Academic year 2023–2024**
+
+- Undergraduate Dissertation (Trabajo Fin de Grado) · B.S. in Business Administration
+- Contemporary East Asian Economy · B.A. in East Asian Studies
+- Microeconomics · B.S. in Finance and Accounting
+
+**Academic year 2022–2023**
+
+- Fiscal Systems · B.S. in Business Administration
+
+### Universidad Europea del Atlántico
+
+**Academic year 2023–2024**
+
+- Business Organization · B.S. in Business Administration
+- Market Research · B.S. in Business Administration
+
+### Universidad Loyola Andalucía
+
+**Academic year 2021–2022**
+
+- Applications II: Case Studies · B.S. in Business Administration
+
+**Academic year 2020–2021**
+
+- International Economics · B.S. in International Relations
+- Economic Policy · B.S. in Business Administration
