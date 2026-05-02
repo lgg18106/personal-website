@@ -6,19 +6,13 @@ page-layout: full
 ---
 
 ```{=html}
-<div class="cv-actions">
-  <a href="cv-gonzalo-llamosas.pdf" download class="cv-download-btn">
-    <i class="bi bi-download"></i> Download PDF
-  </a>
-  <a href="cv-gonzalo-llamosas.pdf" target="_blank" class="cv-fullscreen-btn">
-    <i class="bi bi-arrows-fullscreen"></i> Open in new tab
-  </a>
-</div>
-
-<div class="cv-viewer">
-  <object data="cv-gonzalo-llamosas.pdf" type="application/pdf" width="100%" height="100%">
-    <p>Your browser does not support embedded PDFs.
-       <a href="cv-gonzalo-llamosas.pdf">Download the CV</a> instead.</p>
-  </object>
+<div class="cv-viewer-pages" oncontextmenu="return false;">
+  <img src="pages/cv-page-1.png" alt="CV page 1" class="cv-page" draggable="false">
+  <img src="pages/cv-page-2.png" alt="CV page 2" class="cv-page" draggable="false">
+  <img src="pages/cv-page-3.png" alt="CV page 3" class="cv-page" draggable="false">
+  <img src="pages/cv-page-4.png" alt="CV page 4" class="cv-page" draggable="false">
+  <img src="pages/cv-page-5.png" alt="CV page 5" class="cv-page" draggable="false">
+  <img src="pages/cv-page-6.png" alt="CV page 6" class="cv-page" draggable="false">
+  <img src="pages/cv-page-7.png" alt="CV page 7" class="cv-page" draggable="false">
 </div>
 ```
