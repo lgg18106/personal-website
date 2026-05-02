@@ -1,6 +1,6 @@
 ---
 title: "Research"
-description: "Publications, working papers and ongoing projects"
+description: "Publications and working papers"
 toc: true
 toc-location: right
 ---
@@ -47,12 +47,6 @@ Q1 in Political Science.
 **ICT-Enabled Co-Production of Public Services: Barriers and Enablers. A Systematic Review**\
 *Information Polity*, Vol. 25, No. 1, pp. 25–48 · [`DOI`](https://doi.org/10.3233/IP-190122){target="_blank"}
 :::
-
-## Ongoing projects
-
-- **Paper #2** · Methodological extensions of the LP-DiD framework applied to fiscal sustainability under r > g regimes.
-- **Vaccination and mental health (with coauthors)** · Major revision in progress, target resubmission Q2 2026.
-- **AI and the tax base of advanced economies** · Early-stage paper exploring how AI-driven labour-market transitions affect the structure and size of fiscal revenues in the EU.
 
 ## Citations and metrics
 
