@@ -1,6 +1,7 @@
 ---
 title: "Teaching"
-description: "Current and past teaching"
+description: "Current and past teaching by Gonzalo Llamosas-García: Fiscal Systems and Spanish Public Finance at the University of Málaga, plus past teaching at Cantabria, UEA and Loyola Andalucía."
+keywords: "teaching public finance, fiscal systems, hacienda pública, University of Málaga, ADE, business administration, economics teaching Spain"
 toc: true
 toc-location: right
 ---
@@ -9,15 +10,15 @@ toc-location: right
 
 **University of Málaga** · Department of Public Finance
 
-### Sistemas Fiscales
+### Fiscal Systems
 
-- **Programme:** Business Administration (ADE)
+- **Programme:** B.S. in Business Administration
 - **Schedule:** Monday 16:30–18:00 · Tuesday 18:15–20:00
 - **Description:** Introduction to the Spanish tax system and comparison with other European fiscal systems. Analysis of the main taxes (PIT, CIT, VAT, social contributions) and the economic effects of taxation.
 
-### Hacienda Pública Española
+### Spanish Public Finance
 
-- **Programme:** Business Administration (ADE)
+- **Programme:** B.S. in Business Administration
 - **Schedule:** Thursday 16:30–18:00 · Friday 18:15–20:00
 - **Description:** Structure of the Spanish public sector, public spending by function, fiscal sustainability and recent structural reforms.
 

@@ -1,6 +1,7 @@
 ---
 title: "CV"
-description: "Curriculum vitae"
+description: "Curriculum vitae of Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga."
+keywords: "Gonzalo Llamosas CV, curriculum vitae, public finance, University of Málaga"
 toc: false
 page-layout: full
 ---

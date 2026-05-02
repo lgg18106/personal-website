@@ -1,0 +1,24 @@
+# robots.txt for https://gonzalollamosas.com
+# Allow all reputable crawlers; reference sitemap.
+
+User-agent: *
+Allow: /
+Disallow: /_site/
+Disallow: /.git/
+Disallow: /.quarto/
+
+# Common AI crawlers — explicitly allow indexing of public content.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap location
+Sitemap: https://gonzalollamosas.com/sitemap.xml

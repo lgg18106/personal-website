@@ -1,6 +1,7 @@
 ---
 title: "Contact"
-description: "How to reach me"
+description: "Contact Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga — email, office and media enquiries."
+keywords: "contact Gonzalo Llamosas, University of Málaga public finance, fiscal policy media enquiries"
 toc: false
 ---
 

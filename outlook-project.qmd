@@ -1,6 +1,7 @@
 ---
 title: "Outlook Project"
-description: "A YouTube channel on economics, data and human decisions"
+description: "Outlook Project is a YouTube channel by Gonzalo Llamosas on economics, data and human decisions — long-form conversations on European fiscal policy and behavioural economics."
+keywords: "Outlook Project, YouTube economics, fiscal policy podcast, behavioural economics channel, Gonzalo Llamosas"
 toc: false
 ---
 

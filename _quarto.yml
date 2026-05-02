@@ -3,11 +3,12 @@ project:
   output-dir: _site
   resources:
     - "CNAME"
+    - "robots.txt"
     - "images/**"
 
 website:
   title: "Gonzalo Llamosas"
-  description: "Assistant Professor in Public Finance · University of Málaga"
+  description: "Personal website of Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga. Research on fiscal policy, public debt sustainability and behavioural economics."
   site-url: "https://gonzalollamosas.com"
   image: images/profile.jpg
   favicon: images/branding/logo_user_e1.svg
@@ -69,6 +70,8 @@ website:
     right:
       Built with [Quarto](https://quarto.org)
 
+lang: en
+
 format:
   html:
     fontsize: 1.1em
@@ -87,6 +90,81 @@ format:
           <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/logo_e1_32.png">
           <link rel="icon" type="image/png" sizes="64x64" href="/images/branding/logo_e1_64.png">
           <link rel="icon" type="image/png" sizes="512x512" href="/images/branding/logo_e1_512.png">
+          <meta name="author" content="Gonzalo Llamosas-García">
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+          <meta name="googlebot" content="index, follow">
+          <meta name="bingbot" content="index, follow">
+          <meta property="og:site_name" content="Gonzalo Llamosas">
+          <meta property="og:type" content="website">
+          <meta property="profile:first_name" content="Gonzalo">
+          <meta property="profile:last_name" content="Llamosas-García">
+          <!-- Google Search Console verification (replace TOKEN after verifying) -->
+          <!-- <meta name="google-site-verification" content="TOKEN_GSC"> -->
+          <!-- Bing Webmaster Tools verification (replace TOKEN after verifying) -->
+          <!-- <meta name="msvalidate.01" content="TOKEN_BING"> -->
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gonzalo Llamosas-García",
+            "givenName": "Gonzalo",
+            "familyName": "Llamosas-García",
+            "alternateName": "Gonzalo Llamosas",
+            "url": "https://gonzalollamosas.com",
+            "image": "https://gonzalollamosas.com/images/profile.jpg",
+            "jobTitle": "Assistant Professor in Public Finance",
+            "description": "Assistant Professor in Public Finance at the University of Málaga, working on fiscal policy, public debt sustainability and behavioural economics.",
+            "email": "mailto:gonzalo.llamosas@uma.es",
+            "worksFor": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidad de Málaga",
+              "url": "https://www.uma.es"
+            },
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Universidad de Cantabria",
+                "url": "https://www.unican.es"
+              }
+            ],
+            "knowsAbout": [
+              "Public Finance",
+              "Fiscal Policy",
+              "Public Debt Sustainability",
+              "Behavioural Economics",
+              "Local Projections",
+              "European Fiscal Framework"
+            ],
+            "sameAs": [
+              "https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en",
+              "https://orcid.org/0000-0002-4407-2845",
+              "https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2",
+              "https://www.linkedin.com/in/gonzalo-llamosas-garcia/",
+              "https://x.com/gonzalollamosas",
+              "https://github.com/lgg18106",
+              "https://portaldelainvestigacion.uma.es/investigadores/2208701/detalle"
+            ]
+          }
+          </script>
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Gonzalo Llamosas",
+            "url": "https://gonzalollamosas.com",
+            "inLanguage": "en",
+            "description": "Personal website of Gonzalo Llamosas-García, Assistant Professor in Public Finance at the University of Málaga.",
+            "author": {
+              "@type": "Person",
+              "name": "Gonzalo Llamosas-García"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://gonzalollamosas.com/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+          </script>
 
 execute:
   freeze: auto
