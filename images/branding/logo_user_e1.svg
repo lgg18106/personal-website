@@ -1,18 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <!-- E1 · Histograma campana + density curve · CENTRADO PERCEPTUAL
-       Contenido subido para compensar el peso visual de las barras.
-       Curva más gruesa (14px) para equilibrar masa visual con las barras. -->
+  <!-- E1 · Histograma campana + density curve · CENTRADO SIMÉTRICO
+       Top visual (cima curva con stroke 14): y = 66 - 7 = 59
+       Bottom visual (base barras): y = 181
+       Espacio arriba = 59 - 14 = 45 px
+       Espacio abajo = 226 - 181 = 45 px ✓ -->
   <defs>
     <mask id="cutE1">
       <rect x="0" y="0" width="240" height="240" fill="white"/>
-      <!-- 5 barras campana subidas (bases en y=158) -->
-      <rect x="51" y="133" width="22" height="25" fill="black" rx="2"/>
-      <rect x="80" y="108" width="22" height="50" fill="black" rx="2"/>
-      <rect x="109" y="83" width="22" height="75" fill="black" rx="2"/>
-      <rect x="138" y="108" width="22" height="50" fill="black" rx="2"/>
-      <rect x="167" y="133" width="22" height="25" fill="black" rx="2"/>
-      <!-- Curva density · más gruesa para equilibrar el peso visual -->
-      <path d="M 45 118 Q 80 48, 120 43 Q 160 48, 195 118"
+      <!-- 5 barras campana (bases en y=181) -->
+      <rect x="51" y="156" width="22" height="25" fill="black" rx="2"/>
+      <rect x="80" y="131" width="22" height="50" fill="black" rx="2"/>
+      <rect x="109" y="106" width="22" height="75" fill="black" rx="2"/>
+      <rect x="138" y="131" width="22" height="50" fill="black" rx="2"/>
+      <rect x="167" y="156" width="22" height="25" fill="black" rx="2"/>
+      <!-- Curva density (centrada simétricamente) -->
+      <path d="M 45 141 Q 80 71, 120 66 Q 160 71, 195 141"
             stroke="black" stroke-width="14" fill="none"
             stroke-linecap="round" stroke-linejoin="round"/>
     </mask>
