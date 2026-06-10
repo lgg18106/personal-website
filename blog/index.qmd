@@ -5,14 +5,14 @@ keywords: "fiscal policy blog, behavioural economics, AI economics, public finan
 listing:
   contents: posts
   type: grid
-  grid-columns: 3
-  image-height: 200px
+  grid-columns: 2
+  image-height: 240px
   fields: [image, date, title, description, reading-time, categories]
   sort: "date desc"
-  categories: true
+  categories: false
   feed: true
 page-layout: full
 toc: false
 ---
 
-This blog collects shorter writing on the topics I work on. Posts may be in **English** or **Spanish**, depending on the audience and the source of the argument. Use the categories below to filter.
+This blog collects shorter writing on the topics I work on. Posts may be in **English** or **Spanish**, depending on the audience and the source of the argument.

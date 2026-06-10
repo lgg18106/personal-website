@@ -421,18 +421,34 @@ main li a:not(.btn):not(.social-pill) {
         font-size: 2rem;
         font-weight: 500;
         margin-bottom: 1.5rem;
-        border-bottom: 1px solid $gray-300;
-        padding-bottom: 0.5rem;
     }
 
+    // timeline · línea suave + puntos dorados
     ul {
-        list-style: disc;
-        padding-left: 1.5rem;
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0.4rem;
+        border-left: 2px solid #f0e7d2;
 
         li {
+            position: relative;
+            padding-left: 1.6rem;
             margin-bottom: 1.4rem;
             line-height: 1.6;
             color: $gray-900;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -7px;
+                top: 0.45em;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: $gold;
+                border: 2.5px solid $white;
+                box-shadow: 0 0 0 1px rgba(230, 170, 4, 0.35);
+            }
 
             strong {
                 color: $black;
@@ -461,8 +477,6 @@ main li a:not(.btn):not(.social-pill) {
         font-size: 2rem;
         font-weight: 500;
         margin-bottom: 1.5rem;
-        border-bottom: 1px solid $gray-300;
-        padding-bottom: 0.5rem;
     }
 }
 
@@ -521,13 +535,23 @@ main li a:not(.btn):not(.social-pill) {
 // ─── PUBLICATION BLOCKS ──────────────────────────────────
 
 .publication {
+    border: 1px solid #eee8da;
     border-left: 3px solid $gold;
-    padding: 0.9rem 1.2rem;
-    margin: 1.2rem 0;
-    background-color: $gray-100;
+    border-radius: 0 12px 12px 0;
+    padding: 1.1rem 1.4rem;
+    margin: 1.3rem 0;
+    background-color: #fffdf9;
     font-size: 0.97rem;
+    box-shadow: 0 1px 3px rgba(55, 58, 60, 0.05);
+    transition: box-shadow 0.18s ease;
+
+    &:hover {
+        box-shadow: 0 6px 18px rgba(55, 58, 60, 0.09);
+    }
 
     strong { font-size: 1.05rem; color: $black; }
+
+    em { color: $gray-700; }
 }
 
 
@@ -825,4 +849,51 @@ blockquote {
         letter-spacing: 0.08em;
         font-size: 0.88em;
     }
+}
+
+// ─── PASADA FINA DE DISEÑO (jun-2026) ────────────────────
+
+// h2 de contenido · barra dorada corta en vez de línea gris
+main h2:not(#toc-title) {
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 0.55rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 44px;
+        height: 3px;
+        border-radius: 2px;
+        background: $gold;
+    }
+}
+
+// navbar · página activa marcada en dorado
+.navbar .nav-link.active,
+.navbar .nav-item .nav-link.active {
+    color: $gold !important;
+    font-weight: 700;
+}
+
+// hero · anillo dorado sutil alrededor de la foto
+.hero-block .hero-image img {
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 5px $white,
+        0 0 0 7px rgba(230, 170, 4, 0.45);
+}
+
+// tarjetas del blog a 2 columnas · título algo mayor
+.quarto-grid-item.card .card-title.listing-title {
+    font-size: 1.18em;
+}
+
+// 404 · ondas decorativas
+.notfound-waves {
+    margin: 1.5rem 0 0.5rem;
+
+    svg { width: 220px; height: auto; }
 }
