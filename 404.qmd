@@ -1,0 +1,19 @@
+---
+title: "Page not found"
+description: "This page does not exist or has moved."
+toc: false
+---
+
+The page you were looking for does not exist or has moved.
+
+Here are some useful places to continue:
+
+- [Home](/index.qmd)
+- [Research](/research.qmd)
+- [Teaching](/teaching.qmd)
+- [Blog](/blog/index.qmd)
+- [Contact](/contact.qmd)
+
+If you followed a link from another site and ended up here, I would
+appreciate a short note at
+[gonzalo.llamosas@uma.es](mailto:gonzalo.llamosas@uma.es) so I can fix it.

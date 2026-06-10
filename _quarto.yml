@@ -18,7 +18,7 @@ website:
   open-graph:
     image: "https://gonzalollamosas.com/images/og-image.png"
     image-alt: "Gonzalo Llamosas — Assistant Professor in Public Finance, University of Málaga"
-    locale: en_US
+    locale: en_GB
   twitter-card:
     image: "https://gonzalollamosas.com/images/og-image.png"
     card-style: summary_large_image
@@ -160,14 +160,12 @@ format:
             "author": {
               "@type": "Person",
               "name": "Gonzalo Llamosas-García"
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://gonzalollamosas.com/?q={search_term_string}",
-              "query-input": "required name=search_term_string"
             }
           }
           </script>
+          <!-- GoatCounter analytics (privacy-friendly, no cookies). Register the
+               code 'gonzalollamosas' at https://www.goatcounter.com to activate. -->
+          <script data-goatcounter="https://gonzalollamosas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 execute:
   freeze: auto
