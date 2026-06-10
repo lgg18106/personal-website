@@ -8,12 +8,12 @@ page-layout: full
 
 ```{=html}
 <div class="cv-viewer-pages" oncontextmenu="return false;">
-  <img src="pages/cv-page-1.png" alt="CV page 1" class="cv-page" draggable="false">
-  <img src="pages/cv-page-2.png" alt="CV page 2" class="cv-page" draggable="false">
-  <img src="pages/cv-page-3.png" alt="CV page 3" class="cv-page" draggable="false">
-  <img src="pages/cv-page-4.png" alt="CV page 4" class="cv-page" draggable="false">
-  <img src="pages/cv-page-5.png" alt="CV page 5" class="cv-page" draggable="false">
-  <img src="pages/cv-page-6.png" alt="CV page 6" class="cv-page" draggable="false">
-  <img src="pages/cv-page-7.png" alt="CV page 7" class="cv-page" draggable="false">
+  <img src="pages/cv-page-1.png" alt="CV page 1" class="cv-page" draggable="false" loading="eager">
+  <img src="pages/cv-page-2.png" alt="CV page 2" class="cv-page" draggable="false" loading="lazy">
+  <img src="pages/cv-page-3.png" alt="CV page 3" class="cv-page" draggable="false" loading="lazy">
+  <img src="pages/cv-page-4.png" alt="CV page 4" class="cv-page" draggable="false" loading="lazy">
+  <img src="pages/cv-page-5.png" alt="CV page 5" class="cv-page" draggable="false" loading="lazy">
+  <img src="pages/cv-page-6.png" alt="CV page 6" class="cv-page" draggable="false" loading="lazy">
+  <img src="pages/cv-page-7.png" alt="CV page 7" class="cv-page" draggable="false" loading="lazy">
 </div>
 ```

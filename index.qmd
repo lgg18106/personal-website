@@ -44,7 +44,7 @@ title-block-style: none
   </div>
 </section>
 
-<div class="wave-separator">
+<div class="wave-separator" aria-hidden="true">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none" fill="none">
     <path d="M 0 70 C 150 30, 300 110, 450 70 S 750 30, 900 70 S 1200 110, 1350 70" stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
     <path d="M 0 90 C 150 50, 300 130, 450 90 S 750 50, 900 90 S 1200 130, 1350 90" stroke="#D9A12C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
