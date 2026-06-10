@@ -42,6 +42,8 @@ website:
         href: blog/index.qmd
       - text: "CV"
         href: cv/index.qmd
+      - text: "Contact"
+        href: contact.qmd
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/gonzalo-llamosas-garcia/

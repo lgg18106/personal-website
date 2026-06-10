@@ -58,10 +58,10 @@ title-block-style: none
 ::: {.news-section}
 ## News
 
+- **Coming soon** · Launching [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions. First episode coming in 2026.
 - **2026** · Working paper *"Does Fiscal Consolidation Reduce Public Debt? Evidence from the EU-27"* (with Cristina Mazas Pérez-Oleaga and José M. Domínguez Martínez) — see [Research](research.qmd).
-- **2025** · Published *"What Works in Financial Education? Experimental Evidence on Program Impact"* in [*Journal of Behavioral and Experimental Economics*](https://doi.org/10.1016/j.socec.2025.102401), Vol. 119 (Q1).
 - **2026** · Serving as reviewer for the *Journal of Behavioral and Experimental Economics*.
-- **Coming soon** · Launching [**Outlook Project**](outlook-project.qmd), a YouTube channel on economics, data and human decisions. First episode out in May 2026.
+- **2025** · Published *"What Works in Financial Education? Experimental Evidence on Program Impact"* in [*Journal of Behavioral and Experimental Economics*](https://doi.org/10.1016/j.socec.2025.102401), Vol. 119 (Q1).
 :::
 
 ## En español
