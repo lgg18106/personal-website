@@ -5,8 +5,12 @@ keywords: "LP-DiD, local projections, difference-in-differences, clean controls,
 author: "Gonzalo Llamosas-García"
 date: "2026-06-10"
 categories: [english, methods, fiscal policy]
+image: images/clean-controls.png
+image-alt: "Schematic of the clean-control rule in LP-DiD: treated unit, treatment window and excluded units"
 draft: false
 ---
+
+![](images/clean-controls.png){.post-banner fig-alt="Schematic of the clean-control rule. The treated unit enters at year t with a window to t plus h; a unit that treats inside the window is excluded; the remaining rows are clean controls."}
 
 Event studies on macro panels have a quiet problem. In a standard two-way
 fixed effects setup, countries that treated earlier serve as controls for
@@ -47,6 +51,43 @@ effective sample shrinks as the horizon lengthens. We report the counts at
 every horizon, and we would encourage anyone using the method to do the
 same, because the estimand quietly changes with the surviving sample.
 
+## The estimator in a few lines of R
+
+Stripped to its essentials, the whole procedure fits on one screen. For
+each horizon, build the long difference, flag the units that stay
+untreated through the window, keep entries and clean controls only, and
+run the fixed-effects regression.
+
+```r
+library(dplyr)
+library(fixest)
+
+lpdid_h <- function(panel, h) {
+  df <- panel |>
+    group_by(country) |>
+    mutate(
+      d_y   = lead(debt_gdp, h) - lag(debt_gdp, 1),           # long difference
+      clean = slider::slide_dbl(entry, max, .after = h) == 0  # untreated in [t, t+h]
+    ) |>
+    ungroup() |>
+    filter(entry == 1 | clean)                                # no forbidden comparisons
+
+  feols(d_y ~ entry + d_debt_l1 + d_debt_l2 + x_l1 | country + year,
+        data = df, cluster = ~country)
+}
+
+irf <- lapply(0:5, function(h) lpdid_h(panel, h))
+
+# 27 clusters: complement with a wild cluster bootstrap (Webb weights)
+fwildclusterboot::boottest(irf[[1]], param = "entry",
+                           B = 999, type = "webb")
+```
+
+Each element of `irf` is one point of the impulse response, and the
+header figure of this post was drawn with the same logic. The real code
+adds the placebo horizons, the trimming and the robustness battery, but
+nothing conceptually new.
+
 ## What we learned applying it
 
 Inference with 27 clusters deserves more care than the default. We cluster
@@ -72,3 +113,5 @@ The full paper, including the debt decomposition that explains why
 consolidations fail to reduce the ratio, is on
 [ResearchGate](https://www.researchgate.net/publication/403998208_Does_Fiscal_Consolidation_Reduce_Public_Debt_Evidence_from_the_European_Union_Using_Local_Projections)
 and summarised on the [Research](../../research.qmd) page.
+
+{{< include _signature.qmd >}}

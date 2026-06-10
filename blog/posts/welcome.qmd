@@ -5,8 +5,12 @@ keywords: "blog launch, fiscal policy notes, Gonzalo Llamosas, Outlook Project"
 author: "Gonzalo Llamosas-García"
 date: "2026-05-01"
 categories: [meta, english]
+image: images/welcome-waves.png
+image-alt: "Gold wave motif with the tagline economics, data, human decisions"
 draft: false
 ---
+
+![](images/welcome-waves.png){.post-banner fig-alt="Gold wave motif with the tagline economics, data, human decisions."}
 
 This is the first post of a blog that will accompany my research and the [Outlook Project](../../outlook-project.qmd) channel.
 
@@ -19,3 +23,5 @@ The plan is simple. Most posts will be short — between 800 and 1,500 words —
 Posts will be in English or Spanish depending on the audience. Op-eds and pieces aimed at the Spanish policy debate will be in Spanish; technical notes for an international academic audience will be in English. Use the categories filter on the [blog index](../index.qmd) to navigate.
 
 Comments are not enabled here. If you want to react to a post, the best channel is [LinkedIn](https://www.linkedin.com/in/gonzalo-llamosas-garcia/) or email.
+
+{{< include _signature.qmd >}}

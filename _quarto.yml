@@ -82,6 +82,7 @@ format:
     theme:
       - pulse
       - html/styles.scss
+    highlight-style: github
     toc: false
     code-link: true
     anchor-sections: true

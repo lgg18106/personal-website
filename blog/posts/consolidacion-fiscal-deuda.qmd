@@ -5,8 +5,12 @@ keywords: "consolidación fiscal, deuda pública, UE-27, austeridad, local proje
 author: "Gonzalo Llamosas-García"
 date: "2026-06-10"
 categories: [español, fiscal policy, public debt]
+image: images/irf-deuda.png
+image-alt: "Respuesta del ratio deuda/PIB a la entrada en consolidación fiscal, horizontes 0 a 5"
 draft: false
 ---
+
+![](images/irf-deuda.png){.post-banner fig-alt="Respuesta del ratio deuda/PIB a la entrada en consolidación fiscal. Los puntos de los horizontes 0 y 1 son significativos al 5%."}
 
 La intuición es sencilla. Si un país recorta su déficit, su deuda debería
 crecer menos y el ratio deuda/PIB debería bajar. Esa intuición sostiene
@@ -91,3 +95,30 @@ ratio de deuda que pretendía bajar.
 El paper completo, con la estrategia empírica y todas las robusteces, está
 disponible en [ResearchGate](https://www.researchgate.net/publication/403998208_Does_Fiscal_Consolidation_Reduce_Public_Debt_Evidence_from_the_European_Union_Using_Local_Projections)
 y en la página de [Research](../../research.qmd).
+
+## La figura de cabecera, en unas líneas de R
+
+Una manía de la casa: las figuras de este blog se generan con código
+reproducible. La de arriba son las estimaciones puntuales del paper, nada
+más, y se dibuja así.
+
+```r
+library(ggplot2)
+
+irf <- data.frame(
+  h    = 0:5,
+  beta = c(0.86, 1.35, 1.45, 1.54, 2.37, 2.56),
+  sig  = c(TRUE, TRUE, FALSE, FALSE, FALSE, FALSE)
+)
+
+ggplot(irf, aes(h, beta)) +
+  geom_hline(yintercept = 0, colour = "#c9c2b4") +
+  geom_line(colour = "#E6AA04", linewidth = 1.4) +
+  geom_point(aes(fill = sig), shape = 21, size = 5.5,
+             colour = "#E6AA04", stroke = 1.6) +
+  scale_fill_manual(values = c("#FBFAF7", "#E6AA04"), guide = "none") +
+  labs(x = "Horizonte (años desde la entrada)", y = expression(beta[h])) +
+  theme_minimal(base_size = 16)
+```
+
+{{< include _signature.qmd >}}

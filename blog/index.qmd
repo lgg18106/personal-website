@@ -4,8 +4,10 @@ description: "Short writing on fiscal policy, behavioural economics, AI and meth
 keywords: "fiscal policy blog, behavioural economics, AI economics, public finance notes, Gonzalo Llamosas"
 listing:
   contents: posts
-  type: default
-  fields: [date, title, description, reading-time, categories]
+  type: grid
+  grid-columns: 3
+  image-height: 200px
+  fields: [image, date, title, description, reading-time, categories]
   sort: "date desc"
   categories: true
   feed: true

@@ -703,17 +703,126 @@ blockquote {
 }
 
 
-// ─── BLOG LISTING ────────────────────────────────────────
+// ─── BLOG LISTING (grid cards) ───────────────────────────
 
-.quarto-listing-default {
-    margin-top: 2rem;
+.quarto-grid-item.card {
+    border: 1px solid #eee8da;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fffdf9;
+    box-shadow: 0 1px 3px rgba(55, 58, 60, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 
-    .quarto-post {
-        border-bottom: 1px solid $gray-300;
-        padding: 1.5rem 0;
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(55, 58, 60, 0.13);
+    }
 
-        .listing-title { font-weight: 600; font-size: 1.2rem; color: $black; }
-        .listing-description { color: $gray-700; }
-        .listing-date, .listing-categories { font-size: 0.85rem; color: $gray-500; }
+    .card-img-top {
+        border-bottom: 1px solid #f3eee2;
+    }
+
+    .card-title.listing-title {
+        font-weight: 700;
+        font-size: 1.05em;
+        line-height: 1.35;
+        color: $gray-900;
+    }
+
+    &:hover .card-title.listing-title {
+        color: $gold-dark;
+    }
+
+    .listing-description {
+        color: $gray-700;
+        font-size: 0.9em;
+        line-height: 1.45;
+    }
+
+    .listing-date,
+    .listing-reading-time {
+        color: $gray-600;
+        font-size: 0.78em;
+        letter-spacing: 0.03em;
+    }
+}
+
+// category pills · listing cards and post title block
+.listing-categories .listing-category,
+.quarto-title .quarto-categories .quarto-category {
+    background: rgba(230, 170, 4, 0.13);
+    color: $gold-dark;
+    border: none;
+    border-radius: 999px;
+    padding: 0.22em 0.85em;
+    font-size: 0.68em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+// ─── BLOG POSTS ──────────────────────────────────────────
+
+// banner image at the top of each post
+.post-banner img,
+img.post-banner {
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(55, 58, 60, 0.10);
+    margin-bottom: 0.5rem;
+}
+
+// code blocks · gold accent, soft card look
+div.sourceCode {
+    border: 1px solid #ece7db;
+    border-left: 4px solid $gold;
+    border-radius: 10px;
+    background: #fcfbf7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin: 1.4rem 0;
+
+    pre.sourceCode {
+        padding: 1.05rem 1.25rem;
+        font-size: 0.88em;
+        line-height: 1.55;
+    }
+}
+
+// inline code
+p code:not(.sourceCode),
+li code:not(.sourceCode) {
+    background: rgba(230, 170, 4, 0.10);
+    color: $gray-800;
+    border-radius: 4px;
+    padding: 0.08em 0.35em;
+}
+
+// blockquotes · gold accent
+blockquote {
+    border-left: 3px solid $gold;
+    background: #fcf9f2;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0 10px 10px 0;
+    color: $gray-700;
+}
+
+// wave signature at the end of each post
+.post-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 3rem 0 1rem;
+
+    svg {
+        width: 190px;
+        height: auto;
+    }
+
+    .sig-name {
+        font-style: italic;
+        color: $gray-600;
+        letter-spacing: 0.08em;
+        font-size: 0.88em;
     }
 }
