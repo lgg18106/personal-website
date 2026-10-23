@@ -1,0 +1,71 @@
+---
+title: "Gonzalo Llamosas García"
+pagetitle: "Public Finance, University of Málaga"
+description-meta: "Gonzalo Llamosas García, Assistant Professor in Public Finance at the University of Málaga. Research on fiscal policy and public debt in the EU, household finance and the econometrics of policy evaluation."
+keywords: "Gonzalo Llamosas, Gonzalo Llamosas García, Gonzalo Llamosas-García, public finance, fiscal policy, public debt, fiscal consolidation, event studies, household finance, University of Málaga, Hacienda Pública"
+title-block-style: none
+open-graph:
+  title: "Gonzalo Llamosas García"
+twitter-card:
+  title: "Gonzalo Llamosas García"
+body-classes: home
+toc: false
+---
+
+```{=html}
+<section class="hero" style="background-image: url('images/hero.svg');">
+<div class="hero-inner">
+  <div class="hero-text">
+    <h1>Fiscal policy, public debt and policy evaluation</h1>
+    <p>I study what fiscal consolidations do to public debt in the European Union,
+    how households make financial decisions, and what event-study estimates
+    measure when governments act in response to the outcomes they want to
+    change.</p>
+    <p>My work has appeared in the <em>Journal of Behavioral and Experimental
+    Economics</em>, <em>Global Policy</em> and <em>Information Polity</em>, and I
+    hold the ANECA accreditation as Associate Professor.</p>
+    <p class="hero-links">
+      <a class="btn-hero" href="cv/Gonzalo_Llamosas-Garcia_CV.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=O8gTD4AAAAAJ&amp;hl=en">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-4407-2845">ORCID</a>
+      <a href="mailto:gonzalo.llamosas@uma.es">gonzalo.llamosas@uma.es</a>
+    </p>
+  </div>
+  <div class="hero-photo">
+    <img src="images/profile.jpg" alt="Gonzalo Llamosas García" loading="eager">
+  </div>
+</div>
+</section>
+```
+
+::: {.wide}
+## Current research
+
+{{< include /_generated/selected_en.md >}}
+
+{{< include /_generated/feature_en.md >}}
+:::
+
+:::: {.wide .home-split}
+::: {.split-main}
+## Recent
+
+{{< include /_generated/news_en.md >}}
+
+[All papers, publications and projects](research.qmd)
+:::
+
+::: {.split-side}
+```{=html}
+<div class="side-card">
+  <h3>Teaching 2026–27</h3>
+  <ul>
+    <li><strong>Public Finance</strong><br>Public Management and Administration</li>
+    <li><strong>Spanish Public Finance</strong><br>Economics</li>
+    <li><strong>Fiscal Systems</strong><br>Business Administration; Finance and Accounting</li>
+  </ul>
+  <a class="card-link" href="teaching.html">Courses and office hours</a>
+</div>
+```
+:::
+::::

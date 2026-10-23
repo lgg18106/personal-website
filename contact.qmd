@@ -1,0 +1,35 @@
+---
+title: "Contact"
+description: "Email, office and online profiles, plus media and policy enquiries."
+keywords: "contact Gonzalo Llamosas, University of Málaga public finance, fiscal policy media enquiries"
+toc: false
+---
+
+## Email
+
+[gonzalo.llamosas@uma.es](mailto:gonzalo.llamosas@uma.es)
+
+## Office
+
+Office 2402, Department of Applied Economics (Public Finance), Faculty of Economics and Business, University of Málaga, Campus de El Ejido, 29071 Málaga, Spain.
+
+Office hours are listed on the [Teaching](teaching.qmd) page.
+
+## Online
+
+- [LinkedIn](https://www.linkedin.com/in/gonzalo-llamosas-garcia/){target="_blank"}
+- [X (Twitter)](https://x.com/gonzalollamosas){target="_blank"}
+- [GitHub](https://github.com/lgg18106){target="_blank"}
+- [Google Scholar](https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en){target="_blank"}
+- [ORCID](https://orcid.org/0000-0002-4407-2845){target="_blank"}
+- [ResearchGate](https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2){target="_blank"}
+- [Staff page at the University of Málaga](https://www.uma.es/departments/teachers/MXhRMU03dmJIVlZvTlZVWkUxbXBuUT09/){target="_blank"}
+- [University of Málaga research portal](https://portaldelainvestigacion.uma.es/investigadores/2208701/detalle){target="_blank"}
+
+## Media and policy enquiries
+
+For media enquiries on fiscal policy, public debt sustainability, behavioural economics applied to public policy, or AI and the tax base, please write to [gonzalo.llamosas@uma.es](mailto:gonzalo.llamosas@uma.es) with a brief description of the request and the deadline.
+
+## Speaking and consultancy
+
+I am happy to give talks and to discuss teaching collaborations or policy work compatible with my university position. Please describe the scope and the timing.

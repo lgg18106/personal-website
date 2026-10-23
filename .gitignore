@@ -1,0 +1,36 @@
+# Quarto build output
+/.quarto/
+/_site/
+/_freeze/
+*_files/
+*_cache/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Logs
+*.log
+
+**/*.quarto_ipynb
+
+# Working notes and old material, kept on the computer only
+_SESSION_RESUME.md
+assets-archive/
+images.jpeg

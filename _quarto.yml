@@ -1,0 +1,131 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "CNAME"
+    - "robots.txt"
+    - "images/**"
+    - "cv/*.pdf"
+  post-render:
+    - python3 _scripts/post-render.py
+
+website:
+  title: "Gonzalo Llamosas García"
+  description: "Personal website of Gonzalo Llamosas García, Assistant Professor in Public Finance at the University of Málaga. Research on fiscal policy and public debt, household finance and the econometrics of policy evaluation."
+  site-url: "https://gonzalollamosas.com"
+  image: images/profile.jpg
+  favicon: images/favicon.svg
+
+  open-graph:
+    image: "https://gonzalollamosas.com/images/og-image.png"
+    image-alt: "Gonzalo Llamosas García, Public Finance, University of Málaga"
+    locale: en_GB
+  twitter-card:
+    image: "https://gonzalollamosas.com/images/og-image.png"
+    card-style: summary_large_image
+
+  search: false
+
+lang: en
+
+format:
+  html:
+    theme:
+      - default
+      - html/styles.scss
+    highlight-style: github
+    # no page has formulas; without this Quarto loads MathJax on the listing pages
+    html-math-method: plain
+    toc: false
+    toc-depth: 2
+    title-block-banner: images/banner.svg
+    title-block-banner-color: "#ffffff"
+    grid:
+      body-width: 860px
+      margin-width: 250px
+    include-before-body: html/header.html
+    include-after-body: html/footer.html
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
+    include-in-header:
+      - text: |
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+          <meta name="author" content="Gonzalo Llamosas García">
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+          <meta name="googlebot" content="index, follow">
+          <meta name="bingbot" content="index, follow">
+          <meta property="profile:first_name" content="Gonzalo">
+          <meta property="profile:last_name" content="Llamosas García">
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gonzalo Llamosas García",
+            "givenName": "Gonzalo",
+            "familyName": "Llamosas García",
+            "alternateName": ["Gonzalo Llamosas", "Gonzalo Llamosas-García"],
+            "url": "https://gonzalollamosas.com",
+            "image": "https://gonzalollamosas.com/images/profile.jpg",
+            "jobTitle": "Assistant Professor in Public Finance",
+            "affiliation": "Department of Applied Economics, University of Málaga",
+            "description": "Assistant Professor in Public Finance at the University of Málaga, working on fiscal policy, public debt sustainability and behavioural economics.",
+            "email": "mailto:gonzalo.llamosas@uma.es",
+            "worksFor": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidad de Málaga",
+              "url": "https://www.uma.es"
+            },
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Universidad de Cantabria",
+                "url": "https://www.unican.es"
+              }
+            ],
+            "knowsAbout": [
+              "Public Finance",
+              "Fiscal Policy",
+              "Public Debt Sustainability",
+              "Behavioural Economics",
+              "Household Finance",
+              "Econometrics",
+              "Event Studies",
+              "Local Projections",
+              "European Fiscal Framework"
+            ],
+            "sameAs": [
+              "https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en",
+              "https://orcid.org/0000-0002-4407-2845",
+              "https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2",
+              "https://www.linkedin.com/in/gonzalo-llamosas-garcia/",
+              "https://x.com/gonzalollamosas",
+              "https://github.com/lgg18106",
+              "https://www.uma.es/departments/teachers/MXhRMU03dmJIVlZvTlZVWkUxbXBuUT09/",
+              "https://portaldelainvestigacion.uma.es/investigadores/2208701/detalle"
+            ]
+          }
+          </script>
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Gonzalo Llamosas",
+            "url": "https://gonzalollamosas.com",
+            "inLanguage": "en",
+            "description": "Personal website of Gonzalo Llamosas García, Assistant Professor in Public Finance at the University of Málaga.",
+            "author": {
+              "@type": "Person",
+              "name": "Gonzalo Llamosas García"
+            }
+          }
+          </script>
+          <!-- GoatCounter analytics (privacy-friendly, no cookies); fixed version, the browser checks its hash -->
+          <script data-goatcounter="https://gonzalollamosas.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
+
+execute:
+  freeze: auto

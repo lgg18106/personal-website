@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name en-only" href="/"><img class="site-logo" src="/images/logo/logo-light.svg" alt="" width="56" height="56"><span class="site-id"><span class="site-title">Gonzalo Llamosas García</span><span class="site-role">Assistant Professor in Public Finance at the University of Málaga</span></span></a>
+    <a class="site-name es-only" href="/es/"><img class="site-logo" src="/images/logo/logo-light.svg" alt="" width="56" height="56"><span class="site-id"><span class="site-title">Gonzalo Llamosas García</span><span class="site-role">Profesor de Hacienda Pública en la Universidad de Málaga</span></span></a>
+    <nav class="site-nav en-only" aria-label="Main">
+      <a href="/about.html">About</a>
+      <a href="/research.html">Research</a>
+      <a href="/teaching.html">Teaching</a>
+      <a href="/cv/">CV</a>
+      <a class="lang-switch" href="/es/" hreflang="es" lang="es">Español</a>
+    </nav>
+    <nav class="site-nav es-only" aria-label="Principal">
+      <a href="/es/sobre-mi.html">Sobre mí</a>
+      <a href="/es/#investigacion">Investigación</a>
+      <a href="/es/docencia.html">Docencia</a>
+      <a href="/es/cv.html">CV</a>
+      <a class="lang-switch" href="/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<script>
+(function () {
+  // Quarto places include-before-body inside <main>; lift the header to the top of <body>
+  var header = document.querySelector(".site-header");
+  if (header) document.body.insertBefore(header, document.body.firstChild);
+  // counterpart page in the other language, and the current section in the nav
+  var path = location.pathname.replace(/index\.html$/, "");
+  var es = /^es/.test(document.documentElement.lang);
+  var pairs = [["/", "/es/"], ["/about.html", "/es/sobre-mi.html"], ["/teaching.html", "/es/docencia.html"], ["/blog/", "/es/divulgacion.html"], ["/cv/", "/es/cv.html"]];
+  var target = es ? "/" : "/es/";
+  pairs.forEach(function (p) {
+    if (!es && path === p[0]) target = p[1];
+    if (es && path === p[1]) target = p[0];
+  });
+  if (path.indexOf("/blog/posts/") === 0) target = es ? "/blog/" : "/es/divulgacion.html";
+  document.querySelectorAll(".lang-switch").forEach(function (a) { a.setAttribute("href", target); });
+  document.querySelectorAll(".site-nav a:not(.lang-switch)").forEach(function (a) {
+    if (a.hash) return;
+    var h = a.pathname.replace(/index\.html$/, "");   // Quarto rewrites hrefs as relative paths
+    if (h === path || (h.slice(-1) === "/" && h !== "/" && path.indexOf(h) === 0)) {
+      a.setAttribute("aria-current", "page");
+    }
+  });
+})();
+</script>

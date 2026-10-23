@@ -1,0 +1,79 @@
+---
+title: "Gonzalo Llamosas García"
+pagetitle: "Hacienda Pública, Universidad de Málaga"
+description-meta: "Gonzalo Llamosas García, profesor de Hacienda Pública en la Universidad de Málaga. Política fiscal y deuda pública en la UE, decisiones financieras de los hogares y econometría de la evaluación de políticas."
+keywords: "Gonzalo Llamosas, Gonzalo Llamosas García, Gonzalo Llamosas-García, Hacienda Pública, política fiscal, deuda pública, consolidación fiscal, Universidad de Málaga, economía aplicada"
+title-block-style: none
+open-graph:
+  title: "Gonzalo Llamosas García"
+twitter-card:
+  title: "Gonzalo Llamosas García"
+body-classes: home
+toc: false
+---
+
+```{=html}
+<section class="hero" style="background-image: url('../images/hero.svg');">
+<div class="hero-inner">
+  <div class="hero-text">
+    <h1>Política fiscal, deuda pública y evaluación de políticas</h1>
+    <p>Estudio qué hacen las consolidaciones fiscales con la deuda pública en la
+    Unión Europea, cómo toman los hogares sus decisiones financieras y qué miden
+    los estudios de eventos cuando los gobiernos actúan en respuesta a los
+    resultados que quieren cambiar.</p>
+    <p>He publicado en el <em>Journal of Behavioral and Experimental Economics</em>,
+    en <em>Global Policy</em> y en <em>Information Polity</em>, y estoy acreditado
+    por ANECA como profesor contratado doctor.</p>
+    <p class="hero-links">
+      <a class="btn-hero" href="../cv/Gonzalo_Llamosas-Garcia_CV_es.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=O8gTD4AAAAAJ&amp;hl=es">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-4407-2845">ORCID</a>
+      <a href="mailto:gonzalo.llamosas@uma.es">gonzalo.llamosas@uma.es</a>
+    </p>
+  </div>
+  <div class="hero-photo">
+    <img src="../images/profile.jpg" alt="Gonzalo Llamosas García" loading="eager">
+  </div>
+</div>
+</section>
+```
+
+::: {.wide}
+## Investigación {#investigacion}
+
+Los títulos van en inglés, el idioma en que están escritos los trabajos. Los
+proyectos, las estancias, los premios y las comunicaciones están en el
+[currículum](cv.qmd); los resúmenes completos, en la página de
+[Research](../research.qmd), y los textos para un público amplio, en
+[Divulgación](divulgacion.qmd).
+
+{{< include /_generated/selected_es.md >}}
+
+{{< include /_generated/feature_es.md >}}
+:::
+
+:::: {.wide .home-split}
+::: {.split-main}
+## Publicaciones
+
+{{< include /_generated/research_es.md >}}
+
+## Novedades
+
+{{< include /_generated/news_es.md >}}
+:::
+
+::: {.split-side}
+```{=html}
+<div class="side-card">
+  <h3>Docencia 2026–27</h3>
+  <ul>
+    <li><strong>Hacienda Pública</strong><br>Gestión y Administración Pública</li>
+    <li><strong>Hacienda Pública Española</strong><br>Economía</li>
+    <li><strong>Sistemas Fiscales</strong><br>ADE; Finanzas y Contabilidad</li>
+  </ul>
+  <a class="card-link" href="docencia.html">Asignaturas y tutorías</a>
+</div>
+```
+:::
+::::

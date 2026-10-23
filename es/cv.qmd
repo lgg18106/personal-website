@@ -1,0 +1,11 @@
+---
+title: "Currículum"
+description: "Currículum vítae, actualizado en octubre de 2026."
+keywords: "Gonzalo Llamosas García, Gonzalo Llamosas-García, currículum, CV, Hacienda Pública, Universidad de Málaga"
+toc: true
+toc-location: right
+---
+
+[Descargar el CV (PDF)](../cv/Gonzalo_Llamosas-Garcia_CV_es.pdf){.btn-cv} [English version (PDF)](../cv/Gonzalo_Llamosas-Garcia_CV.pdf){.cv-alt lang="en"}
+
+{{< include /_generated/cv_body_es.md >}}

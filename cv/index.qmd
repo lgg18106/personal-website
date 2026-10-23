@@ -1,0 +1,11 @@
+---
+title: "CV"
+description: "Curriculum vitae, updated October 2026."
+keywords: "Gonzalo Llamosas García CV, Gonzalo Llamosas-García, curriculum vitae, public finance, University of Málaga"
+toc: true
+toc-location: right
+---
+
+[Download the CV (PDF)](Gonzalo_Llamosas-Garcia_CV.pdf){.btn-cv} [Versión en español (PDF)](Gonzalo_Llamosas-Garcia_CV_es.pdf){.cv-alt lang="es"}
+
+{{< include /_generated/cv_body.md >}}

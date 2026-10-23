@@ -1,0 +1,13 @@
+---
+title: "Writing"
+description: "Notes on fiscal policy, public debt and econometric methods, in English or Spanish."
+keywords: "fiscal policy, public debt, fiscal consolidation, local projections, LP-DiD, econometrics, Gonzalo Llamosas"
+listing:
+  contents: posts
+  type: default
+  fields: [image, date, title, description, reading-time]
+  sort: "date desc"
+  categories: false
+  feed: true
+toc: false
+---

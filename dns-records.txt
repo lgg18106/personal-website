@@ -1,0 +1,5 @@
+gonzalollamosas.com.	300	IN	A	185.199.108.153
+gonzalollamosas.com.	300	IN	A	185.199.109.153
+gonzalollamosas.com.	300	IN	A	185.199.110.153
+gonzalollamosas.com.	300	IN	A	185.199.111.153
+www.gonzalollamosas.com.	300	IN	CNAME	lgg18106.github.io.

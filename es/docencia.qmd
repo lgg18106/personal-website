@@ -1,0 +1,38 @@
+---
+title: "Docencia"
+description: "Asignaturas que imparto en la Universidad de Málaga en el curso 2026–2027, tutorías y docencia anterior."
+keywords: "Hacienda Pública, Hacienda Pública Española, Sistemas Fiscales, Universidad de Málaga, tutorías, Gestión y Administración Pública, ADE, Finanzas y Contabilidad"
+toc: true
+toc-location: right
+---
+
+## Curso 2026–2027
+
+**Universidad de Málaga**, Departamento de Economía Aplicada (Hacienda Pública)
+
+- **Hacienda Pública**, Grado en Gestión y Administración Pública (planes 2010 y 2024)
+- **Hacienda Pública Española**, Grado en Economía
+- **Sistemas Fiscales**, Grado en Administración y Dirección de Empresas y Grado en Finanzas y Contabilidad
+- **Trabajo Fin de Grado**, Grado en Finanzas y Contabilidad y Grado en Gestión y Administración Pública
+
+## Tutorías
+
+Durante todo el curso:
+
+- **Lunes**, de 16:00 a 18:15, en el despacho 2402 de la Facultad de Ciencias Económicas y Empresariales
+- **Miércoles**, de 10:30 a 13:30, en modalidad virtual
+- **Viernes**, de 15:00 a 16:30, en el despacho 2402 de la Facultad de Ciencias Económicas y Empresariales
+
+Los materiales de las asignaturas están en el Campus Virtual de la UMA. Para
+cualquier otra cosa, escribe a [gonzalo.llamosas@uma.es](mailto:gonzalo.llamosas@uma.es)
+con el nombre de la asignatura en el asunto.
+
+## Docencia anterior
+
+- **Universidad de Málaga** (2022–2024 y 2025–2026): Sistemas Fiscales, Hacienda Pública Española y Microeconomía, entre otras
+- **Universidad de Cantabria** (2024–2025): Asignaturas de economía y dirección de empresas en grados de ingeniería y en el Máster en Ingeniería Industrial
+- **Universidad Europea del Atlántico** (2023–2024): Asignaturas del Grado en Administración y Dirección de Empresas y dirección de Trabajos Fin de Grado
+- **Universidad de León** (2022–2023): Mercados, Medios e Instituciones Financieras, en el Grado en Administración y Dirección de Empresas
+- **Universidad Loyola Andalucía** (2020–2022): Economía Internacional, Política Económica y casos prácticos de empresa
+
+El detalle, en la página [Teaching](../teaching.qmd).

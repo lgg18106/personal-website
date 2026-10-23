@@ -1,0 +1,27 @@
+---
+title: "Research"
+description: "Papers under review, working papers, publications, projects, talks, awards and notes."
+keywords: "fiscal consolidation, public debt, debt dynamics, local projections, LP-DiD, event studies, difference-in-differences, biomarkers, household wealth, financial education, SHARE, EU-27"
+toc: true
+toc-location: right
+listing:
+  id: notes
+  contents: ["blog/posts/*.qmd", "!blog/posts/_*.qmd"]
+  type: default
+  fields: [date, title, description]
+  sort: "date desc"
+  categories: false
+---
+
+{{< include /_generated/research_en.md >}}
+
+## Notes and commentary
+
+Short pieces on the papers and on methods, in English or Spanish.
+
+::: {#notes}
+:::
+
+## Profiles
+
+[Google Scholar](https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en), [ORCID](https://orcid.org/0000-0002-4407-2845), [ResearchGate](https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2), [Dialnet](https://dialnet.unirioja.es/metricas/investigadores/5013639/masindicadores), [Lens.org](https://www.lens.org/lens/orcid/0000-0002-4407-2845/scholar), my [staff page](https://www.uma.es/departments/teachers/MXhRMU03dmJIVlZvTlZVWkUxbXBuUT09/) and the [research portal](https://portaldelainvestigacion.uma.es/investigadores/2208701/detalle) of the University of Málaga.

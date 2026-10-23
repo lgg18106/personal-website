@@ -1,0 +1,15 @@
+---
+title: "Divulgación"
+description: "Textos en español sobre política fiscal, deuda pública y métodos."
+listing:
+  contents:
+    - "../blog/posts/*.qmd"
+    - "!../blog/posts/_*.qmd"
+  include:
+    lang: es
+  type: default
+  fields: [image, date, title, description, reading-time]
+  sort: "date desc"
+  feed: false
+toc: false
+---

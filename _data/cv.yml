@@ -1,0 +1,379 @@
+# Single source for the Research page, the CV pages, the CV PDFs, the home-page
+# research list and the News list (English and Spanish).
+# Fields ending in _es are the Spanish text; where there is none, the English field is used.
+# After editing:  Rscript _scripts/build_cv.R   (then quarto render / push)
+
+updated: "October 2026"
+updated_es: "octubre de 2026"
+
+person:
+  name: "Gonzalo Llamosas García"
+  position: "Assistant Professor in Public Finance"
+  position_es: "Profesor Ayudante Doctor de Hacienda Pública"
+  department: "Department of Applied Economics (Public Finance)"
+  department_es: "Departamento de Economía Aplicada (Hacienda Pública, Política Económica y Economía Política)"
+  university: "University of Málaga"
+  university_es: "Universidad de Málaga"
+  address: "Office 2402, Faculty of Economics and Business, Campus de El Ejido, 29071 Málaga, Spain"
+  address_es: "Despacho 2402, Facultad de Ciencias Económicas y Empresariales, Campus de El Ejido, 29071 Málaga"
+  email: "gonzalo.llamosas@uma.es"
+  web: "gonzalollamosas.com"
+  orcid: "0000-0002-4407-2845"
+  accreditation: "Accredited by ANECA as Associate Professor"
+  accreditation_es: "Acreditado por ANECA como Profesor Contratado Doctor"
+
+# Coauthor names link to these pages on the website (checked 22-oct-2026): their own site as given in their
+# ORCID record, else their university profile, else their ORCID record. Names not listed are not linked.
+coauthor_links:
+  "Cristina Mazas Pérez-Oleaga": "https://orcid.org/0000-0001-7009-1567"
+  "José M. Domínguez-Martínez": "https://portaldelainvestigacion.uma.es/investigadores/1241699/detalle"
+  "Judith Clifton": "https://www.judithclifton.com/"
+  "Daniel Díaz-Fuentes": "https://www.danieldiazfuentes.com/"
+
+# Spanish titles as in the teaching certificates (UMA, Cantabria) and the CVA of December 2025
+positions:
+  - years: "2025–"
+    title: "Assistant Professor in Public Finance"
+    title_es: "Profesor Ayudante Doctor de Hacienda Pública"
+    place: "University of Málaga, Department of Applied Economics"
+    place_es: "Universidad de Málaga, Departamento de Economía Aplicada"
+  - years: "2024–2025"
+    title: "Assistant Professor"
+    title_es: "Profesor Ayudante Doctor"
+    place: "University of Cantabria"
+    place_es: "Universidad de Cantabria"
+  - years: "2022–2024"
+    title: "Adjunct Professor"
+    title_es: "Profesor sustituto interino"
+    place: "University of Málaga"
+    place_es: "Universidad de Málaga"
+  - years: "2023–2024"
+    title: "Lecturer"
+    title_es: "Profesor"
+    place: "Universidad Europea del Atlántico"
+  - years: "2020–2022"
+    title: "Lecturer"
+    title_es: "Profesor"
+    place: "Universidad Loyola Andalucía"
+  - years: "2015–2019"
+    title: "Predoctoral Researcher in Applied Economics"
+    title_es: "Investigador predoctoral en Economía Aplicada"
+    place: "University of Cantabria"
+    place_es: "Universidad de Cantabria"
+
+other_experience:
+  - years: "2021–2023"
+    title: "Statistician"
+    title_es: "Técnico de Estadísticas Económicas"
+    place: "Government of Cantabria"
+    place_es: "Gobierno de Cantabria"
+    note: "Statistical analysis of administrative data, forecasting models and policy reports on health, education and public finance."
+    note_es: "Análisis estadístico de datos administrativos, modelos de predicción e informes para las políticas de sanidad, educación y finanzas públicas."
+
+education:
+  - years: "2015–2019"
+    title: "PhD in Economics"
+    title_es: "Doctor en Economía"
+    place: "University of Cantabria (inter-university programme with the universities of Oviedo and the Basque Country)"
+    place_es: "Universidad de Cantabria (programa de doctorado interuniversitario «Economía: Instrumentos del Análisis Económico», con las universidades de Oviedo y del País Vasco)"
+    note: "Thesis: Essays on Citizens’ Economic Behavior in Services of Public Interest: A European Union Perspective."
+    note_es: "Tesis: Essays on Citizens’ Economic Behavior in Services of Public Interest: A European Union Perspective."
+  - years: "2012–2013"
+    title: "MSc in Economic Research"
+    title_es: "Máster en Investigación en Economía"
+    place: "University of Valladolid"
+    place_es: "Universidad de Valladolid"
+  - years: "2008–2012"
+    title: "BA in Economics"
+    title_es: "Licenciatura en Economía"
+    place: "University of Cantabria"
+    place_es: "Universidad de Cantabria"
+
+# Papers not yet published. status: review (submitted to a journal) or working (working paper).
+# Optional links, shown when present: pdf, slides, code (URLs).
+papers:
+  - id: consolidation
+    topic: "Fiscal policy"
+    topic_es: "Política fiscal"
+    tone: magenta
+    status: review
+    feature: >-
+      Debt-to-GDP ratio after entering a fiscal consolidation, EU-27, 1996–2024. The first
+      panel uses the baseline controls; the second compares countries that start from a
+      similar primary balance. Points are estimates and bands are 95% confidence intervals.
+    feature_es: >-
+      Ratio deuda/PIB tras entrar en consolidación fiscal, UE-27, 1996–2024. El primer
+      gráfico usa los controles habituales; el segundo compara con países que parten de un
+      saldo primario parecido. Los puntos son estimaciones y las bandas, intervalos de
+      confianza del 95 %.
+    title: "Decomposing the Debt Response to Fiscal Consolidation: Evidence from EU-27 Local Projections, 1996–2024"
+    coauthors: ["Cristina Mazas Pérez-Oleaga", "José M. Domínguez-Martínez"]
+    figure: "images/research/consolidation-irf.png"
+    figure_es: "images/research/consolidation-irf-es.png"
+    figure_narrow: "images/research/consolidation-irf-narrow.png"
+    figure_narrow_es: "images/research/consolidation-irf-es-narrow.png"
+    figure_alt: "Response of the debt-to-GDP ratio to entering a fiscal consolidation, horizons 0 to 5, with and without conditioning on the initial primary balance, with 95% confidence bands."
+    figure_alt_es: "Respuesta del ratio deuda/PIB a la entrada en consolidación fiscal, horizontes 0 a 5, con y sin controlar por el saldo primario inicial, con intervalos de confianza del 95 %."
+    short: >-
+      No evidence that entering a consolidation lowers the debt ratio within five
+      years: the primary-balance effort is offset by the snowball term and by
+      stock-flow adjustments.
+    short_es: >-
+      No encontramos que entrar en consolidación reduzca el ratio de deuda en
+      cinco años: la mejora del saldo primario queda compensada por el efecto bola
+      de nieve y los ajustes stock-flujo.
+    summary: >-
+      Using local projections difference-in-differences on 125 consolidation
+      entries in the EU-27, we find no evidence that entering a fiscal consolidation
+      lowers the debt-to-GDP ratio within five years. Conditional on the fiscal
+      position at entry, the response is centred on zero; without that conditioning
+      the ratio rises in the short run, consistent with selection. An exact
+      decomposition shows the improvement in the primary balance offset by the
+      snowball term and by stock-flow adjustments, while output contracts, public
+      investment falls and no decline in borrowing costs is detected.
+    post: "blog/posts/consolidacion-fiscal-deuda.html"
+    post_label: "Summary in Spanish"
+    post_label_es: "Resumen divulgativo"
+  - id: feedback
+    topic: "Econometrics"
+    topic_es: "Econometría"
+    tone: cyan
+    status: working
+    title: "Event-study estimators when adoption responds to past outcomes"
+    coauthors: []
+    short: >-
+      When adoption responds to past shocks, the bias of standard event-study
+      estimators shifts with the persistence of the outcome by the same amount for
+      all of them, so choosing an estimator amounts to choosing the dynamics.
+    short_es: >-
+      Cuando la adopción responde a perturbaciones pasadas, el sesgo de los
+      estimadores habituales de estudios de eventos cambia con la persistencia del
+      resultado en la misma cuantía para todos, de modo que elegir estimador
+      equivale a elegir la dinámica.
+    summary: >-
+      When units adopt a policy in response to past shocks to the outcome, adopters
+      are selected on bad shocks and the units still untreated on good ones. Under a
+      factorised adoption hazard, the paper derives a closed form for the bias of
+      every calendar-weight event-study estimator, shows that none of them is
+      unbiased under two different persistences of the untreated outcome, and builds
+      joint confidence sets for the dynamics and the effect. Applications to banking
+      deregulation, fiscal rules and democratisation.
+  - id: biomarkers
+    topic: "Household finance"
+    topic_es: "Finanzas de los hogares"
+    tone: navy
+    status: working
+    title: "Does Biological Ageing Foreshadow Financial Fragility? Evidence from Dried-Blood-Spot Biomarkers and Household Wealth in Europe"
+    coauthors: []
+    short: >-
+      Blood biomarkers measured in 2015 predict lower household wealth six years
+      later among Europeans aged 50 and over, partly through persistent differences
+      in economic position.
+    short_es: >-
+      Los biomarcadores en sangre medidos en 2015 anticipan una riqueza neta menor
+      seis años después entre los europeos de 50 años o más, en parte por
+      diferencias económicas persistentes.
+    summary: >-
+      Links blood biomarkers collected in SHARE in 2015 to household net wealth six
+      years later, for about 7,400 respondents aged 50 and over in 12 European
+      countries. Conditional on baseline wealth, income and health, a
+      one-standard-deviation higher index of biological risk predicts net wealth
+      about 7% lower; part of that gap reflects persistent economic position rather
+      than later decline.
+
+# access: open (open access, CC BY) or free (free to read at the journal), as reported by OpenAlex
+# on 22 October 2026; no field = not checked or behind a paywall
+publications:
+  - title: "What Works in Financial Education? Experimental Evidence on Program Impact"
+    authors: "Llamosas-García, G. and Mazas Pérez-Oleaga, C."
+    coauthors: ["Cristina Mazas Pérez-Oleaga"]
+    journal: "Journal of Behavioral and Experimental Economics"
+    details: "vol. 119, 102401"
+    year: 2025
+    url: "https://doi.org/10.1016/j.socec.2025.102401"
+    link: "DOI"
+    access: open
+  - title: "Predicting the Tide of the Pandemic: An In-Depth Analysis of Forecasting Models for COVID-19 in Cantabria"
+    authors: "Lezcano Lastra, A., Llamosas-García, G. and López-Cagigas, A."
+    coauthors: ["A. Lezcano Lastra", "A. López-Cagigas"]
+    journal: "BEIO. Boletín de Estadística e Investigación Operativa"
+    details: "vol. 39, no. 2, pp. 36–49"
+    details_es: "vol. 39, n.º 2, pp. 36–49"
+    year: 2023
+    url: "https://portaldelainvestigacion.uma.es/documentos/6501a724df0d06753d5bfb47"
+    link: "Link"
+    link_es: "Enlace"
+  - title: "A Behavioral Perspective on Saving Decisions. Empirical Evidence for Policymakers in the European Union"
+    authors: "Clifton, J., Díaz-Fuentes, D. and Llamosas-García, G."
+    coauthors: ["Judith Clifton", "Daniel Díaz-Fuentes"]
+    journal: "Global Policy"
+    details: "vol. 11, suppl. 1, pp. 62–72"
+    details_es: "vol. 11, supl. 1, pp. 62–72"
+    year: 2020
+    url: "https://doi.org/10.1111/1758-5899.12751"
+    link: "DOI"
+    access: open
+  - title: "ICT-Enabled Co-Production of Public Services: Barriers and Enablers. A Systematic Review"
+    authors: "Clifton, J., Díaz-Fuentes, D. and Llamosas-García, G."
+    coauthors: ["Judith Clifton", "Daniel Díaz-Fuentes"]
+    journal: "Information Polity"
+    details: "vol. 25, no. 1, pp. 25–48"
+    details_es: "vol. 25, n.º 1, pp. 25–48"
+    year: 2020
+    url: "https://doi.org/10.3233/IP-190122"
+    link: "DOI"
+    access: free
+
+work_in_progress:
+  - "Sustainability for Whom? The Distributional Costs of Statutory Retirement-Age Reforms in Older Europe"
+  - "Corporate Tax Structures in the Age of AI: Evidence from World Bank Data"
+  - "Popular Discontent and Recall Elections"
+
+projects:
+  - years: "2020–2021"
+    title: "EU Finance and Institutions: New Social and Environmental Challenges"
+    funder: "Jean Monnet Module, European Commission"
+    funder_es: "Módulo Jean Monnet, Comisión Europea"
+    role: "Researcher"
+    role_es: "Investigador"
+  - years: "2017–2020"
+    title: "Europe, Finance and Institutions"
+    funder: "Jean Monnet Module, European Commission"
+    funder_es: "Módulo Jean Monnet, Comisión Europea"
+    role: "Researcher"
+    role_es: "Investigador"
+  - years: "2016–2019"
+    title: "CITADEL: Empowering Citizens to Transform European Public Administrations"
+    funder: "Horizon 2020, European Union"
+    funder_es: "Horizonte 2020, Unión Europea"
+    role: "Predoctoral researcher"
+    role_es: "Investigador predoctoral"
+  - years: "2015–2017"
+    title: "Global Banks Programme"
+    funder: "Santander Financial Institute (SANFI)"
+    role: "Research assistant"
+    role_es: "Ayudante de investigación"
+
+# Research stays: certificates for Loyola Behavioral Lab (letter of 17 Jan 2024), UNIB (16 Jan 2024)
+# and Bangor (2 Nov 2017); Valladolid as in the CV of December 2023
+stays:
+  - years: "2021–2022"
+    text: "Loyola Behavioral Lab, Universidad Loyola Andalucía (October 2021 to April 2022), with Pablo Brañas-Garza"
+    text_es: "Loyola Behavioral Lab, Universidad Loyola Andalucía (de octubre de 2021 a abril de 2022), con Pablo Brañas-Garza"
+  - years: "2019–2020"
+    text: "Postdoctoral stay as visiting professor, Universidad Internacional Iberoamericana (UNIB), Puerto Rico (October 2019 to October 2020)"
+    text_es: "Estancia posdoctoral como profesor visitante, Universidad Internacional Iberoamericana (UNIB), Puerto Rico (de octubre de 2019 a octubre de 2020)"
+  - years: "2017"
+    text: "Bangor Business School, Bangor University, United Kingdom (April to May 2017), with Phil Molyneux"
+    text_es: "Bangor Business School, Universidad de Bangor, Reino Unido (abril y mayo de 2017), con Phil Molyneux"
+  - years: "2016"
+    text: "Department of Business Administration, University of Valladolid (April to May 2016), with Eleuterio Vallelado"
+    text_es: "Departamento de Administración de Empresas, Universidad de Valladolid (abril y mayo de 2016), con Eleuterio Vallelado"
+
+# 2016 award as in the organisers' certificate of 12 April 2016 and in the Anexo III CV of 2024;
+# 2012 award as in the Anexo III CV
+awards:
+  - years: "2016"
+    text: "Best Paper Award, I Workshop on Government, Incentives and Risk in Banking (Financial Economics Section of ACEDE and Santander Financial Institute), Santander, for “Loss Aversion in Saving Behavior in Europe”"
+    text_es: "Premio a la mejor comunicación, I Workshop en Gobierno, Incentivos y Riesgo en la Banca (Sección de Economía Financiera de ACEDE y Santander Financial Institute), Santander, por «Loss Aversion in Saving Behavior in Europe»"
+  - years: "2012"
+    text: "Student Research Award (second prize), College of Economists of Cantabria and University of Cantabria"
+    text_es: "II Premio a la Comunicación por «Desarrollo Económico en Argentina», XIV Premio del Ilustre Colegio de Economistas de Cantabria"
+
+service:
+  - years: "2016–2018"
+    text: "Assistant Editor, Journal of Economic Policy Reform"
+    text_es: "Editor asistente, Journal of Economic Policy Reform"
+  - years: "Referee"
+    years_es: "Revisor"
+    text: "Journal of Behavioral and Experimental Economics; Public Finance Review; Revista Galega de Economía"
+
+# talk: title of the presentation, from the CVA of December 2025 (in its original language)
+conferences:
+  - years: "2023"
+    talk: "Evaluando la trayectoria experimental de la educación financiera. Una revisión sistemática"
+    text: "VI Conference on Financial Education (Edufinet): Financial Education in a Context of Transition towards Sustainability, Málaga"
+    text_es: "VI Congreso de Educación Financiera de Edufinet: «La educación financiera en un contexto de transición hacia la sostenibilidad», Málaga"
+  - years: "2021"
+    talk: "Una evaluación de modelos de pronóstico para casos COVID-19 en Cantabria"
+    text: "Statistical Conference of the Spanish Autonomous Communities, Canary Islands"
+    text_es: "XXI Jornadas de Estadística de las Comunidades Autónomas (JECAS 2021), Canarias"
+  - years: "2019"
+    talk: "Behavioral Perspective on Saving Behavior"
+    text: "Banca March Workshop on Contemporary Issues in Banking, Madrid"
+  - years: "2019"
+    talk: "Explaining citizens’ coproduction through ICTs in health: a multi-level model analysis"
+    text: "IIAS Study Group on Co-production of Public Services, KU Leuven"
+  - years: "2017–2018"
+    text: "CITADEL General Assembly conferences: The Hague, Riga, Bari, Brussels and Antwerp"
+    text_es: "Asambleas generales del proyecto CITADEL: La Haya, Riga, Bari, Bruselas y Amberes"
+  - years: "2017"
+    talk: "Co-creation in financial services: a semantic analysis"
+    text: "Wolpertinger Conference of the European Association of University Teachers of Banking and Finance, Santander"
+    text_es: "Wolpertinger Conference de la European Association of University Teachers of Banking and Finance, Santander"
+  - years: "2016"
+    talk: "Loss Aversion in Saving Behavior: Evidence from the ECB’s European Household Finance and Consumption Survey"
+    text: "XVIII World Economy Meeting, “Europe-America: Strategic Alliances in Global Economy”, University of Alcalá"
+    text_es: "XVIII Reunión de Economía Mundial, Universidad de Alcalá"
+  - years: "2016"
+    talk: "Loss Aversion in Saving Behavior in Europe: Evidence from the Household Finance and Consumption Survey"
+    text: "I Workshop on Government, Incentives and Risk in Banking, Santander"
+    text_es: "I Workshop en Gobierno, Incentivos y Riesgo en la Banca, Santander"
+  - years: "2015"
+    talk: "¿Tomas riesgos en tus inversiones? Tus características socioeconómicas pueden hacerte perder dinero"
+    text: "II Young Researchers’ Conference of Cantabria, Santander"
+    text_es: "II Jornadas de Jóvenes Investigadores de Cantabria, Santander"
+
+# Spanish course names as in the teaching certificates (UMA, Cantabria, Loyola)
+teaching:
+  - years: "2025–"
+    place: "University of Málaga"
+    place_es: "Universidad de Málaga"
+    text: "Public Finance; Spanish Public Finance; Fiscal Systems; bachelor’s thesis supervision"
+    text_es: "Hacienda Pública; Hacienda Pública Española; Sistemas Fiscales; dirección de Trabajos Fin de Grado"
+  - years: "2022–2024"
+    place: "University of Málaga"
+    place_es: "Universidad de Málaga"
+    text: "Fiscal Systems; Microeconomics; Contemporary East Asian Economy"
+    text_es: "Sistemas Fiscales; Microeconomía; Economía Contemporánea de Asia Oriental"
+  - years: "2024–2025"
+    place: "University of Cantabria"
+    place_es: "Universidad de Cantabria"
+    text: "Production and Industrial Organisation; Economics and Business Management; Business (engineering degrees); Business Management and Administration (Master’s in Industrial Engineering)"
+    text_es: "Producción y Organización Industrial; Economía y Administración de Empresas; Empresas (grados de ingeniería); Dirección y Gestión de Empresas (Máster Universitario en Ingeniería Industrial)"
+  - years: "2023–2024"
+    place: "Universidad Europea del Atlántico"
+    text: "Business Organisation; Market Research; bachelor’s thesis supervision"
+    text_es: "Business Organisation y Market Research (docencia en inglés); dirección de Trabajos Fin de Grado"
+  - years: "2022–2023"
+    place: "University of León"
+    place_es: "Universidad de León"
+    text: "Financial Markets, Instruments and Institutions (BA in Business Administration and Management)"
+    text_es: "Mercados, Medios e Instituciones Financieras (Grado en Administración y Dirección de Empresas)"
+  - years: "2020–2022"
+    place: "Universidad Loyola Andalucía"
+    text: "International Economics; Economic Policy; Applications II: Case Studies"
+    text_es: "Economía Internacional; Política Económica; Aplicaciones II: Estudio de casos"
+
+skills:
+  - label: "Languages"
+    label_es: "Idiomas"
+    text: "Spanish (native), English (C1), French (basic)"
+    text_es: "Español (nativo), inglés (C1), francés (básico)"
+  - label: "Software"
+    label_es: "Informática"
+    text: "R, Python, Stata, SQL, LaTeX"
+
+news:
+  - year: "2026"
+    en: "*Decomposing the Debt Response to Fiscal Consolidation*, with Cristina Mazas Pérez-Oleaga and José M. Domínguez-Martínez, is under review."
+    es: "*Decomposing the Debt Response to Fiscal Consolidation*, con Cristina Mazas Pérez-Oleaga y José M. Domínguez-Martínez, en evaluación."
+  - year: "2026"
+    en: "*Event-study estimators when adoption responds to past outcomes*, new working paper."
+    es: "*Event-study estimators when adoption responds to past outcomes*, nuevo documento de trabajo."
+  - year: "2026"
+    en: "*Does Biological Ageing Foreshadow Financial Fragility?*, new working paper."
+    es: "*Does Biological Ageing Foreshadow Financial Fragility?*, nuevo documento de trabajo."
+  - year: "2025"
+    en: "*What Works in Financial Education?*, with Cristina Mazas Pérez-Oleaga, published in the *Journal of Behavioral and Experimental Economics*."
+    es: "*What Works in Financial Education?*, con Cristina Mazas Pérez-Oleaga, publicado en el *Journal of Behavioral and Experimental Economics*."

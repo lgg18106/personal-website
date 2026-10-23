@@ -1,0 +1,50 @@
+---
+title: "Sobre mí"
+description: "Puesto, investigación, trayectoria, formación y una biografía breve."
+keywords: "Gonzalo Llamosas García, Gonzalo Llamosas-García, Hacienda Pública, política fiscal, deuda pública, Universidad de Málaga, Economía Aplicada, ANECA"
+toc: true
+toc-location: right
+---
+
+## Puesto
+
+Soy **profesor de Hacienda Pública** en el Departamento de Economía Aplicada de la Universidad de Málaga y estoy acreditado por ANECA como **profesor contratado doctor**.
+
+## Investigación
+
+- **Política fiscal y deuda pública.** Cómo cambian las consolidaciones fiscales la dinámica de la deuda en la Unión Europea y qué se consigue con un esfuerzo en el saldo primario cuando se tienen en cuenta la producción, el coste de los intereses y los ajustes stock-flujo.
+- **Decisiones financieras de los hogares.** El ahorro, la educación financiera y, más recientemente, la relación entre la salud en la vejez y la riqueza de los hogares.
+- **Econometría de la evaluación de políticas.** Qué identifican los estudios de eventos y las proyecciones locales cuando los gobiernos adoptan una política en respuesta a los resultados que quieren cambiar.
+
+Una línea más reciente estudia cómo puede cambiar la inteligencia artificial las bases imponibles. Trabajo en R y organizo los análisis para que se puedan reproducir. Los trabajos están en [Investigación](index.qmd#investigacion) y el detalle, en el [currículum](cv.qmd).
+
+## Trayectoria
+
+- **2025–** Profesor de Hacienda Pública, Universidad de Málaga.
+- **2024–2025** Profesor, Universidad de Cantabria.
+- **2022–2024** Profesor sustituto, Universidad de Málaga, y profesor en la Universidad Europea del Atlántico (2023–2024).
+- **2021–2023** Técnico de Estadísticas Económicas, Gobierno de Cantabria.
+- **2020–2022** Profesor, Universidad Loyola Andalucía.
+- **2015–2019** Investigador predoctoral en Economía Aplicada, Universidad de Cantabria, con participación en el proyecto CITADEL de Horizonte 2020.
+
+## Formación
+
+- **Doctor en Economía**, Universidad de Cantabria, programa interuniversitario con las universidades de Oviedo y del País Vasco (2015–2019). Tesis sobre el comportamiento económico de los ciudadanos en los servicios de interés general, desde una perspectiva europea.
+- **Máster en Investigación en Economía**, Universidad de Valladolid (2012–2013).
+- **Licenciatura en Economía**, Universidad de Cantabria (2008–2012).
+
+## Biografía breve {#bio}
+
+Para programas de congresos y prensa. También en [inglés](../about.qmd#bio).
+
+**Unas 50 palabras**
+
+::: {.bio-text}
+Gonzalo Llamosas García es profesor de Hacienda Pública en la Universidad de Málaga. Investiga las consolidaciones fiscales y la deuda pública en la Unión Europea, las decisiones financieras de los hogares y la econometría de la evaluación de políticas. Ha publicado en el *Journal of Behavioral and Experimental Economics*, *Global Policy* e *Information Polity*.
+:::
+
+**Unas 100 palabras**
+
+::: {.bio-text}
+Gonzalo Llamosas García es profesor de Hacienda Pública en la Universidad de Málaga y está acreditado por ANECA como profesor contratado doctor. Es doctor en Economía por la Universidad de Cantabria. Investiga las consolidaciones fiscales y la deuda pública en la Unión Europea, las decisiones financieras de los hogares y la econometría de la evaluación de políticas, en especial los estudios de eventos. Ha publicado en el *Journal of Behavioral and Experimental Economics*, *Global Policy* e *Information Polity*. Ha sido profesor en la Universidad de Cantabria y en la Universidad Loyola Andalucía, y técnico de estadística del Gobierno de Cantabria.
+:::

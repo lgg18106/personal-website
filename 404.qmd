@@ -1,0 +1,11 @@
+---
+title: "Page not found"
+description: "This page does not exist or has moved. Esta página no existe o ha cambiado de sitio."
+toc: false
+---
+
+Try the [home page](/index.qmd), [Research](/research.qmd), [Teaching](/teaching.qmd), [Writing](/blog/index.qmd) or the [CV](/cv/index.qmd).
+
+Prueba con la [página de inicio en español](/es/index.qmd), [Docencia](/es/docencia.qmd), [Divulgación](/es/divulgacion.qmd) o el [currículum](/es/cv.qmd).
+
+If a link from another site brought you here, I would be grateful for a short note at [gonzalo.llamosas@uma.es](mailto:gonzalo.llamosas@uma.es).

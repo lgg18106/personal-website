@@ -1,0 +1,52 @@
+---
+title: "About"
+description: "Position, research, career, education and a short bio."
+keywords: "Gonzalo Llamosas, public finance, fiscal policy, University of Málaga, Department of Applied Economics, public debt, household finance, econometrics, ANECA"
+toc: true
+toc-location: right
+---
+
+## Position
+
+I am **Assistant Professor in Public Finance** in the Department of Applied Economics at the University of Málaga, and I hold the ANECA accreditation as **Associate Professor**.
+
+## Research
+
+- **Fiscal policy and public debt.** How fiscal consolidations change debt dynamics in the European Union, and what a primary-balance effort buys once output, interest costs and stock-flow adjustments are taken into account.
+- **Household financial decisions.** Saving, financial education and, more recently, how health in later life relates to household wealth.
+- **Econometrics of policy evaluation.** What event-study and local-projection estimators identify when governments adopt a policy in response to the outcomes it is meant to change.
+
+A newer line looks at how artificial intelligence may change the tax base. I work in R and build my analyses as reproducible pipelines. Papers, projects and awards are on the [Research](research.qmd) page.
+
+## Career
+
+- **2025–** Assistant Professor in Public Finance, University of Málaga.
+- **2024–2025** Assistant Professor, University of Cantabria.
+- **2022–2024** Adjunct Professor, University of Málaga, and lecturer at Universidad Europea del Atlántico (2023–2024).
+- **2021–2023** Statistician, Government of Cantabria.
+- **2020–2022** Lecturer, Universidad Loyola Andalucía.
+- **2015–2019** Predoctoral researcher in Applied Economics, University of Cantabria, including the Horizon 2020 project CITADEL.
+
+## Education
+
+- **PhD in Economics**, University of Cantabria, inter-university doctoral programme with the universities of Oviedo and the Basque Country (2015–2019). Thesis on the economic behaviour of citizens in public-interest services, from an EU perspective.
+- **MSc in Economic Research**, University of Valladolid (2012–2013).
+- **BA in Economics**, University of Cantabria (2008–2012).
+
+## Short bio {#bio}
+
+For conference programmes and the press. Also in [Spanish](es/sobre-mi.qmd#bio).
+
+**About 50 words**
+
+::: {.bio-text}
+Gonzalo Llamosas García is Assistant Professor in Public Finance at the University of Málaga. He studies fiscal consolidations and public debt in the European Union, household financial decisions and the econometrics of policy evaluation. His work has appeared in the *Journal of Behavioral and Experimental Economics*, *Global Policy* and *Information Polity*.
+:::
+
+**About 100 words**
+
+::: {.bio-text}
+Gonzalo Llamosas García is Assistant Professor in Public Finance at the University of Málaga and holds the ANECA accreditation as Associate Professor. He received his PhD in Economics from the University of Cantabria. His research covers fiscal consolidations and public debt in the European Union, household financial decisions and the econometrics of policy evaluation, with a focus on event studies. His work has appeared in the *Journal of Behavioral and Experimental Economics*, *Global Policy* and *Information Polity*. He has taught at the University of Cantabria and Universidad Loyola Andalucía and worked as a statistician for the Government of Cantabria.
+:::
+
+[Versión en español](es/sobre-mi.qmd)
