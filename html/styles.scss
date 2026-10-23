@@ -5,10 +5,10 @@
 // text #243649, slate #64748b, page #f4f6f9, rules #e2e8f0.
 // The UMA typefaces (Malacitana, Malacitana Sans) cannot be served as webfonts under
 // their licence. Headings and the name in the header are set in Newsreader, a book and
-// newspaper face, and text in PT Sans (both SIL Open Font License). The CV PDFs keep Zilla
-// Slab for their headings (_cv/fonts).
-
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+// newspaper face, and text in PT Sans (both SIL Open Font License), served from the site
+// itself (see the @font-face rules below); the subsets of PT Sans are named "Site Sans"
+// because its licence reserves the name. The CV PDFs keep Zilla Slab for their headings
+// (_cv/fonts).
 
 $ink:        #243649;
 $ink-2:      #415669;
@@ -22,7 +22,7 @@ $magenta:    #cc0066;
 $navy-soft:  #e8eef5;
 
 $font-family-wordmark: "Newsreader", Georgia, "Times New Roman", serif;
-$font-family-sans-serif: "PT Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Site Sans", "PT Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;
 $headings-font-family: $font-family-wordmark;
 $headings-font-weight: 600;
@@ -45,6 +45,30 @@ $toc-color: $navy;
 
 
 /*-- scss:rules --*/
+
+// Fonts served from the site (fonts/, made by _scripts/make_webfonts.py) instead of Google Fonts, so
+// pages make no requests to Google. Same faces and character ranges as Google's: a page downloads a
+// latin-ext file only when it uses one of those characters.
+$latin: unquote("U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD");
+$latin-ext: unquote("U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF");
+@mixin face($family, $style, $weight, $file) {
+  @each $part, $range in ("latin-ext": $latin-ext, "latin": $latin) {
+    @font-face {
+      font-family: $family;
+      font-style: $style;
+      font-weight: $weight;
+      font-display: swap;
+      src: url("/fonts/#{$file}-#{$part}.woff") format("woff");
+      unicode-range: $range;
+    }
+  }
+}
+@include face("Newsreader", italic, 400, "newsreader-italic");
+@include face("Newsreader", normal, 500, "newsreader");
+@include face("Newsreader", normal, 600, "newsreader");
+@include face("Site Sans", italic, 400, "site-sans-italic");
+@include face("Site Sans", normal, 400, "site-sans-regular");
+@include face("Site Sans", normal, 700, "site-sans-bold");
 
 body {
   -webkit-font-smoothing: antialiased;

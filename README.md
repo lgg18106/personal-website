@@ -20,3 +20,4 @@ A push to `main` publishes the site through GitHub Actions (`.github/workflows/p
 - `es/`: the Spanish pages.
 - `blog/posts/`: notes.
 - `html/`: header, footer and styles.
+- `fonts/`: the web fonts, served from the site; `python3 _scripts/make_webfonts.py` makes them from the TTF files in `_cv/fonts`.

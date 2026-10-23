@@ -5,6 +5,7 @@ project:
     - "CNAME"
     - "robots.txt"
     - "images/**"
+    - "fonts/**"
     - "cv/*.pdf"
   post-render:
     - python3 _scripts/post-render.py
@@ -55,6 +56,8 @@ format:
           <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
           <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
           <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+          <link rel="preload" href="/fonts/site-sans-regular-latin.woff" as="font" type="font/woff" crossorigin>
+          <link rel="preload" href="/fonts/newsreader-latin.woff" as="font" type="font/woff" crossorigin>
           <meta name="author" content="Gonzalo Llamosas García">
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
           <meta name="googlebot" content="index, follow">
