@@ -19,7 +19,6 @@ Office hours are listed on the [Teaching](teaching.qmd) page.
 
 - [LinkedIn](https://www.linkedin.com/in/gonzalo-llamosas-garcia/){target="_blank"}
 - [X (Twitter)](https://x.com/gonzalollamosas){target="_blank"}
-- [GitHub](https://github.com/lgg18106){target="_blank"}
 - [Google Scholar](https://scholar.google.com/citations?user=O8gTD4AAAAAJ&hl=en){target="_blank"}
 - [ORCID](https://orcid.org/0000-0002-4407-2845){target="_blank"}
 - [ResearchGate](https://www.researchgate.net/profile/Gonzalo-Llamosas-Garcia-2){target="_blank"}
