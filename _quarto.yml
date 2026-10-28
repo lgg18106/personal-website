@@ -58,6 +58,8 @@ format:
           <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
           <link rel="preload" href="/fonts/site-sans-regular-latin.woff" as="font" type="font/woff" crossorigin>
           <link rel="preload" href="/fonts/newsreader-latin.woff" as="font" type="font/woff" crossorigin>
+          <!-- the notes feed, for feed readers; there is no visible link because browsers show it as raw XML -->
+          <link rel="alternate" type="application/rss+xml" title="Gonzalo Llamosas García" href="https://gonzalollamosas.com/blog/index.xml">
           <meta name="author" content="Gonzalo Llamosas García">
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
           <meta name="googlebot" content="index, follow">
