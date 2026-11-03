@@ -1,0 +1,67 @@
+---
+title: "What drives public debt?"
+description: "Public debt in the 27 EU countries since 1995, and what moved it each year."
+keywords: "public debt, debt dynamics, snowball effect, stock-flow adjustments, primary balance, interest rate, growth, EU, AMECO"
+---
+
+Choose a country to see how its public debt has moved since 1995 and why. The change in debt each year splits into the primary balance, the snowball effect of interest and growth, and stock-flow adjustments. Hover over a chart, or tap it, to see the figures for a year.
+
+```{=html}
+<div id="debt-dashboard" class="dash wide" data-src="/data/debt-dashboard.json">
+  <div class="dash-filters">
+    <label class="dash-field">Country <select id="dd-country"></select></label>
+    <label class="dash-field">Compare with <select id="dd-compare"></select></label>
+    <div class="dash-field" role="group" aria-labelledby="dd-period-label">
+      <span id="dd-period-label">Years</span>
+      <div id="dd-period" class="dash-pills"></div>
+    </div>
+  </div>
+
+  <p id="dd-heading" class="dash-heading" aria-live="polite"></p>
+  <div id="dd-kpis" class="dash-kpis"></div>
+
+  <section class="dash-card">
+    <h3>Public debt</h3>
+    <p class="dash-sub">Per cent of GDP.</p>
+    <div id="dd-legend-debt" class="dash-legend"></div>
+    <div id="dd-chart-debt" class="dash-chart" role="img"></div>
+  </section>
+
+  <div class="dash-row">
+    <section class="dash-card">
+      <h3>What moved the debt each year</h3>
+      <p class="dash-sub">Points of GDP. Parts above zero raised the debt ratio and parts below zero lowered it; the dots are the total change. Click the legend to hide a part.</p>
+      <div id="dd-legend-parts" class="dash-legend"></div>
+      <div id="dd-chart-parts" class="dash-chart dash-chart-tall" role="img"></div>
+    </section>
+    <section class="dash-card">
+      <h3>Interest rate minus growth</h3>
+      <p class="dash-sub">Points. Above zero, the snowball effect pushes the debt ratio up.</p>
+      <div id="dd-legend-rg" class="dash-legend"></div>
+      <div id="dd-chart-rg" class="dash-chart dash-chart-tall" role="img"></div>
+    </section>
+  </div>
+
+  <details class="dash-table">
+    <summary>Show the figures as a table</summary>
+    <div id="dd-table" class="dash-table-wrap"></div>
+  </details>
+  <p class="dash-actions">
+    <button type="button" id="dd-csv-one" class="dash-btn">Download this country (CSV)</button>
+    <button type="button" id="dd-csv-all" class="dash-btn dash-btn-quiet">Download all 27 countries (CSV)</button>
+  </p>
+</div>
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/debt-dashboard.js"></script>
+```
+
+## How to read it
+
+- **The change in debt** each year is the sum of three parts: the primary balance (a primary deficit adds to debt and a surplus subtracts from it), the snowball effect and stock-flow adjustments. The parts add up to the change exactly.
+- **The snowball effect** joins interest payments, which raise the debt ratio, and nominal growth, which lowers it by making the economy larger. The growth part is the previous year's ratio times g/(1 + g), where g is nominal GDP growth. The snowball pushes the ratio up when the interest rate on debt is higher than nominal growth.
+- **Stock-flow adjustments** are changes in debt that do not come from the deficit: purchases and sales of financial assets such as deposits, loans or shares, changes in valuation, and differences between accrual and cash. Here they close the identity, and they match the European Commission's own series to within 0.21 points.
+- **The interest rate** is the implicit one: interest paid over the previous year's debt. Growth is nominal GDP growth in national currency.
+
+**Source:** European Commission, AMECO database, May 2025 release; general government, per cent of GDP; own calculations. Bulgaria starts in 1997 and Denmark in 2000. The figures can be downloaded above. The charts are drawn with Apache ECharts, under the [Apache License 2.0](/js/vendor/echarts-LICENSE.txt).
+
+[Versión en español](es/deuda.qmd)

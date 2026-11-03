@@ -653,10 +653,14 @@ header#title-block-header:not(.quarto-title-block) { display: none !important; }
   .site-name .site-title { font-size: 1.45rem; }
   .site-name .site-role { font-size: 0.9rem; }
   .site-nav { gap: 0.3rem 0.7rem; font-size: 0.95rem; }
-  .site-nav .lang { margin-left: 0; }
+  .site-nav .lang-switch { margin-left: 0; }
 }
 @media (max-width: 380px) {
   .site-nav { gap: 0.3rem 0.55rem; font-size: 0.9rem; }
+}
+// the Spanish menu does not fit on one line on a phone: two even rows rather than one word left on its own
+@media (max-width: 430px) {
+  .site-nav.es-only { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; justify-items: start; column-gap: 1.2rem; }
 }
 
 .nowrap { white-space: nowrap; }
@@ -669,4 +673,227 @@ header#title-block-header:not(.quarto-title-block) { display: none !important; }
 @media (max-width: 767px) {
   .quarto-title-block .quarto-title-banner { background-position: left center; padding: 2.25rem 0 2rem; }
   .hero { background-position: left center; }
+}
+
+
+// ─── public-debt dashboard (debt.qmd, es/deuda.qmd) ───────
+// js/debt-dashboard.js reads the chart colours from these properties. The three parts of the debt
+// change (s1 to s3) pass the palette checks for colour-blind readers on white; s1 is the UMA navy
+// lightened into the band where it stays distinct from magenta.
+
+.dash {
+  --dash-ink: #{$ink};
+  --dash-ink-2: #{$ink-2};
+  --dash-muted: #{$ink-3};
+  --dash-grid: #{$rule};
+  --dash-axis: #c3cdd8;
+  --dash-surface: #{$surface};
+  --dash-country: #{$navy};
+  --dash-compare: #{$ink-3};
+  --dash-s1: #16589e;
+  --dash-s2: #{$magenta};
+  --dash-s3: #{$cyan};
+  margin-top: 1.5rem;      // left and right margins come from .wide
+  margin-bottom: 2.5rem;
+}
+
+.dash-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.9rem 1.5rem;
+  background: $surface;
+  border: 1px solid $rule;
+  border-top: 5px solid $navy;
+  border-radius: 12px;
+  padding: 0.9rem 1.25rem 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.dash-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $ink-2;
+
+  select {
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $ink;
+    background-color: $surface;
+    border: 1px solid #c3cdd8;
+    border-radius: 8px;
+    padding: 0.4rem 0.7rem;
+    min-width: 13rem;
+    max-width: 100%;
+  }
+}
+
+.dash-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  button {
+    font: inherit;
+    font-size: 0.93rem;
+    font-weight: 400;
+    color: $ink;
+    background: $surface;
+    border: 1px solid #c3cdd8;
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+    &:hover { border-color: $navy; }
+    &[aria-pressed="true"] { background: $navy; border-color: $navy; color: #fff; font-weight: 700; }
+  }
+}
+
+.dash-field select:focus-visible,
+.dash-pills button:focus-visible,
+.dash-btn:focus-visible,
+button.dash-key:focus-visible,
+.dash-table summary:focus-visible { outline: 3px solid rgba($cyan, 0.45); outline-offset: 2px; }
+
+.dash-heading {
+  font-family: $font-family-wordmark;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: $navy;
+  margin: 0 0 0.8rem;
+}
+
+.dash-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  @media (max-width: 767px) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+}
+
+.dash-kpi {
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem 0.9rem;
+
+  p { margin: 0; }
+  .dash-kpi-label { font-size: 0.88rem; font-weight: 700; color: $ink-2; }
+  .dash-kpi-value { font-size: 2rem; font-weight: 700; line-height: 1.2; color: $navy; margin-top: 0.15rem; }
+  .dash-kpi-sub { font-size: 0.85rem; color: $ink-3; }
+  .dash-kpi-parts {
+    list-style: none;
+    padding: 0;
+    margin: 0.4rem 0 0.2rem;
+    li { display: flex; align-items: center; gap: 0.45rem; font-size: 0.92rem; line-height: 1.5; color: $ink-2; }
+    b { min-width: 3.1em; text-align: right; color: $navy; font-variant-numeric: tabular-nums; }
+  }
+  .dash-kpi-cmp { font-size: 0.88rem; color: $ink-2; margin-top: 0.5rem; padding-top: 0.45rem; border-top: 1px solid $rule; }
+  @media (max-width: 575px) { padding: 0.75rem 0.85rem; .dash-kpi-value { font-size: 1.6rem; } }
+}
+
+.dash-card {
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem 0.6rem;
+  margin: 0 0 1.25rem;
+  min-width: 0;
+
+  h3 { font-size: 1.25rem; margin: 0 0 0.25rem; }
+  .dash-sub { margin: 0 0 0.55rem; font-size: 0.93rem; line-height: 1.45; color: $ink-2; }
+  @media (max-width: 575px) { padding: 0.95rem 0.8rem 0.4rem; }
+}
+
+.dash-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  @media (max-width: 991px) { grid-template-columns: 1fr; gap: 0; }
+}
+
+.dash-chart { height: 300px; }
+.dash-chart-tall { height: 340px; }
+@media (max-width: 575px) { .dash-chart, .dash-chart-tall { height: 270px; } }
+
+.dash-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: $ink-2;
+  &:empty { display: none; }
+}
+
+.dash-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0.15rem 0;
+}
+button.dash-key { cursor: pointer; border-radius: 4px; }
+button.dash-key[aria-pressed="false"] { color: $ink-3; text-decoration: line-through; .dash-mark { opacity: 0.35; } }
+
+.dash-mark { flex: none; width: 14px; height: 10px; border-radius: 2px; }
+.dash-mark.line { width: 18px; height: 3px; }
+.dash-mark.dot { width: 9px; height: 9px; border-radius: 50%; }
+
+// tooltips (ECharts puts them inside the chart box)
+.dd-tip-year { font-weight: 700; margin-bottom: 0.2rem; }
+.dd-tip-row { display: flex; align-items: center; gap: 0.5rem; line-height: 1.55; }
+.dd-tip-row b { min-width: 3.6em; text-align: right; font-variant-numeric: tabular-nums; }
+.dd-key { flex: none; width: 12px; height: 3px; border-radius: 2px; }
+.dd-key.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dd-tip-sub { padding-left: calc(12px + 3.6em + 1rem); font-size: 0.85em; color: $ink-3; line-height: 1.4; }
+
+.dash-table {
+  margin: 0.25rem 0 1rem;
+  summary { cursor: pointer; font-weight: 700; color: $navy; border-radius: 4px; }
+}
+
+.dash-table-wrap {
+  overflow-x: auto;
+  margin-top: 0.75rem;
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: 12px;
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; font-variant-numeric: tabular-nums; margin: 0; }
+  th, td { padding: 0.4rem 0.75rem; border-bottom: 1px solid $rule; text-align: right; white-space: nowrap; }
+  thead th { background: $page; color: $ink-2; font-weight: 700; }
+  th:first-child { text-align: left; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+}
+
+.dash-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1rem; }
+
+.dash-btn {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: $navy;
+  border: 1px solid $navy;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  &:hover { background: $magenta; border-color: $magenta; }
+}
+.dash-btn-quiet { color: $navy; background: $surface; &:hover { color: #fff; } }
+
+.dash-message { padding: 1rem 1.25rem; background: $surface; border: 1px solid $rule; border-left: 5px solid $magenta; border-radius: 12px; }
+
+@media (max-width: 575px) {
+  .dash-filters { padding: 0.8rem 0.9rem 0.9rem; }
+  .dash-field { flex: 1 1 100%; select { width: 100%; min-width: 0; } }
 }

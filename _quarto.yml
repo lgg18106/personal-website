@@ -6,6 +6,8 @@ project:
     - "robots.txt"
     - "images/**"
     - "fonts/**"
+    - "js/**"
+    - "data/**"
     - "cv/*.pdf"
   post-render:
     - python3 _scripts/post-render.py

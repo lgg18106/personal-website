@@ -1,0 +1,67 @@
+---
+title: "¿Qué mueve la deuda pública?"
+description: "La deuda pública de los 27 países de la UE desde 1995 y qué la movió cada año."
+keywords: "deuda pública, dinámica de la deuda, efecto bola de nieve, ajustes stock-flujo, saldo primario, tipo de interés, crecimiento, UE, AMECO"
+---
+
+Elige un país para ver cómo se ha movido su deuda pública desde 1995 y por qué. El cambio de cada año se reparte entre el saldo primario, el efecto bola de nieve de los intereses y el crecimiento, y los ajustes stock-flujo. Pasa el ratón por un gráfico, o tócalo, para ver las cifras de un año.
+
+```{=html}
+<div id="debt-dashboard" class="dash wide" data-src="/data/debt-dashboard.json">
+  <div class="dash-filters">
+    <label class="dash-field">País <select id="dd-country"></select></label>
+    <label class="dash-field">Comparar con <select id="dd-compare"></select></label>
+    <div class="dash-field" role="group" aria-labelledby="dd-period-label">
+      <span id="dd-period-label">Años</span>
+      <div id="dd-period" class="dash-pills"></div>
+    </div>
+  </div>
+
+  <p id="dd-heading" class="dash-heading" aria-live="polite"></p>
+  <div id="dd-kpis" class="dash-kpis"></div>
+
+  <section class="dash-card">
+    <h3>Deuda pública</h3>
+    <p class="dash-sub">En % del PIB.</p>
+    <div id="dd-legend-debt" class="dash-legend"></div>
+    <div id="dd-chart-debt" class="dash-chart" role="img"></div>
+  </section>
+
+  <div class="dash-row">
+    <section class="dash-card">
+      <h3>Qué movió la deuda cada año</h3>
+      <p class="dash-sub">En puntos del PIB. Lo que está por encima de cero subió la deuda y lo que está por debajo la bajó; los puntos son el cambio total. Pulsa la leyenda para ocultar una parte.</p>
+      <div id="dd-legend-parts" class="dash-legend"></div>
+      <div id="dd-chart-parts" class="dash-chart dash-chart-tall" role="img"></div>
+    </section>
+    <section class="dash-card">
+      <h3>Interés menos crecimiento</h3>
+      <p class="dash-sub">En puntos. Por encima de cero, la bola de nieve empuja la deuda hacia arriba.</p>
+      <div id="dd-legend-rg" class="dash-legend"></div>
+      <div id="dd-chart-rg" class="dash-chart dash-chart-tall" role="img"></div>
+    </section>
+  </div>
+
+  <details class="dash-table">
+    <summary>Ver las cifras en una tabla</summary>
+    <div id="dd-table" class="dash-table-wrap"></div>
+  </details>
+  <p class="dash-actions">
+    <button type="button" id="dd-csv-one" class="dash-btn">Descargar este país (CSV)</button>
+    <button type="button" id="dd-csv-all" class="dash-btn dash-btn-quiet">Descargar los 27 países (CSV)</button>
+  </p>
+</div>
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/debt-dashboard.js"></script>
+```
+
+## Cómo leerlo
+
+- **El cambio de la deuda** de cada año es la suma de tres partes: el saldo primario (un déficit primario sube la deuda y un superávit la baja), el efecto bola de nieve y los ajustes stock-flujo. Las partes suman exactamente el cambio.
+- **El efecto bola de nieve** junta los intereses, que suben el ratio de deuda, y el crecimiento nominal, que lo baja porque agranda la economía. La parte del crecimiento es el ratio del año anterior multiplicado por g/(1 + g), donde g es el crecimiento nominal del PIB. La bola de nieve empuja el ratio hacia arriba cuando el tipo de interés de la deuda supera al crecimiento nominal.
+- **Los ajustes stock-flujo** son cambios de la deuda que no vienen del déficit: compras y ventas de activos financieros como depósitos, préstamos o acciones, cambios de valoración y diferencias entre devengo y caja. Aquí cierran la identidad y coinciden con la serie de la propia Comisión Europea con una diferencia máxima de 0,21 puntos.
+- **El tipo de interés** es el implícito: los intereses pagados sobre la deuda del año anterior. El crecimiento es el del PIB nominal en moneda nacional.
+
+**Fuente:** Comisión Europea, base de datos AMECO, edición de mayo de 2025; administraciones públicas, en % del PIB; cálculos propios. Bulgaria empieza en 1997 y Dinamarca en 2000. Las cifras se pueden descargar arriba. Los gráficos están hechos con Apache ECharts, con [licencia Apache 2.0](/js/vendor/echarts-LICENSE.txt).
+
+[English version](../debt.qmd)

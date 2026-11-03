@@ -5,6 +5,7 @@
     <nav class="site-nav en-only" aria-label="Main">
       <a href="/about.html">About</a>
       <a href="/research.html">Research</a>
+      <a href="/debt.html">Data</a>
       <a href="/teaching.html">Teaching</a>
       <a href="/cv/">CV</a>
       <a class="lang-switch" href="/es/" hreflang="es" lang="es">Español</a>
@@ -12,6 +13,7 @@
     <nav class="site-nav es-only" aria-label="Principal">
       <a href="/es/sobre-mi.html">Sobre mí</a>
       <a href="/es/#investigacion">Investigación</a>
+      <a href="/es/deuda.html">Datos</a>
       <a href="/es/docencia.html">Docencia</a>
       <a href="/es/cv.html">CV</a>
       <a class="lang-switch" href="/" hreflang="en" lang="en">English</a>
@@ -26,7 +28,7 @@
   // counterpart page in the other language, and the current section in the nav
   var path = location.pathname.replace(/index\.html$/, "");
   var es = /^es/.test(document.documentElement.lang);
-  var pairs = [["/", "/es/"], ["/about.html", "/es/sobre-mi.html"], ["/teaching.html", "/es/docencia.html"], ["/blog/", "/es/divulgacion.html"], ["/cv/", "/es/cv.html"]];
+  var pairs = [["/", "/es/"], ["/about.html", "/es/sobre-mi.html"], ["/teaching.html", "/es/docencia.html"], ["/blog/", "/es/divulgacion.html"], ["/cv/", "/es/cv.html"], ["/debt.html", "/es/deuda.html"]];
   var target = es ? "/" : "/es/";
   pairs.forEach(function (p) {
     if (!es && path === p[0]) target = p[1];
