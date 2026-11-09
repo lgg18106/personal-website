@@ -230,6 +230,35 @@ html:not([lang^="es"]) .es-only { display: none !important; }
   .quarto-categories { display: none; }
 }
 
+// the two tabs of «Datos» (es/deuda.qmd, es/irpf.qmd), which html/header.html puts at the foot of the
+// title band; the open tab takes the colour of the page, so it runs into the page below
+.quarto-title-banner.with-tabs { padding-bottom: 0; }
+.quarto-title-banner .data-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1.6rem;
+
+  a {
+    flex: 0 1 auto;
+    padding: 0.6rem 1.15rem 0.65rem;
+    border-radius: 10px 10px 0 0;
+    background: rgba(#fff, 0.1);
+    color: #dbe6f1;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    &:hover { background: rgba(#fff, 0.18); color: #fff; text-decoration: none; }
+    &:focus-visible { outline: 3px solid rgba($cyan, 0.6); outline-offset: 2px; }
+    &[aria-current="page"] { background: $page; color: $navy; }
+  }
+
+  @media (max-width: 430px) {
+    gap: 0.3rem;
+    a { padding: 0.5rem 0.8rem 0.55rem; font-size: 0.95rem; }
+  }
+}
+
 // section titles with the UMA magenta bar
 main h2, #quarto-content main h2 {
   font-size: 1.6rem;
@@ -896,4 +925,109 @@ button.dash-key[aria-pressed="false"] { color: $ink-3; text-decoration: line-thr
 @media (max-width: 575px) {
   .dash-filters { padding: 0.8rem 0.9rem 0.9rem; }
   .dash-field { flex: 1 1 100%; select { width: 100%; min-width: 0; } }
+}
+
+
+// ─── IRPF simulator (es/irpf.qmd) ─────────────────────────
+// It reuses the dashboard pieces above; s1 and s2 mark the two taxpayers.
+
+.irpf-people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 1.25rem;
+  @media (max-width: 991px) { grid-template-columns: 1fr; }
+}
+
+.irpf-person {
+  --who: var(--dash-s1);
+  &[data-who="b"] { --who: var(--dash-s2); }
+  background: $surface;
+  border: 1px solid $rule;
+  border-top: 5px solid var(--who);
+  border-radius: 12px;
+  padding: 0.9rem 1.25rem 1rem;
+  min-width: 0;
+  @media (max-width: 575px) { padding: 0.8rem 0.9rem 0.9rem; }
+}
+
+.irpf-person-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.7rem;
+  h3 { margin: 0; font-size: 1.3rem; overflow-wrap: anywhere; }
+  .dash-mark { width: 12px; height: 12px; border-radius: 50%; }
+}
+
+.irpf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  @media (max-width: 575px) { grid-template-columns: 1fr; }
+  .dash-field select, .dash-field input[type="text"] { width: 100%; min-width: 0; }
+}
+.irpf-wide { grid-column: 1 / -1; }
+.irpf-grid.irpf-top { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); margin-bottom: 0.75rem; }
+
+.irpf .dash-field input[type="text"] {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $ink;
+  background-color: $surface;
+  border: 1px solid #c3cdd8;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  &:focus-visible { outline: 3px solid rgba($cyan, 0.45); outline-offset: 2px; }
+  &:disabled { background: $page; color: $ink-3; }
+}
+.irpf .irpf-salary input[type="text"] { max-width: 14rem; font-size: 1.15rem; font-weight: 700; color: $navy; font-variant-numeric: tabular-nums; }
+.irpf .dash-field input[type="range"] { width: 100%; margin: 0.4rem 0 0; accent-color: var(--who); }
+
+.irpf-check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 0.95rem;
+  color: $ink;
+  cursor: pointer;
+  input { width: 1.1rem; height: 1.1rem; accent-color: var(--who); }
+  &[hidden] { display: none; }
+}
+
+.irpf-more {
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid $rule;
+  summary { cursor: pointer; font-weight: 700; color: $navy; border-radius: 4px; }
+  summary:focus-visible { outline: 3px solid rgba($cyan, 0.45); outline-offset: 2px; }
+  .irpf-grid { margin-top: 0.75rem; }
+  .irpf-note { margin-top: 0.6rem; }
+}
+
+.irpf-note { flex-basis: 100%; margin: 0; font-size: 0.88rem; color: $ink-2; &[hidden] { display: none; } }
+
+.irpf-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 991px) { .irpf-row { grid-template-columns: 1fr; } }
+
+.dash-kpi .irpf-kpi b { min-width: 5.4em; }
+
+.irpf-table {
+  thead th { .dash-mark { display: inline-block; margin-right: 0.4rem; vertical-align: middle; } }
+  tbody th { font-weight: 400; color: $ink; white-space: normal; min-width: 13rem; }
+  tr.irpf-total th, tr.irpf-total td { font-weight: 700; color: $navy; }
+  tr.irpf-final th, tr.irpf-final td { background: rgba($navy, 0.05); }
+  tr.irpf-sub th { padding-left: 1.6rem; }
+  tr.irpf-sub th, tr.irpf-sub td { font-size: 0.86rem; color: $ink-2; }
+  tr.irpf-aside th, tr.irpf-aside td { font-style: italic; color: $ink-3; }
+  // both taxpayers fit side by side on a phone
+  @media (max-width: 575px) {
+    .dash-table-wrap & { font-size: 0.75rem; }
+    th, td { padding: 0.35rem 0.4rem; }
+    tbody th { min-width: 0; }
+    tr.irpf-sub th { padding-left: 0.9rem; }
+    tr.irpf-sub th, tr.irpf-sub td { font-size: 0.76rem; }
+  }
 }

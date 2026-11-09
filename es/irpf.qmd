@@ -1,0 +1,83 @@
+---
+title: "Simulador del IRPF 2025"
+description: "El IRPF de 2025 de dos personas que viven en Andalucía y cómo cambia a medida que sube el sueldo."
+keywords: "IRPF, Renta 2025, simulador, Andalucía, tipo marginal, tipo medio, mínimo personal y familiar, deducciones autonómicas, Sistemas Fiscales"
+---
+
+Este simulador calcula el IRPF de 2025, el de la declaración que se presentó en la primavera de 2026, para dos personas que viven en Andalucía y cobran un sueldo o una pensión. Cambia su sueldo, su familia o lo que gastan en alquiler y verás cuánto paga cada una y cómo crece el impuesto a medida que sube el sueldo. Lo he preparado para mis clases de Sistemas Fiscales en la Universidad de Málaga.
+
+```{=html}
+<div id="irpf" class="dash irpf wide">
+  <div class="dash-filters">
+    <div class="dash-field" role="group" aria-labelledby="ir-escala-label">
+      <span id="ir-escala-label">Escala autonómica</span>
+      <div id="ir-escala" class="dash-pills"></div>
+    </div>
+    <div class="dash-field" role="group" aria-labelledby="ir-eje-label">
+      <span id="ir-eje-label">Sueldos en los gráficos</span>
+      <div id="ir-eje" class="dash-pills"></div>
+    </div>
+    <p id="ir-escala-nota" class="irpf-note"></p>
+  </div>
+
+  <div class="irpf-people">
+    <section id="ir-a" class="irpf-person" data-who="a" aria-labelledby="ir-a-title"></section>
+    <section id="ir-b" class="irpf-person" data-who="b" aria-labelledby="ir-b-title"></section>
+  </div>
+
+  <div id="ir-kpis" class="dash-kpis" aria-live="polite"></div>
+
+  <section class="dash-card">
+    <h3>El IRPF a medida que sube el sueldo</h3>
+    <p class="dash-sub">Euros al año, con todo lo demás igual. El punto marca el sueldo de cada uno. Por debajo de cero, Hacienda le paga más de lo que le cobra.</p>
+    <div id="ir-legend-irpf" class="dash-legend"></div>
+    <div id="ir-chart-irpf" class="dash-chart dash-chart-tall" role="img"></div>
+  </section>
+
+  <div class="dash-row irpf-row">
+    <section class="dash-card">
+      <h3>Tipo marginal</h3>
+      <p class="dash-sub">De cada 100 € más de sueldo, cuántos se van en IRPF. Donde se retira una reducción es más alto que el tipo del tramo.</p>
+      <div id="ir-legend-marginal" class="dash-legend"></div>
+      <div id="ir-chart-marginal" class="dash-chart" role="img"></div>
+    </section>
+    <section class="dash-card">
+      <h3>Tipo medio</h3>
+      <p class="dash-sub">El IRPF del año sobre el sueldo bruto, en %.</p>
+      <div id="ir-legend-medio" class="dash-legend"></div>
+      <div id="ir-chart-medio" class="dash-chart" role="img"></div>
+    </section>
+  </div>
+
+  <details class="dash-table" open>
+    <summary>La declaración paso a paso</summary>
+    <div id="ir-table" class="dash-table-wrap"></div>
+  </details>
+  <p class="dash-actions">
+    <button type="button" id="ir-link" class="dash-btn">Copiar el enlace a esta comparación</button>
+    <button type="button" id="ir-reset" class="dash-btn dash-btn-quiet">Volver a empezar</button>
+  </p>
+</div>
+<script src="/js/vendor/echarts.min.js"></script>
+<script src="/js/irpf-2025.js"></script>
+<script src="/js/irpf-simulador.js"></script>
+```
+
+## Cómo leerlo
+
+- **El IRPF del año** es lo que le cuesta el impuesto a cada uno en 2025, después de todas las deducciones. Lo que le retuvieron en la nómina o en la pensión es un adelanto: si fue más, Hacienda le devuelve la diferencia, y si fue menos, la paga en la declaración.
+- **Por tramos, no en bloque.** Cada tipo de la escala solo se aplica a la parte de la base que cae en su tramo, así que pasar de tramo nunca deja menos dinero. Los saltos de verdad vienen de algunas deducciones con límite de renta. La del alquiler en Andalucía, por ejemplo, se pierde entera en cuanto la base pasa de 25.000 €, y en el gráfico se ve como un escalón.
+- **El tipo marginal** dice cuánto se va en IRPF de cada euro de subida. Con sueldos bajos puede ser mucho más alto que el tipo del tramo, porque al subir el sueldo se pierden a la vez la reducción por rendimientos del trabajo y la deducción para sueldos bajos.
+- **El mínimo personal y familiar** no se resta de la base. Se aplica la escala a la base y al mínimo, y la segunda cuota se resta de la primera, como se ve en la tabla.
+- **Andalucía** tiene su propia escala para la mitad autonómica del impuesto y sus propios mínimos, algo más altos que los estatales. Con «Escala de clase» se usa la escala estatal en las dos mitades, como en los apuntes.
+
+## Qué tiene en cuenta y qué no
+
+- **La renta.** Un sueldo o una pensión como única renta de alguien que vivió en Andalucía todo 2025. Las cotizaciones son el 6,48 % del sueldo hasta la base máxima de 2025, 58.914 € al año, sin la cotización de solidaridad.
+- **La familia.** En la declaración conjunta, la pareja no tiene ingresos y tiene la misma edad. Quien vive solo con sus hijos hace la conjunta con ellos, que siempre le conviene. En pareja con declaraciones separadas, el mínimo y las deducciones por los hijos se reparten a medias. Dan derecho al mínimo los hijos menores de 25 años y los padres o abuelos de 65 o más que conviven y no tienen rentas de más de 8.000 €.
+- **Las deducciones estatales.** Para sueldos bajos (hasta 340 €), por donativos (el 80 % de los primeros 250 € y el 40 % del resto), por maternidad (1.200 € por cada hijo menor de 3 años, contando el año entero, sin el aumento por guardería) y por familia numerosa o monoparental con dos hijos. La familia es numerosa con tres hijos y especial con cinco.
+- **Las deducciones de Andalucía.** Alquiler de la vivienda (el 15 %, hasta 1.200 €, para menores de 35 años, mayores de 65 o personas con discapacidad), nacimiento, familia numerosa, familia monoparental, discapacidad, gastos educativos de los hijos, deporte y veterinario de una mascota adquirida en 2025, cada una con sus límites de renta.
+- **Lo que no incluye.** Otras rentas, como intereses, alquileres o actividades; los planes de pensiones; la deducción por la vivienda comprada antes de 2013; y otras deducciones andaluzas, como las de municipios de menos de 3.000 habitantes, celiaquía, ayuda doméstica o víctimas de violencia. Con sueldos de menos de unos 3.000 € al año, el límite de la deducción por familia numerosa se calcula de forma aproximada.
+- **Sirve para entender el impuesto, no para hacer la declaración.** Para eso está Renta WEB, de la Agencia Tributaria.
+
+**Fuentes:** [Ley 35/2006 del IRPF](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), con la [deducción para sueldos bajos de la Ley 5/2025](https://sede.agenciatributaria.gob.es/Sede/irpf/novedades-impuesto/novedades-normativa-2025/principales-novedades-tributarias-introducidas-ley-julio.html); [Ley 5/2021 de tributos cedidos de Andalucía](https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915); y el [Manual práctico de Renta 2025](https://sede.agenciatributaria.gob.es/Sede/Ayuda/25Manual/100.html) de la Agencia Tributaria.

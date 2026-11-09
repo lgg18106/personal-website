@@ -15,6 +15,10 @@ toc-location: right
 - **Sistemas Fiscales**, Grado en Administración y Dirección de Empresas y Grado en Finanzas y Contabilidad
 - **Trabajo Fin de Grado**, Grado en Finanzas y Contabilidad y Grado en Gestión y Administración Pública
 
+## Recursos
+
+- **[Simulador del IRPF 2025](irpf.qmd).** Compara lo que pagan dos personas que viven en Andalucía según su sueldo, su familia y sus gastos, y muestra cómo crece el impuesto cuando sube el sueldo.
+
 ## Tutorías
 
 Durante todo el curso:

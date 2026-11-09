@@ -15,6 +15,10 @@ toc-location: right
 - **Fiscal Systems**, Bachelor's in Business Administration and Management, and Bachelor's in Finance and Accounting
 - **Bachelor's thesis supervision** in Finance and Accounting and in Public Management and Administration
 
+## Resources
+
+- **[Income tax simulator](es/irpf.qmd)**, in Spanish. It compares the Spanish personal income tax for 2025 of two people living in Andalusia, by salary, family and expenses, and shows how the tax rises with the salary.
+
 ## Office hours
 
 Throughout the academic year:

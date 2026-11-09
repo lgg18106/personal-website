@@ -35,13 +35,34 @@
     if (es && path === p[1]) target = p[0];
   });
   if (path.indexOf("/blog/posts/") === 0) target = es ? "/blog/" : "/es/divulgacion.html";
+  if (path === "/es/irpf.html") target = "/debt.html";
   document.querySelectorAll(".lang-switch").forEach(function (a) { a.setAttribute("href", target); });
+  // «Datos» has two tabs, the public-debt panel and the IRPF simulator; the menu points to the first
+  var tabs = [["/es/deuda.html", "Deuda pública"], ["/es/irpf.html", "Simulador del IRPF"]];
+  var tabbed = tabs.some(function (t) { return t[0] === path; });
+  var section = tabbed ? tabs[0][0] : path;
   document.querySelectorAll(".site-nav a:not(.lang-switch)").forEach(function (a) {
     if (a.hash) return;
     var h = a.pathname.replace(/index\.html$/, "");   // Quarto rewrites hrefs as relative paths
-    if (h === path || (h.slice(-1) === "/" && h !== "/" && path.indexOf(h) === 0)) {
+    if (h === section || (h.slice(-1) === "/" && h !== "/" && path.indexOf(h) === 0)) {
       a.setAttribute("aria-current", "page");
     }
   });
+  // the tabs go at the foot of the title band, which is already in the page when this runs
+  var title = document.querySelector("#title-block-header .quarto-title");
+  if (tabbed && title) {
+    var nav = document.createElement("nav");
+    nav.className = "data-tabs";
+    nav.setAttribute("aria-label", "Datos");
+    tabs.forEach(function (t) {
+      var a = document.createElement("a");
+      a.href = t[0];
+      a.textContent = t[1];
+      if (t[0] === path) a.setAttribute("aria-current", "page");
+      nav.appendChild(a);
+    });
+    title.appendChild(nav);
+    title.closest(".quarto-title-banner").classList.add("with-tabs");
+  }
 })();
 </script>
