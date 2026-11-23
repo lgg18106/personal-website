@@ -1,9 +1,11 @@
 // IRPF 2025, the return filed in the spring of 2026, for someone who lives in Andalusia and has a salary or
-// a pension and no other income. js/irpf-simulador.js uses it on es/irpf.html.
+// a pension and no other income. It can also start from the taxable base, as the exercises in class do.
+// js/irpf-simulador.js uses it on es/irpf.html.
 //
-// Sources: Ley 35/2006 del IRPF (arts. 19, 20, 56 to 61, 63, 68.3, 81, 81 bis and 84, and the 61st additional
-// provision added by Ley 5/2025) and the Andalusian Ley 5/2021 de tributos cedidos (arts. 10, 11, 13 to 16,
-// 22 bis, 22 ter, 23 and 23 bis), as the Agencia Tributaria explains them in its Manual práctico de Renta 2025.
+// Sources: Ley 35/2006 del IRPF (arts. 18.2, 19, 20, 56 to 61, 63, 68.3, 81, 81 bis and 84, and the 61st
+// additional provision added by Ley 5/2025) and the Andalusian Ley 5/2021 de tributos cedidos (arts. 10, 11,
+// 13 to 16, 22 bis, 22 ter, 23 and 23 bis), as the Agencia Tributaria explains them in its Manual práctico de
+// Renta 2025.
 (function (root) {
   "use strict";
 
@@ -27,10 +29,12 @@
   var BASE_MAXIMA = 58914;      // 4,909.50 € a month
   var OTROS_GASTOS = 2000;      // art. 19.2.f, raised for workers with a disability
   var GASTOS_DISCAPACIDAD = { d33: 3500, d65: 7750 };
+  var IRREGULAR = 0.3, IRREGULAR_MAXIMO = 300000;   // art. 18.2
 
-  // a person with nothing: the simulator fills in the rest
+  // a person with nothing: the simulator fills in the rest. irregular is the part of bruto generated over more
+  // than two years and received at once
   var VACIO = {
-    nombre: "", bruto: 0, renta: "sueldo", edad: "adulto", discapacidad: "no", situacion: "sin",
+    nombre: "", bruto: 0, irregular: 0, renta: "sueldo", edad: "adulto", discapacidad: "no", situacion: "sin",
     hijos: 0, menores3: 0, nacidos: 0, madre: false, ascendientes: 0, ascendientes75: 0,
     alquiler: 0, deporte: 0, veterinario: 0, educacion: 0, donativos: 0, retenciones: 0
   };
@@ -106,24 +110,34 @@
     return lista;
   }
 
-  function liquidar(persona, escalaAutonomica) {
+  // partida "base" reads bruto as the taxable base, already net of contributions, expenses and reductions, the
+  // joint one included; the person is taken to be a worker
+  function liquidar(persona, escalaAutonomica, partida) {
     var p = {};
     Object.keys(VACIO).forEach(function (k) { p[k] = persona[k] === undefined ? VACIO[k] : persona[k]; });
     var andalucia = escalaAutonomica !== "clase";
-    var sueldo = p.renta === "sueldo";
+    var deBase = partida === "base";
+    var sueldo = deBase || p.renta === "sueldo";
     var bruto = Math.max(0, p.bruto);
 
-    var cotizaciones = sueldo ? COTIZACION * Math.min(bruto, BASE_MAXIMA) : 0;
-    var previo = bruto - cotizaciones;
-    var otrosGastos = Math.min(previo, OTROS_GASTOS + (sueldo && p.discapacidad !== "no" ? GASTOS_DISCAPACIDAD[p.discapacidad] : 0));
+    // art. 18.2: work income generated over more than two years and received at once counts 70 %, on up to
+    // 300,000 € a year; pensions are left out. The reduction comes before the expenses, so the art. 20 one is
+    // worked out on what is left
+    var irregular = sueldo ? Math.min(Math.max(0, p.irregular), bruto) : 0;
+    var reduccionIrregular = IRREGULAR * Math.min(irregular, IRREGULAR_MAXIMO);
+    var integro = bruto - reduccionIrregular;
+
+    var cotizaciones = sueldo && !deBase ? COTIZACION * Math.min(bruto, BASE_MAXIMA) : 0;
+    var previo = integro - cotizaciones;
+    var otrosGastos = deBase ? 0 : Math.min(previo, OTROS_GASTOS + (sueldo && p.discapacidad !== "no" ? GASTOS_DISCAPACIDAD[p.discapacidad] : 0));
     var neto = previo - otrosGastos;
-    var reduccion = Math.min(neto, reduccionTrabajo(previo));
+    var reduccion = deBase ? 0 : Math.min(neto, reduccionTrabajo(previo));
     var baseImponible = neto - reduccion;
 
     // a parent living alone with the children files jointly with them (2,150 €), which never costs more
     var monoparental = p.situacion === "sin" && p.hijos > 0;
     var conjunta = p.situacion === "conjunta" || monoparental;
-    var reduccionConjunta = conjunta ? Math.min(baseImponible, monoparental ? 2150 : 3400) : 0;
+    var reduccionConjunta = conjunta && !deBase ? Math.min(baseImponible, monoparental ? 2150 : 3400) : 0;
     var baseLiquidable = baseImponible - reduccionConjunta;
 
     // a couple filing separately share the minimum and the deductions for their children
@@ -153,13 +167,15 @@
     var cuotaLiquidaAutonomica = cuotaAutonomica - donativosAutonomico - andaluzasAplicadas;
     var cuotaLiquida = cuotaLiquidaEstatal + cuotaLiquidaAutonomica;
 
-    // it may not exceed the gross quotas; here it does not leave the tax below zero either
-    var sueldosBajos = sueldo ? Math.min(deduccionSueldosBajos(bruto), cuotaEstatal + cuotaAutonomica, cuotaLiquida) : 0;
+    // it looks at the whole gross pay, before the 30 % reduction, so it is left out when starting from the base.
+    // It may not exceed the gross quotas; here it does not leave the tax below zero either
+    var sueldosBajos = sueldo && !deBase ? Math.min(deduccionSueldosBajos(bruto), cuotaEstatal + cuotaAutonomica, cuotaLiquida) : 0;
     var cuotaResultante = cuotaLiquida - sueldosBajos;
 
     // these two can turn the tax negative: they are paid even without tax to deduct them from, to someone
     // who works or has a pension. For a worker, the general 1,200 € of art. 81 bis may not exceed the total
     // contributions, the employer's included; the increases for a special or larger family are outside the limit.
+    // From the base the contributions are unknown and the limit is left out.
     var maternidad = sueldo && p.madre && bruto > 0 ? 1200 * p.menores3 : 0;
     var general = 0, aumento = 0;
     if (p.hijos >= 3) {
@@ -168,12 +184,13 @@
     } else if (monoparental && p.hijos === 2) {
       general = 1200;
     }
-    if (sueldo) general = Math.min(general, (COTIZACION + COTIZACION_EMPRESA) * Math.min(bruto, BASE_MAXIMA));
+    if (sueldo && !deBase) general = Math.min(general, (COTIZACION + COTIZACION_EMPRESA) * Math.min(bruto, BASE_MAXIMA));
     var familia = bruto > 0 ? general + aumento : 0;
     var irpf = cuotaResultante - maternidad - familia;
 
     return {
-      bruto: bruto, sueldo: sueldo, cotizaciones: cotizaciones, otrosGastos: otrosGastos, neto: neto,
+      bruto: bruto, deBase: deBase, irregular: irregular, reduccionIrregular: reduccionIrregular, integro: integro,
+      sueldo: sueldo, cotizaciones: cotizaciones, otrosGastos: otrosGastos, neto: neto,
       reduccion: reduccion, baseImponible: baseImponible, conjunta: conjunta, monoparental: monoparental,
       reduccionConjunta: reduccionConjunta, baseLiquidable: baseLiquidable,
       minimoEstatal: minimoEstatal, minimoAutonomico: minimoAutonomico,

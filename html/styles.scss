@@ -983,7 +983,10 @@ button.dash-key[aria-pressed="false"] { color: $ink-3; text-decoration: line-thr
   &:disabled { background: $page; color: $ink-3; }
 }
 .irpf .irpf-salary input[type="text"] { max-width: 14rem; font-size: 1.15rem; font-weight: 700; color: $navy; font-variant-numeric: tabular-nums; }
+.irpf .irpf-irregular input[type="text"] { max-width: 14rem; }
 .irpf .dash-field input[type="range"] { width: 100%; margin: 0.4rem 0 0; accent-color: var(--who); }
+.irpf .dash-field[hidden] { display: none; }
+.irpf-hint { font-size: 0.85rem; font-weight: 400; color: $ink-3; }
 
 .irpf-check {
   display: flex;
