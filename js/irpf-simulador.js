@@ -8,7 +8,7 @@
   var root = document.getElementById("irpf");
   if (!root || !window.echarts || !window.IRPF2025) return;
 
-  var liquidar = IRPF2025.liquidar, VACIO = IRPF2025.VACIO;
+  var liquidar = IRPF2025.liquidar, cotizar = IRPF2025.cotizar, VACIO = IRPF2025.VACIO;
   var $ = function (id) { return document.getElementById(id); };
   var style = getComputedStyle(root);
   var prop = function (name) { return style.getPropertyValue(name).trim(); };
@@ -27,23 +27,60 @@
   var EDADES = [["joven", "Menos de 35 años"], ["adulto", "De 35 a 64 años"], ["mayor", "De 65 a 74 años"], ["mayor75", "75 años o más"]];
   var SITUACIONES = [["sin", "Sin pareja"], ["pareja", "En pareja, cada uno hace su declaración"], ["conjunta", "En pareja, declaración conjunta"]];
   var DISCAPACIDADES = [["no", "Ninguna"], ["d33", "Del 33 al 64 %"], ["d65", "Del 65 % o más"]];
+  var GRADOS = DISCAPACIDADES.slice(1);
+  var CONTRATOS = [["indefinido", "Indefinido"], ["temporal", "Temporal"]];
+  // art. 23.2, by the date and the kind of the lease
+  var REDUCCIONES = [
+    ["60", "Contrato anterior al 26-5-2023: 60 %"],
+    ["50", "Contrato posterior, en general: 50 %"],
+    ["rehabilitada", "Posterior, vivienda rehabilitada: 60 %"],
+    ["70", "Posterior, inquilino de 18 a 35 años en zona tensionada: 70 %"],
+    ["90", "Posterior, renta rebajada en zona tensionada: 90 %"],
+    ["0", "No es una vivienda: sin reducción"]
+  ];
+  var OTRAS = [
+    ["ahorro", "Intereses, dividendos y ganancias por ventas"],
+    ["alquilerCobrado", "Alquiler cobrado por una vivienda"],
+    ["alquilerGastos", "Gastos de esa vivienda (IBI, comunidad, intereses, amortización)"],
+    ["actividadIngresos", "Ingresos de una actividad como autónomo"],
+    ["actividadGastos", "Gastos de la actividad, con la cuota de autónomo"]
+  ];
   var GASTOS = [
     ["alquiler", "Alquiler de la vivienda en el año"],
+    ["hipoteca", "Hipoteca de una vivienda comprada antes de 2013, pagado en el año"],
+    ["plan", "Aportaciones a su plan de pensiones"],
+    ["guarderia", "Guardería de los menores de 3 años, sin contar las ayudas"],
+    ["empleadaHogar", "Seguridad Social pagada por una empleada del hogar"],
     ["deporte", "Gimnasio o club deportivo en el año"],
     ["educacion", "Academias de idiomas o informática de los hijos"],
     ["veterinario", "Veterinario de una mascota adquirida en 2025"],
-    ["donativos", "Donativos a ONG"],
+    ["donativos", "Donativos a ONG"]
+  ];
+  // as on the employer's certificate; the contributions are worked out when left empty
+  var NOMINA = [
+    ["cotizacionesDadas", "Cotizaciones a la Seguridad Social del año"],
     ["retenciones", "Retenciones de 2025 en la nómina o la pensión"]
   ];
+  // what only the Andalusian deductions use
+  var SOLO_ANDALUCIA = ["alquiler", "empleadaHogar", "deporte", "educacion", "veterinario", "celiacos", "municipioPequeno"];
+  var MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+  // [text, box in Renta WEB 2025]
   var ANDALUZAS = {
-    alquiler: "Alquiler de la vivienda habitual", nacimiento: "Nacimiento o adopción", numerosa: "Familia numerosa",
-    monoparental: "Familia monoparental", discapacidad: "Contribuyente con discapacidad", educacion: "Gastos educativos",
-    deporte: "Ejercicio físico y deporte", veterinario: "Gastos veterinarios"
+    alquiler: ["Alquiler de la vivienda habitual", "0853"], nacimiento: ["Nacimiento o adopción", "0850"],
+    numerosa: ["Familia numerosa", "0816"], monoparental: ["Familia monoparental", "0857"],
+    discapacidad: ["Contribuyente con discapacidad", "0856"], asistencia: ["Asistencia a personas con discapacidad", "0858"],
+    ayudaDomestica: ["Ayuda doméstica", "0862"], educacion: ["Gastos educativos", "0849"],
+    deporte: ["Ejercicio físico y deporte", "0921"], veterinario: ["Gastos veterinarios", "0995"],
+    celiaca: ["Familias con celiaquía", "1476"]
   };
-  var ESCALAS = [
-    ["andalucia", "Andalucía", "La mitad autonómica con la escala y los mínimos de la Junta, y con sus deducciones."],
-    ["clase", "Escala de clase", "La escala estatal dos veces, como en los apuntes, sin los mínimos ni las deducciones de Andalucía."]
-  ];
+  var ESCALAS = IRPF2025.COMUNIDADES;
+  function notaEscala(id) {
+    if (id === "andalucia") return "La mitad autonómica con la escala y los mínimos de la Junta, y con sus deducciones.";
+    if (id === "clase") return "La escala estatal dos veces, como en los apuntes, sin los mínimos ni las deducciones de Andalucía.";
+    var c = ESCALAS.filter(function (e) { return e[0] === id; })[0];
+    return "La mitad autonómica con la escala y los mínimos de " + c[1] + ". Sus deducciones propias no están: " +
+      "el simulador solo calcula las de Andalucía.";
+  }
   var PARTIDAS = [
     ["sueldo", "Sueldo bruto", ""],
     ["base", "Base liquidable", "Se escribe la base liquidable, como en los ejercicios de clase. Ya lleva restadas las cotizaciones, " +
@@ -56,22 +93,38 @@
     ["joven", "Joven de alquiler", { bruto: 18000, edad: "joven", alquiler: 6000, deporte: 360 }],
     ["smi", "Salario mínimo de 2025", { bruto: 16576 }],
     ["madre", "Madre sola, hijo de 2 años", { bruto: 22000, hijos: 1, menores3: 1, madre: true }],
+    ["bebe", "Bebé nacido en julio de 2025", { bruto: 28000, situacion: "pareja", hijos: 1, menores3: 1, nacidos: 1, mes: 7, madre: true }],
     ["numerosa", "Familia numerosa, por separado", { bruto: 40000, situacion: "pareja", hijos: 3, menores3: 1 }],
     ["pension", "Pensionista de 70 años", { bruto: 20000, renta: "pension", edad: "mayor" }],
     ["alto", "Sueldo alto", { bruto: 90000 }],
-    ["golpe", "Tres años cobrados de una vez", { bruto: 60000, irregular: 60000 }]
+    ["plan", "Con plan de pensiones", { bruto: 45000, plan: 1500 }],
+    ["golpe", "Tres años cobrados de una vez", { bruto: 60000, irregular: 60000 }],
+    ["dosSueldos", "Pareja con dos sueldos, conjunta", { bruto: 30000, situacion: "conjunta", sueldoPareja: 20000, hijos: 2 }],
+    ["discapacidad", "Hijo con discapacidad", { bruto: 30000, situacion: "conjunta", hijos: 2, hijosDiscapacidad: 1 }],
+    ["rentas", "Sueldo, ahorros y un piso alquilado", { bruto: 35000, ahorro: 2000, alquilerCobrado: 9000, alquilerGastos: 3000 }],
+    ["autonomo", "Autónomo sin sueldo", { bruto: 0, actividadIngresos: 40000, actividadGastos: 14000 }]
   ];
   var INICIO = { a: "soltero", b: "familia", partida: "sueldo", escala: "andalucia", eje: 60000 };
   var MAX_SUELDO = 1000000, MAX_SLIDER = 150000;
-  var IMPORTES = GASTOS.map(function (g) { return g[0]; }).concat(["irregular"]);
+  var IMPORTES = GASTOS.concat(NOMINA, OTRAS).map(function (g) { return g[0]; }).concat(["irregular", "sueldoPareja"]);
+  var CIFRAS = ["hijos", "menores3", "mayores", "nacidos", "mes", "cumplen3", "mesTres", "hijosDiscapacidad",
+    "ascendientes", "ascendientes75", "ascendientesDiscapacidad", "celiacos"];
+  var CASILLAS = ["madre", "municipioPequeno"];
 
   // short keys for the address
   var CLAVES = {
-    bruto: "s", irregular: "ir", renta: "r", edad: "e", situacion: "f", discapacidad: "d", hijos: "h", menores3: "h3",
-    nacidos: "hn", madre: "m", ascendientes: "as", ascendientes75: "as75", alquiler: "al", deporte: "dp", educacion: "ed",
-    veterinario: "vt", donativos: "dn", retenciones: "rt", nombre: "n"
+    bruto: "s", irregular: "ir", renta: "r", edad: "e", situacion: "f", sueldoPareja: "sp", discapacidad: "d", hijos: "h",
+    menores3: "h3", mayores: "h18", nacidos: "hn", mes: "mn", cumplen3: "h3c", mesTres: "mt", madre: "m",
+    hijosDiscapacidad: "hd", gradoHijos: "gh", ascendientes: "as", ascendientes75: "as75", ascendientesDiscapacidad: "ad",
+    gradoAscendientes: "ga", celiacos: "ce", municipioPequeno: "mp", ahorro: "ah", alquilerCobrado: "ac",
+    alquilerGastos: "ag", alquilerReduccion: "ar", actividadIngresos: "ai", actividadGastos: "ae", alquiler: "al",
+    hipoteca: "hi", plan: "pp", guarderia: "gu", empleadaHogar: "eh", deporte: "dp", educacion: "ed", veterinario: "vt",
+    donativos: "dn", contrato: "ct", cotizacionesDadas: "ss", retenciones: "rt", nombre: "n"
   };
-  var OPCIONES = { renta: RENTAS, edad: EDADES, situacion: SITUACIONES, discapacidad: DISCAPACIDADES };
+  var OPCIONES = {
+    renta: RENTAS, edad: EDADES, situacion: SITUACIONES, discapacidad: DISCAPACIDADES, gradoHijos: GRADOS,
+    gradoAscendientes: GRADOS, alquilerReduccion: REDUCCIONES, contrato: CONTRATOS
+  };
 
   var state = {}, forms = {}, charts = {}, boxes = {};
   // texts that change when the calculation starts from the base (data-base in es/irpf.qmd)
@@ -130,18 +183,26 @@
   function ajustar(p) {
     p.bruto = clamp(p.bruto, 0, MAX_SUELDO);
     p.irregular = clamp(p.irregular, 0, MAX_SUELDO);   // the engine takes no more than the salary itself
+    p.sueldoPareja = clamp(p.sueldoPareja, 0, MAX_SUELDO);
     p.hijos = clamp(p.hijos, 0, 6);
     p.menores3 = clamp(p.menores3, 0, p.hijos);
+    p.mayores = clamp(p.mayores, 0, p.hijos - p.menores3);
+    p.cumplen3 = clamp(p.cumplen3, 0, p.hijos - p.menores3 - p.mayores);
     p.nacidos = clamp(p.nacidos, 0, p.menores3);
+    p.mes = clamp(p.mes, 1, 12);
+    p.mesTres = clamp(p.mesTres, 1, 12);
+    p.hijosDiscapacidad = clamp(p.hijosDiscapacidad, 0, p.hijos);
     p.ascendientes = clamp(p.ascendientes, 0, 2);
     p.ascendientes75 = clamp(p.ascendientes75, 0, p.ascendientes);
-    if (!p.menores3 || (p.renta !== "sueldo" && !deBase())) p.madre = false;
+    p.ascendientesDiscapacidad = clamp(p.ascendientesDiscapacidad, 0, p.ascendientes);
+    p.celiacos = clamp(p.celiacos, 0, 6);
+    if (!(p.menores3 || p.cumplen3) || (p.renta !== "sueldo" && !deBase())) p.madre = false;
     return p;
   }
 
   function codificar(p) {
     return Object.keys(CLAVES).filter(function (k) { return p[k] !== VACIO[k]; }).map(function (k) {
-      return CLAVES[k] + "-" + (k === "madre" ? "1" : k === "nombre" ? encodeURIComponent(p[k]) : p[k]);
+      return CLAVES[k] + "-" + (CASILLAS.indexOf(k) >= 0 ? "1" : k === "nombre" ? encodeURIComponent(p[k]) : p[k]);
     }).join("_");
   }
 
@@ -151,7 +212,7 @@
     texto.split("_").forEach(function (par) {
       var i = par.indexOf("-"), k = inversas[par.slice(0, i)], v = par.slice(i + 1);
       if (i < 1 || !k) return;
-      if (k === "madre") p.madre = v === "1";
+      if (CASILLAS.indexOf(k) >= 0) p[k] = v === "1";
       else if (k === "nombre") p.nombre = v.slice(0, 24);
       else if (OPCIONES[k]) { if (OPCIONES[k].some(function (o) { return o[0] === v; })) p[k] = v; }
       else if (isFinite(parseFloat(v)) && parseFloat(v) >= 0) p[k] = k === "bruto" || IMPORTES.indexOf(k) >= 0 ? parseFloat(v) : Math.round(parseFloat(v));
@@ -213,6 +274,16 @@
     d.appendChild(node("summary", null, texto));
     return d;
   }
+  // a grid of amount fields; each one's label is kept as f[key + "Box"] to hide it
+  function importes(f, campos) {
+    var grid = node("div", "irpf-grid");
+    campos.forEach(function (g) {
+      f[g[0]] = importe();
+      f[g[0] + "Box"] = campo(g[1], f[g[0]]);
+      grid.appendChild(f[g[0] + "Box"]);
+    });
+    return grid;
+  }
 
   function construir(who) {
     var box = $("ir-" + who), f = {};
@@ -259,46 +330,96 @@
     grid.appendChild(campo("Edad", f.edad));
     f.situacion = lista(SITUACIONES);
     grid.appendChild(campo("Pareja", f.situacion, "irpf-wide"));
+    f.sueldoPareja = importe();
+    f.sueldoParejaBox = campo("Sueldo bruto de la pareja, en euros", f.sueldoPareja, "irpf-wide irpf-irregular");
+    f.sueldoParejaBox.appendChild(node("span", "irpf-hint", "Vacío si no tiene ingresos."));
+    grid.appendChild(f.sueldoParejaBox);
     f.hijos = lista([]);
     cifras(f.hijos, 6);
     grid.appendChild(campo("Hijos que conviven, menores de 25", f.hijos));
     f.menores3 = lista([]);
     grid.appendChild(campo("De ellos, menores de 3 años", f.menores3));
-    f.madreBox = node("label", "irpf-check irpf-wide");
-    f.madre = document.createElement("input");
-    f.madre.type = "checkbox";
-    f.madreBox.appendChild(f.madre);
-    f.madreBox.appendChild(document.createTextNode("Es la madre y trabaja: deducción por maternidad"));
+    f.madreBox = casilla(f, "madre", "");
+    f.madreTexto = f.madreBox.lastChild;
     grid.appendChild(f.madreBox);
     box.appendChild(grid);
 
     f.mas = plegable("Más situaciones familiares");
     var otros = node("div", "irpf-grid");
+    var meses = MESES.map(function (m, i) { return [String(i + 1), m]; });
     f.nacidos = lista([]);
     otros.appendChild(campo("Hijos nacidos en 2025", f.nacidos));
+    f.mes = lista(meses);
+    f.mesBox = campo("Mes del nacimiento", f.mes);
+    otros.appendChild(f.mesBox);
+    f.cumplen3 = lista([]);
+    otros.appendChild(campo("Hijos que cumplieron 3 años en 2025", f.cumplen3));
+    f.mesTres = lista(meses);
+    f.mesTresBox = campo("Mes del cumpleaños", f.mesTres);
+    otros.appendChild(f.mesTresBox);
+    f.mayores = lista([]);
+    otros.appendChild(campo("Hijos mayores de edad", f.mayores));
+    f.hijosDiscapacidad = lista([]);
+    otros.appendChild(campo("Hijos con discapacidad", f.hijosDiscapacidad));
+    f.gradoHijos = lista(GRADOS);
+    f.gradoHijosBox = campo("Grado de su discapacidad", f.gradoHijos);
+    otros.appendChild(f.gradoHijosBox);
     f.discapacidad = lista(DISCAPACIDADES);
-    otros.appendChild(campo("Discapacidad", f.discapacidad));
+    otros.appendChild(campo("Discapacidad propia", f.discapacidad));
     f.ascendientes = lista([]);
     cifras(f.ascendientes, 2);
     otros.appendChild(campo("Padres o abuelos de 65 años o más que conviven", f.ascendientes));
     f.ascendientes75 = lista([]);
     otros.appendChild(campo("De ellos, de 75 o más", f.ascendientes75));
+    f.ascendientesDiscapacidad = lista([]);
+    otros.appendChild(campo("De ellos, con discapacidad", f.ascendientesDiscapacidad));
+    f.gradoAscendientes = lista(GRADOS);
+    f.gradoAscendientesBox = campo("Grado de su discapacidad", f.gradoAscendientes);
+    otros.appendChild(f.gradoAscendientesBox);
+    f.celiacos = lista([]);
+    cifras(f.celiacos, 6);
+    f.celiacosBox = campo("Personas de la familia con celiaquía", f.celiacos);
+    otros.appendChild(f.celiacosBox);
+    f.municipioPequenoBox = casilla(f, "municipioPequeno", "Vive en un municipio andaluz de menos de 3.000 habitantes");
+    otros.appendChild(f.municipioPequenoBox);
     f.mas.appendChild(otros);
     box.appendChild(f.mas);
 
-    f.gastos = plegable("Gastos que desgravan y retenciones");
-    f.notaClase = node("p", "irpf-note", "Con la escala de clase no se aplican las deducciones de Andalucía.");
+    f.otras = plegable("Otras rentas");
+    f.otras.appendChild(importes(f, OTRAS));
+    f.ahorroTexto = f.ahorroBox.firstChild;
+    f.alquilerReduccion = lista(REDUCCIONES);
+    f.alquilerReduccionBox = campo("Tipo de alquiler", f.alquilerReduccion, "irpf-wide");
+    f.alquilerGastosBox.parentNode.insertBefore(f.alquilerReduccionBox, f.alquilerGastosBox.nextSibling);
+    box.appendChild(f.otras);
+
+    f.gastos = plegable("Gastos que desgravan");
+    f.notaClase = node("p", "irpf-note", "Las deducciones de Andalucía solo se calculan con la comunidad de Andalucía.");
     f.gastos.appendChild(f.notaClase);
-    var gastos = node("div", "irpf-grid");
-    GASTOS.forEach(function (g) {
-      f[g[0]] = importe();
-      gastos.appendChild(campo(g[1], f[g[0]]));
-    });
-    f.gastos.appendChild(gastos);
+    f.gastos.appendChild(importes(f, GASTOS));
     box.appendChild(f.gastos);
+
+    f.nomina = plegable("Cotizaciones y retenciones");
+    var nomina = importes(f, NOMINA);
+    f.contrato = lista(CONTRATOS);
+    f.contratoBox = campo("Tipo de contrato", f.contrato);
+    nomina.insertBefore(f.contratoBox, nomina.firstChild);
+    f.nomina.appendChild(nomina);
+    f.cotizacionesDadasBox.appendChild(node("span", "irpf-hint", "Si lo dejas vacío, se calculan con los tipos de 2025."));
+    box.appendChild(f.nomina);
 
     forms[who] = f;
     escuchar(who);
+  }
+
+  // a checkbox with its text, kept as f[key]
+  function casilla(f, clave, texto) {
+    var b = node("label", "irpf-check irpf-wide");
+    f[clave] = document.createElement("input");
+    f[clave].type = "checkbox";
+    b.appendChild(f[clave]);
+    b.appendChild(document.createTextNode(texto));
+    return b;
   }
 
   function escuchar(who) {
@@ -327,13 +448,15 @@
     f.bruto.addEventListener("input", function () { cambiar("bruto", leer(f.bruto.value)); });
     f.bruto.addEventListener("blur", function () { f.bruto.value = fmt(state[who].bruto, state[who].bruto % 1 ? 2 : 0); });
     f.slider.addEventListener("input", function () { cambiar("bruto", +f.slider.value); });
-    ["renta", "edad", "situacion", "discapacidad"].forEach(function (k) {
+    Object.keys(OPCIONES).forEach(function (k) {
       f[k].addEventListener("change", function () { cambiar(k, f[k].value); });
     });
-    ["hijos", "menores3", "nacidos", "ascendientes", "ascendientes75"].forEach(function (k) {
+    CIFRAS.forEach(function (k) {
       f[k].addEventListener("change", function () { cambiar(k, +f[k].value); });
     });
-    f.madre.addEventListener("change", function () { cambiar("madre", f.madre.checked); });
+    CASILLAS.forEach(function (k) {
+      f[k].addEventListener("change", function () { cambiar(k, f[k].checked); });
+    });
     IMPORTES.forEach(function (k) {
       f[k].addEventListener("input", function () { cambiar(k, Math.min(leer(f[k].value), MAX_SUELDO)); });
       f[k].addEventListener("blur", function () { f[k].value = state[who][k] ? fmt(state[who][k], state[who][k] % 1 ? 2 : 0) : ""; });
@@ -347,34 +470,57 @@
     if (document.activeElement !== f.nombre) f.nombre.value = p.nombre;
     if (tecleando !== "bruto" || document.activeElement !== f.bruto) f.bruto.value = fmt(p.bruto, p.bruto % 1 ? 2 : 0);
     f.slider.value = Math.min(p.bruto, MAX_SLIDER);
-    ["renta", "edad", "situacion", "discapacidad"].forEach(function (k) { f[k].value = p[k]; });
+    Object.keys(OPCIONES).forEach(function (k) { f[k].value = p[k]; });
     cifras(f.menores3, p.hijos);
+    cifras(f.mayores, p.hijos - p.menores3);
+    cifras(f.cumplen3, p.hijos - p.menores3 - p.mayores);
     cifras(f.nacidos, p.menores3);
+    cifras(f.hijosDiscapacidad, p.hijos);
     cifras(f.ascendientes75, p.ascendientes);
-    ["hijos", "menores3", "nacidos", "ascendientes", "ascendientes75"].forEach(function (k) { f[k].value = String(p[k]); });
-    f.madre.checked = p.madre;
+    cifras(f.ascendientesDiscapacidad, p.ascendientes);
+    CIFRAS.forEach(function (k) { f[k].value = String(p[k]); });
+    CASILLAS.forEach(function (k) { f[k].checked = p[k]; });
     IMPORTES.forEach(function (k) {
       if (tecleando !== k || document.activeElement !== f[k]) f[k].value = p[k] ? fmt(p[k], p[k] % 1 ? 2 : 0) : "";
     });
     // open a folded part when the case uses it
-    if (p.nacidos || p.discapacidad !== "no" || p.ascendientes) f.mas.open = true;
+    if (p.nacidos || p.cumplen3 || p.mayores || p.hijosDiscapacidad || p.discapacidad !== "no" || p.ascendientes ||
+        p.celiacos || p.municipioPequeno) f.mas.open = true;
+    if (OTRAS.some(function (g) { return p[g[0]]; })) f.otras.open = true;
     if (GASTOS.some(function (g) { return p[g[0]]; })) f.gastos.open = true;
+    if (NOMINA.some(function (g) { return p[g[0]]; }) || p.contrato !== "indefinido") f.nomina.open = true;
     marcar(who);
   }
 
   function marcar(who) {
-    var f = forms[who], p = state[who], clase = state.escala === "clase", base = deBase();
+    var f = forms[who], p = state[who], andalucia = state.escala === "andalucia", base = deBase();
+    var trabajador = base || p.renta === "sueldo";
     f.titulo.textContent = nombre(who);
-    f.notaClase.hidden = !clase;
-    ["alquiler", "deporte", "educacion", "veterinario"].forEach(function (k) { f[k].disabled = clase; });
-    f.sueldoTexto.nodeValue = base ? "Base liquidable del año, en euros" : "Sueldo o pensión bruta al año, en euros";
-    f.slider.setAttribute("aria-label", base ? "Base liquidable del año" : "Sueldo o pensión bruta al año");
+    f.notaClase.hidden = andalucia;
+    SOLO_ANDALUCIA.forEach(function (k) { f[k].disabled = !andalucia; });
+    f.sueldoTexto.nodeValue = base ? "Base liquidable general del año, en euros" : "Sueldo o pensión bruta al año, en euros";
+    f.slider.setAttribute("aria-label", base ? "Base liquidable general del año" : "Sueldo o pensión bruta al año");
     f.irregularTexto.nodeValue = base ? "De ella, renta generada en más de dos años y cobrada de una vez" :
       "De él, lo generado en más de dos años y cobrado de una vez";
-    // the base is a worker's; pensions do not have the 30 % reduction
+    f.ahorroTexto.nodeValue = base ? "Base liquidable del ahorro" : OTRAS[0][1];
+    f.madreTexto.nodeValue = p.situacion === "conjunta" ? "La madre tiene derecho a la deducción por maternidad" :
+      "Es la madre: deducción por maternidad";
+    // the base is a worker's, already net of contributions, other income, the joint reduction and the pension
+    // plan; pensions do not have the 30 % reduction
     f.rentaBox.hidden = base;
-    f.irregularBox.hidden = !base && p.renta !== "sueldo";
-    f.madreBox.hidden = !(p.menores3 > 0 && (base || p.renta === "sueldo"));
+    f.irregularBox.hidden = !trabajador;
+    f.sueldoParejaBox.hidden = base || p.situacion !== "conjunta";
+    f.madreBox.hidden = !((p.menores3 > 0 || p.cumplen3 > 0) && trabajador);
+    f.mesBox.hidden = !p.nacidos;
+    f.mesTresBox.hidden = !p.cumplen3;
+    f.gradoHijosBox.hidden = !p.hijosDiscapacidad;
+    f.gradoAscendientesBox.hidden = !p.ascendientesDiscapacidad;
+    f.guarderiaBox.hidden = !p.madre;
+    ["alquilerCobrado", "alquilerGastos", "alquilerReduccion", "actividadIngresos", "actividadGastos", "plan"].forEach(function (k) {
+      f[k + "Box"].hidden = base;
+    });
+    f.contratoBox.hidden = f.cotizacionesDadasBox.hidden = base || p.renta !== "sueldo";
+    f.cotizacionesDadas.placeholder = fmt(cotizar(p.bruto, p.contrato), 2);
   }
 
 
@@ -392,14 +538,23 @@
       state.partida = v;
       QUIENES.forEach(function (who) { ajustar(state[who]); rellenar(who); });
     });
-    pastillas($("ir-escala"), ESCALAS.map(function (e) { return [e[0], e[1]]; }), function (v) { state.escala = v; });
+    var region = $("ir-escala");
+    ESCALAS.forEach(function (e) { region.appendChild(new Option(e[0] === "clase" ? "Escala de clase (la estatal dos veces)" : e[1], e[0])); });
+    region.addEventListener("change", function () {
+      state.escala = region.value;
+      QUIENES.forEach(function (who) { rellenar(who); });
+      update(true);
+    });
     pastillas($("ir-eje"), EJES.map(function (e) { return [String(e), "Hasta " + fmt(e, 0) + " €"]; }), function (v) { state.eje = +v; });
     $("ir-link").addEventListener("click", copiar);
     $("ir-reset").addEventListener("click", function () {
       state = {};
       history.replaceState(null, "", location.pathname + location.hash);
       leerDireccion();
-      QUIENES.forEach(function (who) { forms[who].mas.open = forms[who].gastos.open = false; rellenar(who); });
+      QUIENES.forEach(function (who) {
+        ["mas", "otras", "gastos", "nomina"].forEach(function (k) { forms[who][k].open = false; });
+        rellenar(who);
+      });
       update(false);
     });
     ["irpf", "marginal", "medio"].forEach(function (k) {
@@ -453,12 +608,13 @@
   }
 
   function draw() {
-    [["ir-partida", state.partida], ["ir-escala", state.escala], ["ir-eje", String(state.eje)]].forEach(function (p) {
+    $("ir-escala").value = state.escala;
+    [["ir-partida", state.partida], ["ir-eje", String(state.eje)]].forEach(function (p) {
       Array.prototype.forEach.call($(p[0]).children, function (b) {
         b.setAttribute("aria-pressed", String(b.getAttribute("data-value") === p[1]));
       });
     });
-    $("ir-escala-nota").textContent = ESCALAS.filter(function (e) { return e[0] === state.escala; })[0][2];
+    $("ir-escala-nota").textContent = notaEscala(state.escala);
     $("ir-partida-nota").textContent = PARTIDAS[1][2];
     $("ir-partida-nota").hidden = !deBase();
     variables.forEach(function (n) { n.textContent = n.getAttribute(deBase() ? "data-base" : "data-sueldo"); });
@@ -478,18 +634,29 @@
 
   // ─── figures above the charts ────────────────────────────
 
+  // the person with another salary and everything else unchanged; contributions typed from the certificate
+  // move in step with the ones the simulator works out
+  function conSueldo(who, s) {
+    var p = Object.assign({}, state[who], { bruto: s }), propias = cotizar(state[who].bruto, p.contrato);
+    if (p.cotizacionesDadas > 0) p.cotizacionesDadas = propias > 0 ? p.cotizacionesDadas * cotizar(s, p.contrato) / propias : 0;
+    return p;
+  }
+
   // of 100 € more a month (1,200 € a year), what is left after IRPF and contributions
   function queda(who, r) {
-    var mas = calc(Object.assign({}, state[who], { bruto: state[who].bruto + 1200 }));
+    var mas = calc(conSueldo(who, state[who].bruto + 1200));
     return 100 - ((mas.irpf - r.irpf) + (mas.cotizaciones - r.cotizaciones)) / 12;
   }
 
   function drawKpis(r) {
     // the exercises from the base work to the cent
     var base = deBase(), cents = base ? 2 : 0;
+    // with other income or a partner's salary the rate is over everything coming in
+    var masRentas = QUIENES.some(function (w) { return r[w].ingresos > r[w].bruto; });
     var tiles = [
       { label: "IRPF del año", value: function (w) { return euros(r[w].irpf, cents); }, sub: "después de todas las deducciones" },
-      { label: "Tipo medio", value: function (w) { return pct(r[w].tipoMedio); }, sub: base ? "el IRPF sobre la base" : "el IRPF sobre el sueldo bruto" },
+      { label: "Tipo medio", value: function (w) { return pct(r[w].tipoMedio); },
+        sub: base ? (masRentas ? "el IRPF sobre las bases" : "el IRPF sobre la base") : masRentas ? "el IRPF sobre todo lo que se cobra" : "el IRPF sobre el sueldo bruto" },
       { label: "De 100 € más al mes, le quedan", value: function (w) { return euros(queda(w, r[w]), 1); }, sub: base ? "el resto se va en IRPF" : "el resto se va en IRPF y cotizaciones" },
       { label: "Le queda al año", value: function (w) { return euros(r[w].neta, cents); }, sub: base ? "la base menos el IRPF" : "después de cotizaciones e IRPF" }
     ];
@@ -519,16 +686,14 @@
   function curvas() {
     var pasos = 800, out = {};
     QUIENES.forEach(function (w) {
-      var p = Object.assign({}, state[w]), irpf = [], marginal = [], medio = [];
+      var irpf = [], marginal = [], medio = [];
       for (var i = 0; i <= pasos; i++) {
         var s = Math.round(state.eje * i / pasos);
-        p.bruto = s;
-        var t = calc(p).irpf;
-        p.bruto = s + 1;
-        var t1 = calc(p).irpf;
+        var res = calc(conSueldo(w, s)), t = res.irpf;
+        var t1 = calc(conSueldo(w, s + 1)).irpf;
         irpf.push([s, round(t, 2)]);
         marginal.push([s, round((t1 - t) * 100, 1)]);
-        medio.push([s, s >= 1000 ? round(100 * t / s, 2) : null]);
+        medio.push([s, res.ingresos >= 1000 ? round(res.tipoMedio, 2) : null]);
       }
       out[w] = { irpf: irpf, marginal: marginal, medio: medio };
     });
@@ -536,10 +701,7 @@
   }
 
   function marginalEn(w, s) {
-    var p = Object.assign({}, state[w], { bruto: s });
-    var t = calc(p).irpf;
-    p.bruto = s + 1;
-    return (calc(p).irpf - t) * 100;
+    return (calc(conSueldo(w, s + 1)).irpf - calc(conSueldo(w, s)).irpf) * 100;
   }
 
   function base(top, yFormatter) {
@@ -647,7 +809,7 @@
         if (QUIENES.indexOf(w) < 0 || p.data[1] === null) return;
         html += tipRow(pal[w], pct(p.data[1]), nombre(w));
         if (k === "marginal") {
-          var t = calc(Object.assign({}, state[w], { bruto: p.data[0] }));
+          var t = calc(conSueldo(w, p.data[0]));
           html += '<div class="dd-tip-sub">' + esc("tipo de su tramo en la escala: " + pct(t.tipoTramo)) + "</div>";
         }
       });
@@ -665,34 +827,62 @@
 
   // ─── the return step by step ─────────────────────────────
 
-  // tb is the text when the calculation starts from the base
+  // The steps and their names are those of the return, and c is the box in Renta WEB 2025, which the rows
+  // marked desdeSueldo only show when starting from the salary. tb is the text when the calculation starts from
+  // the base; a subtotal (sub) only shows when something was taken off since the row before it (si)
   var FILAS = [
-    { t: "Sueldo o pensión bruta", tb: "Base liquidable de partida", v: function (r) { return r.bruto; } },
-    { t: "Reducción del 30 % por renta de más de dos años", v: function (r) { return -r.reduccionIrregular; }, opcional: true },
-    { t: "Cotizaciones a la Seguridad Social", v: function (r) { return -r.cotizaciones; }, opcional: true },
-    { t: "Otros gastos deducibles", v: function (r) { return -r.otrosGastos; }, opcional: true },
-    { t: "Reducción por rendimientos del trabajo", v: function (r) { return -r.reduccion; }, opcional: true },
-    { t: "Base imponible", v: function (r) { return r.baseImponible; }, total: true, sueldo: true },
-    { t: "Reducción por tributación conjunta", v: function (r) { return -r.reduccionConjunta; }, opcional: true },
-    { t: "Base liquidable", v: function (r) { return r.baseLiquidable; }, total: true },
-    { t: "Mínimo personal y familiar estatal", v: function (r) { return r.minimoEstatal.total; }, nota: true },
-    { t: "Escala estatal sobre la base liquidable", v: function (r) { return r.escalaBaseEstatal; } },
-    { t: "Escala estatal sobre el mínimo", v: function (r) { return -r.escalaMinimoEstatal; } },
-    { t: "Cuota íntegra estatal", v: function (r) { return r.cuotaEstatal; }, total: true },
-    { t: "Mínimo personal y familiar autonómico", v: function (r) { return r.minimoAutonomico.total; }, nota: true },
-    { t: "Escala autonómica sobre la base liquidable", v: function (r) { return r.escalaBaseAutonomica; } },
-    { t: "Escala autonómica sobre el mínimo", v: function (r) { return -r.escalaMinimoAutonomico; } },
-    { t: "Cuota íntegra autonómica", v: function (r) { return r.cuotaAutonomica; }, total: true },
-    { t: "Deducción por donativos", v: function (r) { return -r.donativos; }, opcional: true },
-    { t: "Deducciones de Andalucía", v: function (r) { return -r.andaluzasAplicadas; }, opcional: true, andaluzas: true },
-    { t: "Cuota líquida", v: function (r) { return r.cuotaLiquida; }, total: true },
-    { t: "Deducción para sueldos bajos", v: function (r) { return -r.sueldosBajos; }, opcional: true },
-    { t: "Deducción por maternidad", v: function (r) { return -r.maternidad; }, opcional: true },
-    { t: "Deducción por familia numerosa o monoparental", v: function (r) { return -r.familia; }, opcional: true },
+    { t: "Sueldo o pensión bruta", tb: "Base liquidable de partida", c: "0003", desdeSueldo: true, v: function (r) { return r.bruto; } },
+    { t: "Reducción del 30 % por renta de más de dos años", c: "0011", desdeSueldo: true, v: function (r) { return -r.reduccionIrregular; }, opcional: true },
+    { t: "Total ingresos computables", c: "0012", v: function (r) { return r.integro; }, sub: true, sueldo: true, si: function (r) { return r.reduccionIrregular > 0; } },
+    { t: "Cotizaciones a la Seguridad Social", c: "0013", v: function (r) { return -r.cotizaciones; }, opcional: true },
+    { t: "Rendimiento neto previo", c: "0017", v: function (r) { return r.previo; }, sub: true, sueldo: true, si: function (r) { return r.cotizaciones > 0; } },
+    { t: "Sueldo bruto de la pareja", v: function (r) { return r.parejaBruto; }, opcional: true, sueldo: true },
+    { t: "Cotizaciones de la pareja", v: function (r) { return -r.parejaCotizaciones; }, opcional: true, sueldo: true },
+    { t: "Suma de rendimientos netos previos", c: "0018", v: function (r) { return r.previos; }, sub: true, sueldo: true, si: function (r) { return r.parejaBruto > 0; } },
+    { t: "Otros gastos deducibles", c: "0019", v: function (r) { return -r.gastosGenerales; }, opcional: true },
+    { t: "Incremento para trabajadores activos con discapacidad", c: "0021", v: function (r) { return -r.gastosDiscapacidad; }, opcional: true },
+    { t: "Rendimiento neto", c: "0022", v: function (r) { return r.neto; }, sub: true, sueldo: true, si: function (r) { return r.otrosGastos > 0; } },
+    { t: "Reducción por obtención de rendimientos del trabajo", c: "0023", v: function (r) { return -r.reduccion; }, opcional: true },
+    { t: "Rendimiento neto reducido del trabajo", c: "0025", v: function (r) { return r.trabajoReducido; }, sub: true, sueldo: true,
+      si: function (r) { return r.alquilerNeto > 0 || r.actividadPrevio !== 0; } },
+    { t: "Alquiler cobrado menos sus gastos", v: function (r) { return r.alquilerNeto; }, opcional: true, sueldo: true },
+    { t: "Reducción por alquiler de vivienda", v: function (r) { return -r.alquilerReduccion; }, opcional: true, sueldo: true },
+    { t: "Actividad: ingresos menos gastos", v: function (r) { return r.actividadPrevio; }, opcional: true, sueldo: true },
+    { t: "Provisiones y gastos de difícil justificación (5 %)", v: function (r) { return -r.actividadDificil; }, opcional: true, sueldo: true },
+    { t: "Reducción de la actividad por rentas bajas", v: function (r) { return -r.reduccionActividad; }, opcional: true, sueldo: true },
+    { t: "Base imponible general", c: "0435", v: function (r) { return r.baseImponible; }, total: true, sueldo: true },
+    { t: "Base imponible del ahorro", c: "0460", v: function (r) { return r.baseAhorro; }, total: true, opcional: true, sueldo: true },
+    { t: "Reducción por tributación conjunta", c: "0461", v: function (r) { return -r.reduccionConjunta; }, opcional: true },
+    { t: "Reducción por aportaciones a planes de pensiones", v: function (r) { return -r.plan; }, opcional: true },
+    { t: "Base liquidable general", c: "0500", v: function (r) { return r.baseLiquidable; }, total: true },
+    { t: "Base liquidable del ahorro", c: "0510", v: function (r) { return r.baseLiquidableAhorro; }, total: true, opcional: true },
+    { t: "Mínimo personal y familiar estatal", c: "0519", v: function (r) { return r.minimoEstatal.total; }, nota: true },
+    { t: "Escala estatal sobre la base liquidable general", c: "0528", v: function (r) { return r.escalaBaseEstatal; } },
+    { t: "Escala estatal sobre el mínimo", c: "0530", v: function (r) { return -r.escalaMinimoEstatal; } },
+    { t: "Escala del ahorro sobre la base liquidable del ahorro", c: "0536", v: function (r) { return r.ahorroBaseEstatal; }, opcional: true },
+    { t: "Escala del ahorro sobre el mínimo que pasa al ahorro", c: "0538", v: function (r) { return -r.ahorroMinimoEstatal; }, opcional: true },
+    { t: "Cuota íntegra estatal", c: "0545", v: function (r) { return r.cuotaEstatal; }, total: true },
+    { t: "Mínimo personal y familiar autonómico", c: "0520", v: function (r) { return r.minimoAutonomico.total; }, nota: true },
+    { t: "Escala autonómica sobre la base liquidable general", c: "0529", v: function (r) { return r.escalaBaseAutonomica; } },
+    { t: "Escala autonómica sobre el mínimo", c: "0531", v: function (r) { return -r.escalaMinimoAutonomico; } },
+    { t: "Escala del ahorro sobre la base liquidable del ahorro", c: "0537", v: function (r) { return r.ahorroBaseAutonomica; }, opcional: true },
+    { t: "Escala del ahorro sobre el mínimo que pasa al ahorro", c: "0539", v: function (r) { return -r.ahorroMinimoAutonomico; }, opcional: true },
+    { t: "Cuota íntegra autonómica", c: "0546", v: function (r) { return r.cuotaAutonomica; }, total: true },
+    { t: "Deducción por inversión en vivienda habitual", c: "0547 y 0548", v: function (r) { return -r.vivienda; }, opcional: true },
+    { t: "Deducción por donativos", c: "0552 y 0553", v: function (r) { return -r.donativos; }, opcional: true },
+    { t: "Deducciones de Andalucía", c: "0564", v: function (r) { return -r.andaluzasAplicadas; }, opcional: true, andaluzas: true },
+    { t: "Cuota líquida", c: "0587", v: function (r) { return r.cuotaLiquida; }, total: true },
+    { t: "Deducción por obtención de rendimientos del trabajo (sueldos bajos)", c: "0414", v: function (r) { return -r.sueldosBajos; }, opcional: true },
+    { t: "Cuota resultante de la autoliquidación", c: "0595", v: function (r) { return r.cuotaResultante; }, total: true, si: function (r) { return r.sueldosBajos > 0; } },
+    { t: "Deducción por maternidad", c: "0611", v: function (r) { return -r.maternidad; }, opcional: true },
+    { t: "Incremento por gastos de guardería", c: "0613", v: function (r) { return -r.guarderia; }, opcional: true },
+    { t: "Deducción por descendientes con discapacidad", c: "0623", v: function (r) { return -r.discapacidadHijos; }, opcional: true },
+    { t: "Deducción por ascendientes con discapacidad", c: "0636", v: function (r) { return -r.discapacidadAscendientes; }, opcional: true },
+    { t: "Deducción por familia numerosa o monoparental", c: "0660 o 0662", v: function (r) { return -r.familia; }, opcional: true },
     { t: "IRPF del año", v: function (r) { return r.irpf; }, total: true, final: true },
     { t: "Sin la reducción del 30 %, pagaría", sin: true },
-    { t: "Retenciones", v: function (r) { return -r.retenciones; }, opcional: true },
-    { t: "Resultado de la declaración", resultado: true },
+    { t: "Retenciones", c: "0609", v: function (r) { return -r.retenciones; }, opcional: true },
+    { t: "Resultado de la declaración", c: "0670", resultado: true },
     { t: "Tipo medio", p: function (r) { return r.tipoMedio; } },
     { t: "Tipo de su tramo en la escala", p: function (r) { return r.tipoTramo; } }
   ];
@@ -717,9 +907,14 @@
     });
     head.appendChild(tr);
 
-    function fila(texto, celdas, cls) {
+    function fila(texto, celdas, cls, casilla) {
       var row = node("tr", cls), h = node("th", null, texto);
       h.scope = "row";
+      if (casilla) {
+        var c = node("span", "irpf-casilla", casilla);
+        c.title = "Casilla de Renta WEB 2025";
+        h.appendChild(c);
+      }
       row.appendChild(h);
       celdas.forEach(function (v) { row.appendChild(node("td", null, v)); });
       body.appendChild(row);
@@ -727,8 +922,9 @@
 
     var base = deBase();
     FILAS.forEach(function (f) {
+      var casilla = base && f.desdeSueldo ? "" : f.c;
       if (f.resultado) {
-        if (r.a.retenciones || r.b.retenciones) fila(f.t, QUIENES.map(function (w) { return resultado(r[w].resultado); }), "irpf-total");
+        if (r.a.retenciones || r.b.retenciones) fila(f.t, QUIENES.map(function (w) { return resultado(r[w].resultado); }), "irpf-total", casilla);
         return;
       }
       if (f.sin) {
@@ -738,18 +934,19 @@
         return;
       }
       if (f.sueldo && base) return;
+      if (f.si && !QUIENES.some(function (w) { return f.si(r[w]); })) return;
       if (f.p) { fila(f.t, QUIENES.map(function (w) { return pct(f.p(r[w])); })); return; }
       var v = QUIENES.map(function (w) { return f.v(r[w]); });
       if (f.opcional && v.every(function (x) { return Math.abs(x) < 0.005; })) return;
       fila(base && f.tb ? f.tb : f.t, v.map(function (x) { return euros(x); }),
-           f.final ? "irpf-total irpf-final" : f.total ? "irpf-total" : f.nota ? "irpf-aside" : "");
+           f.final ? "irpf-total irpf-final" : f.total ? "irpf-total" : f.sub ? "irpf-subtotal" : f.nota ? "irpf-aside" : "", casilla);
       if (f.andaluzas) {
         Object.keys(ANDALUZAS).forEach(function (k) {
           var d = QUIENES.map(function (w) {
             var x = r[w].andaluzas.filter(function (a) { return a[0] === k; })[0];
             return x ? x[1] : 0;
           });
-          if (d[0] || d[1]) fila(ANDALUZAS[k], d.map(function (x) { return x ? euros(-x) : ""; }), "irpf-sub");
+          if (d[0] || d[1]) fila(ANDALUZAS[k][0], d.map(function (x) { return x ? euros(-x) : ""; }), "irpf-sub", ANDALUZAS[k][1]);
         });
         var fuera = QUIENES.map(function (w) { return r[w].andaluzasTotal - r[w].andaluzasAplicadas; });
         if (fuera[0] > 0.005 || fuera[1] > 0.005) {

@@ -1021,6 +1021,20 @@ button.dash-key[aria-pressed="false"] { color: $ink-3; text-decoration: line-thr
   thead th { .dash-mark { display: inline-block; margin-right: 0.4rem; vertical-align: middle; } }
   tbody th { font-weight: 400; color: $ink; white-space: normal; min-width: 13rem; }
   tr.irpf-total th, tr.irpf-total td { font-weight: 700; color: $navy; }
+  tr.irpf-subtotal th, tr.irpf-subtotal td { color: $navy; }
+  // the box of each step in Renta WEB
+  .irpf-casilla {
+    display: inline-block;
+    margin-left: 0.45rem;
+    padding: 0 0.3rem;
+    border-radius: 4px;
+    background: rgba($navy, 0.07);
+    color: $ink-2;
+    font-size: 0.74rem;
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+  }
   tr.irpf-final th, tr.irpf-final td { background: rgba($navy, 0.05); }
   tr.irpf-sub th { padding-left: 1.6rem; }
   tr.irpf-sub th, tr.irpf-sub td { font-size: 0.86rem; color: $ink-2; }
@@ -1032,5 +1046,6 @@ button.dash-key[aria-pressed="false"] { color: $ink-3; text-decoration: line-thr
     tbody th { min-width: 0; }
     tr.irpf-sub th { padding-left: 0.9rem; }
     tr.irpf-sub th, tr.irpf-sub td { font-size: 0.76rem; }
+    .irpf-casilla { margin-left: 0.3rem; font-size: 0.66rem; }
   }
 }
