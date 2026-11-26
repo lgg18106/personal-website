@@ -3,11 +3,12 @@ centred diamond counterform, a magenta face on the lower left and a cyan face on
 
     python3 _scripts/make_logo.py        (from the project root; the PNG files need rsvg-convert)
 
-Writes images/logo/logo-light.svg (header), logo-dark.svg (navy footer), logo-mono.svg and
-logo-mono-white.svg (one ink), logo-badge.svg and images/favicon.svg (the mark a little larger in its
-square, for browser tabs), the PNG icons in images/, favicon.ico in the project root and the 1024 px
-PNG of the light and dark marks. The horizontal lockups (images/logo/identidad-horizontal*) set the
-name in Newsreader converted to outlines and are not written here.
+Writes images/logo/logo-light.svg (header, 60 px; 50 px on phones), logo-dark.svg (navy footer,
+40 px), logo-mono.svg and logo-mono-white.svg (one ink), logo-badge.svg and images/favicon.svg (for
+browser tabs), the PNG icons in images/, favicon.ico in the project root and the 1024 px PNG of the
+light and dark marks. Other sizes on the site should keep the vertical edges on whole pixels (see
+mark()). The horizontal lockups (images/logo/identidad-horizontal*) set the name in Newsreader
+converted to outlines and are not written here.
 """
 from math import sqrt
 from pathlib import Path
@@ -50,7 +51,11 @@ def polygon(points):
 def mark(navy=NAVY, cyan=CYAN, magenta=MAGENTA, mono=False, badge=False):
     outer = polygon([A, B, T, Q, R, K, N, D])
     hole = polygon([L, H, J, M])
-    scale = (96 if badge else 92) / (K[1] - B[1])
+    # one unit of the drawing per unit of the 100-unit square puts the vertical edges at x = 10, 40, 60
+    # and 90, on whole pixels at 40, 50 and 60 px, so they stay sharp in the footer and the header;
+    # the badge, at 35/32, fills its square and keeps the two long outer edges on whole pixels at 16,
+    # 32 and 48 px, the sizes of a browser tab
+    scale = 35 / 32 if badge else 1
     faces = "" if mono else (
         f'    <path fill="{magenta}" d="{polygon([D2, L, M, I, N, D])}"/>\n'
         f'    <path fill="{cyan}" d="{polygon([T, Q, R, H, P])}"/>\n')
