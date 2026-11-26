@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Gonzalo Llamosas García">
   <title>Gonzalo Llamosas García</title>
-  <desc>Compact folded planes with a centred diamond counterform.</desc>
-  <g transform="translate(50 50) scale(1.00000000) translate(-48 -50.61880215)">
-    <path fill="#ffffff" fill-rule="evenodd" d="M 8.000000 35.000000 L 58.000000 6.132487 L 58.000000 23.917096 L 88.000000 41.237604 L 88.000000 66.237604 L 38.000000 95.105118 L 38.000000 77.320508 L 8.000000 60.000000 Z M 28.598076 46.892305 L 41.545517 39.417096 L 67.401924 54.345299 L 54.454483 61.820508 Z"/>
-    <path fill="#e570a4" d="M 8.000000 58.784610 L 28.598076 46.892305 L 54.454483 61.820508 L 38.000000 71.320508 L 38.000000 77.320508 L 8.000000 60.000000 Z"/>
-    <path fill="#49b7d1" d="M 58.000000 23.917096 L 88.000000 41.237604 L 88.000000 66.237604 L 41.545517 39.417096 L 58.000000 29.917096 Z"/>
-  </g>
+  <desc>Folded planes with a centred diamond counterform.</desc>
+  <path fill="#ffffff" fill-rule="evenodd" d="M 10 35 L 60 10 L 60 25 L 90 40 L 90 65 L 40 90 L 40 75 L 10 60 Z M 30 45 L 40 40 L 70 55 L 60 60 Z"/><path fill="#e570a4" d="M 10 55 L 30 45 L 60 60 L 40 70 L 40 75 L 10 60 Z"/><path fill="#49b7d1" d="M 60 25 L 90 40 L 90 65 L 40 40 L 60 30 Z"/>
 </svg>
