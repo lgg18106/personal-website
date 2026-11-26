@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Gonzalo Llamosas García"><title>Gonzalo Llamosas García</title><circle cx="50" cy="50" r="41.75" fill="none" stroke="#003366" stroke-width="10.5"/><circle cx="50" cy="50" r="36.5" fill="#ffffff"/><path d="M 50 50 L 15.5 50 A 34.5 34.5 0 0 1 50 15.5 Z" fill="#0099cc"/><path d="M 50 50 L 50 15.5 A 34.5 34.5 0 0 1 84.5 50 Z" fill="#ffffff"/><path d="M 50 50 L 84.5 50 A 34.5 34.5 0 0 1 50 84.5 Z" fill="#cc0066"/><path d="M 50 50 L 50 84.5 A 34.5 34.5 0 0 1 15.5 50 Z" fill="#ffffff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Gonzalo Llamosas García">
+  <title>Gonzalo Llamosas García</title>
+  <desc>Compact folded planes with a centred diamond counterform.</desc>
+  <g transform="translate(50 50) scale(1.03402584) translate(-48 -50.61880215)">
+    <path fill="#003366" fill-rule="evenodd" d="M 8.000000 35.000000 L 58.000000 6.132487 L 58.000000 23.917096 L 88.000000 41.237604 L 88.000000 66.237604 L 38.000000 95.105118 L 38.000000 77.320508 L 8.000000 60.000000 Z M 28.598076 46.892305 L 41.545517 39.417096 L 67.401924 54.345299 L 54.454483 61.820508 Z"/>
+    <path fill="#b52b6c" d="M 8.000000 58.784610 L 28.598076 46.892305 L 54.454483 61.820508 L 38.000000 71.320508 L 38.000000 77.320508 L 8.000000 60.000000 Z"/>
+    <path fill="#1488ae" d="M 58.000000 23.917096 L 88.000000 41.237604 L 88.000000 66.237604 L 41.545517 39.417096 L 58.000000 29.917096 Z"/>
+  </g>
+</svg>
