@@ -187,7 +187,10 @@ html:not([lang^="es"]) .es-only { display: none !important; }
     a { color: #fff; text-decoration: none; &:hover { text-decoration: underline; } }
   }
 
-  .footer-id { display: inline-flex; align-items: center; gap: 0.7rem; img { width: 40px; height: 40px; } }
+  .footer-id { display: inline-flex; align-items: center; gap: 0.7rem; }
+  // the header's mark in its own colours, on a white tile so that it reads on the navy footer
+  .footer-logo { display: inline-flex; padding: 4px; background: $surface; border-radius: 10px; }
+  .footer-mark { display: block; width: 40px; height: 40px; }
   .footer-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; }
 }
 

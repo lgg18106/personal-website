@@ -3,15 +3,18 @@ centred diamond counterform, a magenta face on the lower left and a cyan face on
 
     python3 _scripts/make_logo.py        (from the project root; the PNG files need rsvg-convert)
 
-Writes images/logo/logo-light.svg (header, 60 px; 50 px on phones), logo-dark.svg (navy footer,
-40 px), logo-mono.svg and logo-mono-white.svg (one ink), logo-badge.svg and images/favicon.svg (for
-browser tabs), the PNG icons in images/, favicon.ico in the project root and the 1024 px PNG of the
-light and dark marks. Other sizes on the site should keep the vertical edges on whole pixels (see
-mark()). The horizontal lockups (images/logo/identidad-horizontal*) set the name in Newsreader
-converted to outlines and are not written here.
+Writes images/logo/logo-light.svg, logo-dark.svg (for dark backgrounds), logo-mono.svg and
+logo-mono-white.svg (one ink), logo-badge.svg and images/favicon.svg (for browser tabs), the PNG icons
+in images/, favicon.ico in the project root and the 1024 px PNG of the light and dark marks. The site
+draws the light mark inline, in html/header.html (60 px; 50 px on phones) and html/footer.html (40 px,
+on a white tile), so that the browser draws it as shapes at any zoom; this script rewrites those copies
+too. Other sizes on the site should keep the vertical edges on whole pixels (see mark()). The
+horizontal lockups (images/logo/identidad-horizontal*) set the name in Newsreader converted to outlines
+and are not written here.
 """
 from math import sqrt
 from pathlib import Path
+import re
 import shutil
 import struct
 import subprocess
@@ -70,6 +73,17 @@ def mark(navy=NAVY, cyan=CYAN, magenta=MAGENTA, mono=False, badge=False):
         "  </g>\n</svg>\n")
 
 
+def inline(css_class, size):
+    """The light mark as inline SVG for the pages, with the drawing already moved into its square."""
+    num = lambda v: f"{v:.3f}".rstrip("0").rstrip(".")
+    path = lambda points: "M " + " L ".join(f"{num(x - CX + 50)} {num(y - CY + 50)}" for x, y in points) + " Z"
+    return (f'<svg class="{css_class}" viewBox="0 0 100 100" width="{size}" height="{size}" '
+            'aria-hidden="true" focusable="false">'
+            f'<path fill="{NAVY}" fill-rule="evenodd" d="{path([A, B, T, Q, R, K, N, D])} {path([L, H, J, M])}"/>'
+            f'<path fill="{MAGENTA}" d="{path([D2, L, M, I, N, D])}"/>'
+            f'<path fill="{CYAN}" d="{path([T, Q, R, H, P])}"/></svg>')
+
+
 def ico(sizes, out):
     """An .ico file holding the PNG icons of the given sizes."""
     pngs = [(ICONS / f"favicon-{n}.png").read_bytes() for n in sizes]
@@ -90,6 +104,11 @@ marks = {
 }
 for path, svg in marks.items():
     path.write_text(svg, encoding="utf-8")
+for page, css_class, size in (("html/header.html", "site-logo", 60), ("html/footer.html", "footer-mark", 40)):
+    html = Path(page).read_text(encoding="utf-8")
+    html, n = re.subn(rf'<svg class="{css_class}".*?</svg>', inline(css_class, size), html, flags=re.S)
+    assert n, f"no inline logo in {page}"
+    Path(page).write_text(html, encoding="utf-8")
 
 rsvg = shutil.which("rsvg-convert")
 if rsvg:
